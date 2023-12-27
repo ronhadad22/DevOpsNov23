@@ -1,12 +1,41 @@
-name@example.com
+beny1221g@gmail.com
 < your secret here >
-
+68b329da9893e34099c7d8ad5cb9c940  -
 
 Kernel System Calls
 -------------------
 < Your Answer >
-m
+whatIdo it creating folder with name welcomeToDevOpsJan22 and inside file named goodLuck with text inside "There you go... tell me what I do..." 
+
 
 Binary Numbers
 --------------
-< Your Answer >
+1.
+111 = 7
+100 = 4
+10110 = 22
+
+*****************************************
+2.
+decimal range represented by a 2^8=256
+
+*****************************************
+3.
+4  = 0000 0100
+-4 = 1111 1100
+
+*****************************************
+4.
+way to calculate fractions is to take the fraction like 0.3 multiply by 2 and take number before the .  and keep
+at it until you reach 1. and take only the the number ofter , example :
+
+0.3*2 = 0.6
+0
+0.6*2 = 1.2
+0 1
+0.2*2 = 0.4
+0 1 0
+0.4*2 = 0.8
+0 1 0 0
+
+use 4 first to represent the complete numbers and the other 4 to represent the fraction (fraction can be represent more accurate or less )
