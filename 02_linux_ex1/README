@@ -1,12 +1,46 @@
-name@example.com
-< your secret here >
+thebinoman@gmail.com
+814c5723c21e7e90a3eae36c8df3c513
 
 
 Kernel System Calls
 -------------------
-< Your Answer >
-m
+This is what "whatIdo" program is doing according to the output when running "strace whatIdo":
+.
+.
+.
+stat("./welcomeToDevOpsJan22", 0x56171da01040) = -1 ENOENT (No such file or directory)   // Check if the file or directory "./welcomeToDevOpsJan22" exists (it is not in this case)
+mkdir("./welcomeToDevOpsJan22", 0700)   = 0   // If "./welcomeToDevOpsJan22" isn't existing, create a directory with that name
+getrandom("\x78\x27\xf6\x57\xe9\x6a\xcc\x57", 8, GRND_NONBLOCK) = 8   // Get a random number
+brk(NULL)                               = 0x56171ed39000   // Line-break maybe?
+brk(0x56171ed5a000)                     = 0x56171ed5a000   // Line-break maybe?
+openat(AT_FDCWD, "welcomeToDevOpsJan22/goodLuck", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3   // Create a file under "welcomeToDevOpsJan22/goodLuck", and open a stream for it (open it for editing)
+newfstatat(3, "", {st_mode=S_IFREG|0777, st_size=0, ...}, AT_EMPTY_PATH) = 0   // Give full access to the file to all users and groups
+write(3, "There you go... tell me what I d"..., 36) = 36   // Write onto the file "There you go... tell me what I do..."
+close(3)                                = 0   // Close the stream of the file (finish the edit)
+exit_group(0)                           = ?   // Exit the program gracefully (with code 0)
++++ exited with 0 +++   // The running of the program has ended gracefully with code 0
+
 
 Binary Numbers
 --------------
-< Your Answer >
+Q1: Convert the following binary numbers to a decimals: 111, 100, 10110
+A1: 7, 4, 22
+
+Q2: What is the available decimal range represented by a 8 bits binary number?
+A2: 8 bits binary number has 256 combinations. Thus, the common used decimal range is 0-255.
+
+Q3: Given a 9 bits binary number, suggest a method to represent a negative numbers between 0-255
+A3: The common approach is to use the 1st bit to "sign" if the number.
+    If the signing bit is 0, the number is considered positive, and if it's equal to 1, the number is considered negative.
+
+Q4: Suggest a method to represent a floating point numbers (e.g. 12.3, 15.67, 0.231) using a 8 bits binary numbers
+A4: The meaning of a floating point number is that the position of the decimal point can change.
+    For example, the binary number 10111, can have the point after the second bit (10.111),
+    or it can be after the last bit (10111. - a whole number (integer)).
+    The position of the floating point needs to be stored as well.
+    If we have 8 bits in total to store an unsigned floating point number,
+    we can store the position of the decimal point in the first 3 bits, while the rest 5 bits could store the value of the number.
+    3 bits has 8 combinations, and 5 bits binary number has 6 possible positions for the floating point to be (e.g. - .1.0.1.1.1.).
+
+    However using only 8 bits to represent a floating point number is extremely not accurate, and also has several additional caveats.
+    The common standard for a floating point number is 32 bits, and even that is not accurate enough in too many cases, in my opinion.
