@@ -3,9 +3,15 @@ denberezovsky84@gmail.com
 
 Kernel System Calls
 -------------------
-< Your Answer >
-m
+
 
 Binary Numbers
 --------------
-< Your Answer >
+1. From Binary to Decimels:
+111 - 7
+100 - 4
+10110 - 22
+
+2. Available decimal range represented by a 8 bits binary number is from 0 to 255.
+
+3.
