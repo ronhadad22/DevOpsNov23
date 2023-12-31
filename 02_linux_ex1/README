@@ -1,12 +1,36 @@
-name@example.com
+alexb853@gmail.com
 < your secret here >
 
 
 Kernel System Calls
 -------------------
-< Your Answer >
-m
+The README program created a file named 'goodLuck' in the welcomeToDevopsJan22
+directory that contains the massage 'There you go... tell me what I d'
 
 Binary Numbers
 --------------
-< Your Answer >
+1. 111 = (1*2^2) + (1*2^1) + (1*2^0) = 7
+100 = (1*2^2) + (0*2^1) + (0*2^0) = 4
+10110 = (1*2^4) + (0*2^3) + (1*2^2) + (1*2^1) + (0*2^0) = 22
+
+2. The available decimal range represented by a 8 bits binary number is 2^8
+   Which is 256 but we start to count from 0 so the range is 255.
+
+3. A method that could represent a negative numbers between 0-255 Given a 9 bits binary number
+   is to designate the leftmost bit as the sign bit.
+
+   If the sign bit is 0, the number is positive.
+   If the sign bit is 1, the number is negative.
+   If the number is negative, take the one's complement of the remaining 8 bits.
+   For example:
+   Let's say we have the 9-bit binary number 110110011:
+   The leftmost bit is 1, indicating that it's a negative number.
+   To find the magnitude, take the one's complement of the remaining 8 bits:
+   Invert all the bits (change 1s to 0s and 0s to 1s): 001001100.
+   Now, convert the magnitude (001001100) to decimal: 36.
+
+   Since the sign bit is 1, the overall value is -36.
+
+4.
+
+
