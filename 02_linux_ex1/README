@@ -28,5 +28,5 @@ decimal range represented by a 2^8=256
 4.
 use 4 first bits to represent the complete numbers and the other 4 bits to represent the fraction (fraction can be represent more accurate or less )
 12.3 = 1100.0011
-15.67 = 1111.1011
+15.67 = 1111.0110
 0.231 = 0000.0010 
