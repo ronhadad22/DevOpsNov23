@@ -1,21 +1,20 @@
-name@example.com
+fairy3@gmail.com (rimap)
 < your secret here >
-dddhjhjh
+814c5723c21e7e90a3eae36c8df3c513  -
 
 Kernel System Calls
 -------------------
 < Your Answer >
 The program whatIdo do follow things:
 1) system call openat:
-   opens or creates (if not exists) a file googdluck
-   located at the path "welcomeToDevOpsJan22/goodLuck"
+   open or create if not exists a file /welcomeToDevOpsJan22/goodLuck
    within a current working directory for writing only.
    If the file already exists, it's truncated to zero length.
    The file is given read-write permissions for owner,group and others (0666)
-   the system call returns file descriptor of this created/updated file
+   the system call returns file descriptor of new created/updated file
 2) system call write:
   String of characters "There you go... tell me what I d" with a length of 36 bytes
-  is written to the file (file with file descriptor received from systemcall openat)
+  is written to the  goodLuck
 3) the file is closed
 4) the program exit with code 0 - means successful
 
