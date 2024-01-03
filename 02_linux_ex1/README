@@ -1,12 +1,65 @@
-name@example.com
+im.se@outlook.com
+
 < your secret here >
 
+ 814c5723c21e7e90a3eae36c8df3c513 -
 
 Kernel System Calls
 -------------------
 < Your Answer >
-m
+
+# execve("/usr/bin/ls", ["ls", "-li", "whatIdo"],
+system call that executes the program /usr/bin/ls with the arguments ["ls", "-li", "whatIdo"]
+
+# newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+
+The newfstatat system call is used to retrieve information about a file, such as its size, mode, link count, and access time, in a buffer
+It is similar to the stat and lstat system calls, but it allows the file to be specified relative to a directory file descriptor instead of the current working directory
+
+###whatIdo it creating folder with name welcomeToDevOpsJan22 and inside file named goodLuck with text inside "There you go... tell me what I do..."
+
 
 Binary Numbers
 --------------
 < Your Answer >
+#1.Convert the following binary numbers to a decimals: 111, 100, 10110
+
+111=7
+100=4
+10110=22
+
+#2.What is the available decimal range represented by a 8 bits binary number?
+
+in range of smallest value 00000000 and largest value 11111111 or (8+16+32+64+128)=256
+
+#3.Given a 9 bits binary number, suggest a method to represent a negative numbers between 0-255
+
+1. start with absolute value of number (255 in our case or 1111 1111)
+2. inverting all the 1 to 0 (0000 0000)
+3. adding 1 to the entire inverted number will give us representation of -255
+3.1 binary representing of the numbers in 4bit system
+binary  decimal
+  0000        0
+  0010        2
+  1010       -2
+  1101       -5
+  1000       -0
+
+4. Suggest a method to represent a floating point numbers (e.g. 12.3, 15.67, 0.231) using a 8 bits binary numbers
+
+12.3 = 00001100.0100110011....
+1.1000100110011...*2"8
+
+128 64 32 16 8 4 2 1
+0000 1100
+
+0.3 * 2 = 0.6 (0)
+0.6 * 2 = 1.2 (1)
+0.2 * 2 = 0.4 (0)
+0.4 * 2 = 0.8 (0)
+0.8 * 2 = 1.6 (1)
+06 * 2 = 1.2 (1)
+...
+
+Explicit Normalization
+12.3 = 0.123 = bin 1.111011
