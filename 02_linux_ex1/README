@@ -1,8 +1,41 @@
 name@example.com
 denberezovsky84@gmail.com
 
+
+
+
 Kernel System Calls
 -------------------
+At the beginning we see a few system calls that are part of the load of the program.
+For Example:
+
+* mprotect(0x7f7c7dc15000, 16384, PROT_READ) = 0 \ this system call is used to control access to memory
+
+* mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7c7dd18000 \ this system call is used to map files or devices into memory.
+
+* newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2216304, ...}, AT_EMPTY_PATH) = 0 \ sys call to obtain info about a file, given its file descriptor.
+
+But the relevant stuff is starting at the end of the lines:
+
+1. stat("./welcomeToDevOpsJan22", 0x55b27f001040) = -1 ENOENT (No such file or directory)
+This system call checking whether a directory named "welcomeToDevOpsJan22" exists. And it's not.
+
+2. mkdir("./welcomeToDevOpsJan22", 0700) = 0
+This system call creating a new directory named "welcomeToDevOpsJan22" with permissions set to 0700.
+
+3. openat(AT_FDCWD, "welcomeToDevOpsJan22/goodLuck", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+This system call is opening( or creating if doesn't exists) a file named "goodLuck" in the "welcomeToDevOpsJan22" directory.
+And set permissions 0666
+
+4. write(3, "There you go... tell me what I d"..., 36) = 36
+This sys call is writing a string to the "goodLuck" file.
+The string is "There you go...tell me what I d...".
+
+5.exit_group(0) = ?
+This system call is terminating the process with a status code of 0. Which means "successful"
+
+So basically this program creating a new directory "welcomeToDevOpsJan22"( if it doesn't exist)
+Creating a file named "goodLuck" and writing a string"There you go...tell me what I d..." into it.
 
 
 Binary Numbers
