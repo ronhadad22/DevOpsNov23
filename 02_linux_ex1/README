@@ -11,9 +11,11 @@ For Example:
 
 * mprotect(0x7f7c7dc15000, 16384, PROT_READ) = 0 \ this system call is used to control access to memory
 
-* mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7c7dd18000 \ this system call is used to map files or devices into memory.
+* mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7c7dd18000 \
+this system call is used to map files or devices into memory.
 
-* newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2216304, ...}, AT_EMPTY_PATH) = 0 \ sys call to obtain info about a file, given its file descriptor.
+* newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2216304, ...}, AT_EMPTY_PATH) = 0 \
+sys call to obtain info about a file, given its file descriptor.
 
 But the relevant stuff is starting at the end of the lines:
 
@@ -24,7 +26,7 @@ This system call checking whether a directory named "welcomeToDevOpsJan22" exist
 This system call creating a new directory named "welcomeToDevOpsJan22" with permissions set to 0700.
 
 3. openat(AT_FDCWD, "welcomeToDevOpsJan22/goodLuck", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
-This system call is opening( or creating if doesn't exists) a file named "goodLuck" in the "welcomeToDevOpsJan22" directory.
+This system call is opening( or creating if doesn't exists) a file named "goodLuck" in the "welcomeToDevOpsJan22" dir.
 And set permissions 0666
 
 4. write(3, "There you go... tell me what I d"..., 36) = 36
