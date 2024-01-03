@@ -5,7 +5,8 @@ beny1221g@gmail.com
 Kernel System Calls
 -------------------
 < Your Answer >
-it shows all files and folder in git repository , it reveals all data about the repository and is content
+whatIdo it creating folder with name welcomeToDevOpsJan22 and inside file named goodLuck with text inside "There you go... tell me what I do..." 
+
 
 Binary Numbers
 --------------
@@ -25,16 +26,7 @@ decimal range represented by a 2^8=256
 
 *****************************************
 4.
-way to calculate fractions is to take the fraction like 0.3 multiply by 2 and take number before the .  and keep
-at it until you reach 1. and take only the the number ofter , example :
-
-0.3*2 = 0.6
-0
-0.6*2 = 1.2
-0 1
-0.2*2 = 0.4
-0 1 0
-0.4*2 = 0.8
-0 1 0 0
-
-use 4 first to represent the complete numbers and the other 4 to represent the fraction (fraction can be represent more accurate or less )
+use 4 first bits to represent the complete numbers and the other 4 bits to represent the fraction (fraction can be represent more accurate or less )
+12.3 = 1100.0011
+15.67 = 1111.0110
+0.231 = 0000.0010 
