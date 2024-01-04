@@ -1,10 +1,6 @@
-#!bin/bash
-#
-(
-#Check if File is exist already
-
-if
+!bin/bash
 #Check if File is exist already if not extract secretGGenerator archive
+if
   test -e secretGenerator.tar.gz; then
     echo "file already exist"
 fi
@@ -12,12 +8,8 @@ fi
   wget https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz
 #Extract the Archjve
   tar -xvf secretGenerator.tar.gz
-#show extracted folder
-  ls -li
 #Enter to extracted folder
   cd src
-#show content
-  ls -li
 #Change yourSolution file to executable
    sudo chmod u+x generateSecret.sh
 #create new directory named secret dir
