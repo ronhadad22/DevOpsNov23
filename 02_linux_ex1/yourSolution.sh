@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Set variables for archive, directory, and secret
-arch=secretGenerator.tar.gz
-secret_gen=./src/secretDir/generateSecret.sh
+
+export secret_gen=./src/secretDir/generateSecret.sh
 export source=./src
 export secretdir=/src/secretDir
-secret=./src/secretDir/.secret
+export secret=./src/secretDir/.secret
+export arch=secretGenerator.tar.gz
 
 # Download secretGenerator archive if it doesn't exist
 wget -N https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz
