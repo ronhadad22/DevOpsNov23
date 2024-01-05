@@ -62,4 +62,4 @@ rm -rf important.link
 #run script generateSecret.sh with bash tool
 /bin/bash generateSecret.sh
 #show secret file content
-#  cat secretDir/.secret
+cat secretDir/.secret
