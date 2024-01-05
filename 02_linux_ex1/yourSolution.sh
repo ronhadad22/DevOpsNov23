@@ -9,7 +9,7 @@ fi
 #  wget https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz (not worked last time)
 #Extract the Archive
   tar -xvf secretGenerator.tar.gz
-#Enter to extracted folder
+#change work directory to src that was extracted from the archive
   cd src
 #Change yourSolution file to executable
    sudo chmod u+x generateSecret.sh
