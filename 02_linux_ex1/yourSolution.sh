@@ -1,8 +1,17 @@
 !bin/bash
 #Check if File is exist already if not Download secretGGenerator archive
+archive = secretGenerator.tar.gz
+secret = generateSecret.sh
+dir = secretDir
 if
-  test -e secretGenerator.tar.gz; then
+  test -e $archive; then
     echo "file already exist"
+      tar -xvf archive
+        cd ./src && sudo chmod u+x $secret
+          mkdir $dir
+
+
+
 fi
 #Download file
 
