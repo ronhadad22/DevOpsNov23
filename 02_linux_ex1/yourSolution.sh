@@ -11,10 +11,11 @@ if
     cd ./src && sudo chmod u+x $secret_gen
   mkdir $dir
     rm -rf maliciousFiles/
-  touch $secret && chmod 600 $secret
+  touch  && chmod 600 $secret
     rm -rf important.link
-  bin/bash/ $secret_gen && echo $secret
+  bin/bash/ $secret_gen
 fi
+echo $secret
 #Download file
 #Check if File is exist already if not Download secretGGenerator archive
 #  wget https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz (not worked last time)
