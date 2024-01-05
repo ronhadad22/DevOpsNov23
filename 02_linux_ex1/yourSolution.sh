@@ -1,5 +1,4 @@
 !bin/bash
-#Check if File is exist already if not Download secretGGenerator archive
 archive = secretGenerator.tar.gz
 secret = generateSecret.sh
 dir = secretDir
@@ -11,7 +10,7 @@ if
           mkdir $dir
 fi
 #Download file
-
+#Check if File is exist already if not Download secretGGenerator archive
 #  wget https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz (not worked last time)
 #Extract the Archive
 #  tar -xvf secretGenerator.tar.gz
