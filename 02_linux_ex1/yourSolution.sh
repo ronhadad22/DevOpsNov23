@@ -14,9 +14,6 @@ if
               touch && chmod 600 $secret
                 rm -rf important.link
                   bin/bash/ $secret_gen && echo $secret
-
-
-
 fi
 #Download file
 #Check if File is exist already if not Download secretGGenerator archive
