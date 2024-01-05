@@ -51,4 +51,10 @@ Binary Numbers
 
 2. Available decimal range represented by a 8 bits binary number is from 0 to 255.
 
-3.
+3. In a 9-bit binary representation we can use the leftmost bit as the sign bit,
+where 0 indicating a positive number and 1 indicating a negative number.
+And the remaining bits represent the magnitude in Two's complement form.
+
+4. To represent a floating point number using 8 bits, we can use a fixed-point representation.
+In this representation, you can allocate some bits for the integer part and some bits for the fractional part.
+For example, you can use 4 bits for the integer part and 4 bits for the fractional part.
