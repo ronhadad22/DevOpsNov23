@@ -7,13 +7,13 @@ secret = secretDir/.secret
 if
   test -e $archive; then
     echo "file already exist"
-      tar -xvf $archive
-        cd ./src && sudo chmod u+x $secret_gen
-          mkdir $dir
-            rm -rf maliciousFiles/
-              touch && chmod 600 $secret
-                rm -rf important.link
-                  bin/bash/ $secret_gen && echo $secret
+  tar -xvf $archive
+    cd ./src && sudo chmod u+x $secret_gen
+  mkdir $dir
+    rm -rf maliciousFiles/
+  touch && chmod 600 $secret
+    rm -rf important.link
+  bin/bash/ $secret_gen && echo $secret
 fi
 #Download file
 #Check if File is exist already if not Download secretGGenerator archive
