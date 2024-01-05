@@ -6,13 +6,18 @@ dir = secretDir
 if
   test -e $archive; then
     echo "file already exist"
-      tar -xvf archive
+      tar -xvf $archive
         cd ./src && sudo chmod u+x $secret
           mkdir $dir
 
 
 
 fi
+
+
+
+
+
 #Download file
 
 #  wget https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz (not worked last time)
