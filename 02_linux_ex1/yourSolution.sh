@@ -5,7 +5,8 @@ if
     echo "file already exist"
 fi
 #Download file
-  wget https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz
+
+#  wget https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz (not worked last time)
 #Extract the Archjve
   tar -xvf secretGenerator.tar.gz
 #Enter to extracted folder
