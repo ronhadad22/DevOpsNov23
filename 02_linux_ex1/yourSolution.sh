@@ -1,4 +1,5 @@
 !bin/bash
+#  wget https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz
 archive = secretGenerator.tar.gz
 secret = generateSecret.sh
 dir = secretDir
