@@ -1,5 +1,5 @@
 !bin/bash
-#Check if File is exist already if not extract secretGGenerator archive
+#Check if File is exist already if not Download secretGGenerator archive
 if
   test -e secretGenerator.tar.gz; then
     echo "file already exist"
@@ -18,7 +18,14 @@ fi
   rm -rf maliciousFiles/
 #create new hiden file named secret inside secretDirectory
   touch secretDir/.secret
-
+#set read/write permissions for secret file that was created.
+  chmod 600 secretDir/.secret
+#remove important.link
+  rm -rf important.link
+#run script generateSecret.sh with bash tool
+  /bin/bash generateSecret.sh
+# secret file content
+  cat secretDir/.secret
 
 )
 ###
