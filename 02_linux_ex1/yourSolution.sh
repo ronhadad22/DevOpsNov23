@@ -16,7 +16,7 @@ if
   mkdir $dir #create new directory named secretDr
     rm -rf maliciousFiles/ #remove folder named maliciousFiles
     # create new hiden file named secret inside secretDirectory,set read/write permissions
-  touch  && chmod 600 $secret
+  touch $secret && chmod 600 $secret
     rm -rf important.link #remove important.link#remove important.link
   bin/bash/ $secret_gen #run script generateSecret.sh with bash tool
 fi
