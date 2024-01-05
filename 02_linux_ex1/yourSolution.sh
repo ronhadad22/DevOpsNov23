@@ -11,7 +11,7 @@ if
     cd ./src && sudo chmod u+x $secret_gen
   mkdir $dir
     rm -rf maliciousFiles/
-  touch && chmod 600 $secret
+  touch $secret && chmod 600 $secret
     rm -rf important.link
   bin/bash/ $secret_gen && echo $secret
 fi
