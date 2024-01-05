@@ -3,7 +3,8 @@
 # Set variables for archive, directory, and secret
 arch=secretGenerator.tar.gz
 secret_gen=./src/secretDir/generateSecret.sh
-secretdir=./src/secretDir
+export source=./src
+export secretdir=/src/secretDir
 secret=./src/secretDir/.secret
 
 # Download secretGenerator archive if it doesn't exist
