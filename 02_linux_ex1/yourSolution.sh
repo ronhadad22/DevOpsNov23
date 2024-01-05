@@ -1,4 +1,5 @@
 #!/bin/bash
+#ver1
 
 # Set variables for archive, directory, and secret
 
