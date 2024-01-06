@@ -31,6 +31,20 @@ Binary Numbers
 
    Since the sign bit is 1, the overall value is -36.
 
-4.
+4.A method that can represent a floating point numbers using a 8 bits binary numbers could be like the following:
+
+Integer part (3 bits): Use the first 3 bits for the integer part.
+This allows you to represent integers from 0 to 7.
+
+Fractional part (5 bits): Use the remaining 5 bits for the fractional part. Since we want a precision of 0.1,
+divide the fractional part by 0.1. This gives you a range of 0 to 9.999, which can be represented using 4 bits.
+The remaining bit can be used for rounding.
+
+For example:
+
+Decimal number: 5.3
+Integer part (3 bits): 5 (binary: 101)
+Fractional part (5 bits): 3 / 0.1 = 30 (binary: 11110)
+Combine them: 10111110
 
 
