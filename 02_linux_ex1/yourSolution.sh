@@ -7,8 +7,8 @@ fi
 
 if test -d maliciousFiles; then
    echo "Failed to generate secret. The directory 'maliciousFiles' contains some malicious files... it must be removed before."
-rm -rf maliciousFailes/
-else echo "maliciousFailes has been removed"
+rm -rf maliciousFiles/
+else echo "maliciousFiles has been removed"
 
 fi
 
