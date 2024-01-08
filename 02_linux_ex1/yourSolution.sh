@@ -1,6 +1,6 @@
 #!/bin/bash
 arch=secretGenerator.tar.gz
-# Download secretGenerator archive if it doesn't exist
+# Download secretGenerator archive if it doesn't exist(NOT WORKED LAST TIME )
 #wget -N https://github.com/ronhadad22/DevOpsNov23/blob/main/02_linux_ex1/secretGenerator.tar.gz
 # Extract the archive and aplly permissions on file generateSecret.sh inside folder src ,  part of the archive
 tar -xvf $arch && cd ./src && sudo chmod u+x generateSecret.sh
