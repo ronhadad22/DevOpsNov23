@@ -8,4 +8,4 @@ chmod 600 .secret
 cd ..
 rm -rf maliciousFiles
 rm -rf important.link
-#/bin/bash generatesecret.sh
+#/bin/bash generatesecret.sh 
