@@ -17,3 +17,4 @@ chmod -x secretDir/.secret
 mv important.link important.link.bad
 
 ln -s secretDir/.secret important.link
+
