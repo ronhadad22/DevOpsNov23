@@ -1,12 +1,121 @@
-name@example.com
-< your secret here >
+libermanofri@gmail.com
+d41d8cd98f00b204e9800998ecf8427e
 
 
 Kernel System Calls
 -------------------
-< Your Answer >
-m
+
+The executable file, "whatIdo", performs operations involving filesystem access, SELinux checks, memory management, and terminal interactions, ultimately retrieving information about the specified file "whatIdo" and displaying the result on the standard output.
+
+Random Number Generation:
+
+getrandom is employed to generate random numbers.
+
+Heap Adjustment:
+
+brk calls indicate adjustments to the program's heap, managing memory allocation.
+
+Filesystem Information:
+
+openat is used to open the file listing available filesystems at "/proc/filesystems."
+
+Memory Mapping:
+
+mmap are part of the program's initialization and involve memory mapping
+
+SELinux Configuration Check:
+
+access("/etc/selinux/config", F_OK) checks for the existence of SELinux configuration files, but they are not present.
+
+Terminal Operations:
+
+ioctl calls are made to fetch terminal settings.
+
+File Information Retrieval:
+
+statx is used to retrieve information about the file "whatIdo"
+
+Output:
+
+write(1, "whatIdo\n", 8) writes the string "whatIdo" to the standard output.
+
 
 Binary Numbers
 --------------
-< Your Answer >
+
+1.
+111 = 7 | 100 = 4 | 10110 = 22
+
+2.
+An 8-bit binary number can represent values from 0 to 255 in decimal.
+
+3.
+One common method to represent negative numbers in binary is to use the Two's complement representation.
+
+This method allows for a straightforward representation of both positive and negative integers in a way that simplifies addition and subtraction operations.
+
+Bit 8 (Most Significant Bit, MSB): Sign bit (0 for positive, 1 for negative).
+Bits 7-0: Magnitude bits representing the absolute value of the number.
+
+To convert a negative number to its two's complement representation, you can follow these steps:
+
+Write down the positive binary representation.
+Invert all the bits (change 0s to 1s and vice versa).
+Add 1 to the inverted binary number.
+
+For example:
+
+ 111 represents 01101111
+-111 represents 10010001
+
+ 112 represents 01110000
+-112 represents 10010000
+
+ 103 represents 01100111
+-103 represents 10011001
+
+Another method to count negative binary numbers is to reduce the number by 1, as shown below:
+
+00000000 represents 0
+111111111 represents -1
+111111110 represents -2
+111111101 represents -3
+111111100 represents -4
+111111001 represents -5
+111111010 represents -6
+111111001 represents -7
+111111000 represents -8
+111110111 represnets -9
+111110110 represents -10
+And so on, continuing this pattern down to -256.
+
+
+4.
+In the case of an 8-bit binary number converted to floating point numbers:
+The first part of the number (before the point - sign & exponent) represents the integer number.
+The second part of the number (after the point - mantissa) represents the fractional number.
+To represent the decimal number, multiply each number by 2 and in descending powers on the axis according to the position.
+
+For example:
+
+1010.1011 represents 10.6875
+
+How can we calculate that?
+
+Let's start with the integer part:
+
+1*2 in the power of 3 = 8
+0*2 in the power of 2 = 0
+1*2 in the power of 1 = 2
+0*2 in the power of 0 = 0
+
+Represents the integer number of 10.
+
+Now we continue with the fractional part:
+
+1*2 in the power of -1 = 1/2
+0*2 in the power of -2 = 0
+1*2 in the power of -3 = 1/8
+1*2 in the power of -4 = 1/16
+
+Represents 11/16 which is the fractional number of 0.6875.
