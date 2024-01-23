@@ -1,12 +1,66 @@
-name@example.com
-< your secret here >
+kesariben@gmail.com
+My Secret
+--------------------------------
+814c5723c21e7e90a3eae36c8df3c513
 
 
 Kernel System Calls
 -------------------
-< Your Answer >
-m
+//The stat system call is used to retrieve the meta data of the file
+stat("./welcomeToDevOpsJan22", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+
+//The getrandom system call is used to generate random numbers for more secure way to obtain high quality numbers directly from the kernel
+stat("./welcomeToDevOpsJan22", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+
+//The openat system call is used to open files or create file descriptors so we can see there's a file called "welcomeToDevOpsJan22/goodLuck" when i ran strace.
+openat(AT_FDCWD, "welcomeToDevOpsJan22/goodLuck", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 3
+
+//The write system call is used to write data to files or devices
+write(3, "There you go... tell me what I d"..., 36) = 36
+
+//And once we are done, the close system call followed by exit group system call are exiting the program with a return code of 0 because it went successfully
+close(3)                                = 0
++++ exited with 0 +++
+
+So first of all i ran sudo chmod u+x on the file so we can execute it and then
+the program created a new directory (welcomeToDevOpsJan22) which contain a file called (goodLuck) and in the text file it says "There you go... Tell me what i do"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Binary Numbers
 --------------
-< Your Answer >
+1.צפיתי בסרטון הזה כדי להבין איך לחשב:
+https://www.youtube.com/watch?v=VLflTjd3lWA&ab_channel=TheOrganicChemistryTutor
+
+111 in binary equals to 7 in decimal
+100 in binary equals to 4 in decimal
+10110 in binary equals to 22 in decimal
+
+2.The range is from 0 to 2^8 - 1 = 0 to 255
+
+3.
+For negative numbers (-1 to -256): Use Two's complement representation.
+Start with the positive binary representation of the number.
+Invert all the bits (change 0s to 1s and 1s to 0s).
+Add 1 to the inverted binary number.
+
+For example:
+Binary representation of 5 positive : 00000101
+Then we invert the bits and get the following: 11111010
+And then add 1 to the inverted binary number: 11111011
+So now the 9-bit two complement method representation of -5 is 11111011.
+
+4.
+I used the following format to understand how to calculate
+SIIII.FFFF
+S is the sign bit (0 for positive, 1 for negative).
+IIII is the 4-bit integer part.
+FFFF is the 4-bit fractional part.
+
+Now if we represent the decimal number 12.75:
+Convert the integer part (12) to binary: 1100
+Then convert the fractional part (0.75) to binary: 0.11 (75% of 1)
+Then combine the integer and fractional parts: 1100.11
+And then Adjust to the 8bit format: 01100.1100
+so now in an 8bit representation 12.75 would be 01100.1100
+
+And thank god to the internet and calculators....
