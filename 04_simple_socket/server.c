@@ -9,7 +9,7 @@
 #include <arpa/inet.h>
 #include <errno.h>
 
-#define MY_PORT		9999
+#define MY_PORT		8000
 #define MAX_BUF		1024
 
 int main()
