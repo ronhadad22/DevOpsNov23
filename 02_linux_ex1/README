@@ -1,12 +1,43 @@
-name@example.com
-< your secret here >
+Daniel Moshaev @ danixif3@gamil.com
+< 814c5723c21e7e90a3eae36c8df3c513  - >
 
 
 Kernel System Calls
 -------------------
-< Your Answer >
-m
+
+whatido file does call on a few system calls like mmap which maps
+the partition of a file into memory of the process or write() which is used to modify files. 
+By the strace command, I can guess that the script is checking if a "welcomeToDevOpsJan22" folder is existing
+and if not creates it and creates a files with text "There you go.. Tell me what I do"
+
+
+
 
 Binary Numbers
 --------------
 < Your Answer >
+1.  111 - 7 
+    100 - 4
+    10110 - 22
+
+2. The highest decimal range represented in 8 bits are 256
+   The ranges starts at 0 - 255 (256) value is 255 = 11111111 
+   
+3.  For this I would suggest to use MSB, we can represent integers from the range of 
+    -256 to 256 using this method, MSB can be 0 for positive and 1 for negative. 
+    For a positive 9-bit number with a leading 0, 42 would be 001010101
+    To present a negative number we have to invert all the bit 
+     42 = 001010101
+    -42 = 110101010 
+    Then we have to add 1, meaning -42 really equals 110101011
+    
+    
+
+4.  Seperate them into seperate numbers, the full number can be presented in Binary.
+    the remaining can 
+
+
+File System Manipulations 
+--------------
+
+Secret is above and answers at yourSolutions.sh
