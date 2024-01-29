@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add 03 and 04">
+      <change afterPath="$PROJECT_DIR$/05_simple_webserver/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_simple_webserver/images/profile-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_simple_webserver/simple_webserver.wsgi" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_simple_socket/server.c" beforeDir="false" afterPath="$PROJECT_DIR$/04_simple_socket/server.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705756368472</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add 03 and 04">
+      <created>1706453241175</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706453241175</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
