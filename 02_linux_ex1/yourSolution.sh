@@ -16,4 +16,5 @@ cd ..
 rm -rf maliciousFiles
 #delete important.link
 rm -rf important.link
-#generatesecret.sh
+#generate secret to.secret
+/bin/bash generateSecret.sh
