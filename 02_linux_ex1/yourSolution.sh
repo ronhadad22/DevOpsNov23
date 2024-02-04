@@ -32,7 +32,9 @@ if [ -L 'important.link' ] && [ ! -e 'important.link' ]; then
   echo "Failed to generate secret. Secret can not be generated when broken file link exists. Please do something..."
   exit 1
 else echo " important.link does not exists"
-
+#you forget to unlink the file
 fi
 
 cat ./CONTENT_TO_HASH | xargs | md5sum > secretDir/.secret && echo "Done! Your secret was stored in secretDir/.secret"
+
+#good job
