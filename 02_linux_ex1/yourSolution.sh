@@ -13,8 +13,10 @@ dir=secretDir
 tar -xvf $arch && cd $source && sudo chmod u+x $secretgen
 #remove malisious Files and important links
 rm -rf $files && rm -rf $links
+#need to unlink the file -5
 #create new dir named secretDir with the new hidden file secret that have only
 #read and write permissions
+
 mkdir $dir && touch $dir/.secret && chmod 600 $dir/.secret
 #Run script called generateSecret
 ./$secretgen
@@ -22,3 +24,4 @@ mkdir $dir && touch $dir/.secret && chmod 600 $dir/.secret
 clear
 #Show as output file secret that was created on previous steps
 echo -e "${GREEN}your secret is : " && cat $dir/.secret
+#+5 on good doc and generic script
