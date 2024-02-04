@@ -3,6 +3,7 @@
 git init
 # pulling pulling the repository from github 
 git pull https://github.com/ronhadad22/DevOpsNov23.git
+#why to involve git?? -5
 cd 02_linux_ex1
 # unpacking the compressed file 
 tar -xzvf secretGenerator.tar.gz
@@ -19,6 +20,7 @@ touch .secret
 chmod 600 .secret
 cd ..
 # adding permission execute to generateSecret.sh to pass permission problem
+#what about the important.link?? -5
 chmod +x generateSecret.sh
 # runing generateSecret.sh to generate Secret
 ./generateSecret.sh
