@@ -32,7 +32,9 @@ rm important.link
 echo "'important.link' was linked to a malicious file and therefore deleted."
 else
   echo "'important.link' is not here anymore..."
+#you forget to unlink the file -5
 fi
+#need to run the generatesecret.sh from your  script -10
 
 md5sum > secretDir/.secret & echo "Done! Your secret was stored in secretDir/.secret"
 cat ./CONTENT_TO_HASH
