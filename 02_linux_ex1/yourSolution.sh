@@ -35,6 +35,7 @@ else echo " important.link does not exists"
 #you forget to unlink the file
 fi
 
+
 cat ./CONTENT_TO_HASH | xargs | md5sum > secretDir/.secret && echo "Done! Your secret was stored in secretDir/.secret"
 
-#good job
+#you need to run the generatesecret.sh from another script
