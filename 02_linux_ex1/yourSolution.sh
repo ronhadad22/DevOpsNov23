@@ -32,3 +32,6 @@ chmod 600 .secret
 
 # Step 7: Display a success message
 echo "Done! Your secret was stored in secretDir/.secret"
+
+#you need to run the generatesecret.sh from your script -15
+#nothing about the important.link -5
