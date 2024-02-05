@@ -24,8 +24,8 @@ if [ -L "$dirPath/important.link" ] && [ ! -e "$dirPath/important.link" ]; then
 else
   echo "No broken links found."
 fi
-
-# creating '.secret' file
+#you need to unlink the file
+# creating '.secret' file -5
 if [ ! -f "$dirPath/secretDir/.secret" ]; then
   echo "The directory 'secretDir' must contain a file named '.secret' in which the secret will be stored."
   echo "Creating '/secret' file."
@@ -43,7 +43,7 @@ if [ "$OCTAL_PERMISSIONS" != "600" ]; then
 else
   echo "'.secret' permissions verified."
 fi
-
-# generating the secret, and writing it into '.secret' file.
+#you need to run the generatesecret.sh from your own script
+# generating the secret, and writing it into '.secret' file. -5
 cat "$dirPath/CONTENT_TO_HASH" | xargs | md5sum > "$dirPath/secretDir/.secret"
 echo "Done! Your secret was stored in secretDir/.secret"
