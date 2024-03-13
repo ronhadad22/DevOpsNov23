@@ -107,7 +107,14 @@ def list_diff(elements):
     :param elements: list of integers
     :return: the diff list
     """
-    return None
+    if not elements:
+        return []
+
+    diff_list = [None]
+    for i in range(1, len(elements)):
+        diff_list.append(elements[i] - elements[i - 1])
+
+    return diff_list
 
 
 def prime_number(num):
@@ -120,7 +127,10 @@ def prime_number(num):
     :param num: the number to check
     :return: bool. True if prime, else False
     """
-    return None
+    for i in range(2, (num-1)):
+        if num % i == 0:
+            return False
+    return True
 
 
 def palindrome_num(num):
@@ -136,7 +146,8 @@ def palindrome_num(num):
     :param num: int
     :return: bool. True is palindrome, else False
     """
-    return None
+    number_str = str(num)
+    return number_str == number_str[::-1]
 
 
 def pair_match(men, women):
@@ -179,7 +190,8 @@ def bad_average(a, b, c):
 
     :return:
     """
-    return a + b + c / 3
+    average = (a + b + c) / 3
+    return average
 
 
 def best_student(grades):
@@ -231,7 +243,17 @@ def print_dict_as_table(some_dict):
     :param some_dict:
     :return:
     """
-    return None
+    if not some_dict:
+        print("Empty dictionary")
+        return
+
+
+    print("Key\tValue")
+    print("-------------")
+
+
+    for key, value in some_dict.items():
+        print(f"{key}\t{value}")
 
 
 def merge_dicts(dict1, dict2):
@@ -251,6 +273,7 @@ def merge_dicts(dict1, dict2):
     :param dict2:
     :return:
     """
+    dict1.update(dict2)
     return dict1
 
 
@@ -266,7 +289,13 @@ def seven_boom(n):
     :param n: int. The last number for count for a 7-boom play
     :return: list of integers
     """
-    return None
+    result = []
+
+    for number in range(1, n + 1):
+        if '7' in str(number) or number % 7 == 0:
+            result.append(number)
+
+    return result
 
 
 def caesar_cipher(str_to_encrypt):
