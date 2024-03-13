@@ -1,3 +1,7 @@
+import math
+
+
+
 def sum_of_element(elements):
     """
     1 Kata
@@ -28,8 +32,17 @@ def verbing(word):
     :param word: str
     :return: Return the resulting string.
     """
-    return None
-
+    if (len(word) == 0):
+        return 'empty string'
+    leng = len(word)
+    if leng >=3 :
+        s_index = len(word)-3
+        substring = word[s_index:]
+        if substring == 'ing':
+            return word+'ly'
+        else : return word+'ing'
+    else :
+        return word
 
 def words_concatenation(words):
     """
@@ -43,7 +56,18 @@ def words_concatenation(words):
     :param words: list of str
     :return: Return the resulting string.
     """
-    return None
+    if len(words) == 0 :
+        return "empty list"
+
+    res = ''
+    for w in words:
+        if w == '':
+            res = res
+        if w == ' ':
+            res = res
+        else :
+            res += w+' '
+    return res
 
 
 def reverse_words_concatenation(words):
@@ -57,8 +81,21 @@ def reverse_words_concatenation(words):
 
     :param words: list of str
     :return: Return the resulting string.
+
     """
-    return None
+    if len(words) == 0 :
+        return "empty list"
+
+    res =''
+    leng = len(words)
+    while leng :
+       if words[leng-1] == '':
+           res=res
+       if words[leng-1] == ' ':
+           res=res
+       else : res += words[leng-1] +' '
+       leng-=1
+    return res
 
 
 def is_unique_string(some_str):
@@ -75,7 +112,15 @@ def is_unique_string(some_str):
     :param some_str:
     :return: bool
     """
-    return None
+    been = set()
+    if len(some_str) == 0 :
+        return True
+    for each in some_str:
+        if each in been:
+            return False
+        else:been.add(each)
+
+    return True
 
 
 def list_diff(elements):
@@ -93,7 +138,20 @@ def list_diff(elements):
     :param elements: list of integers
     :return: the diff list
     """
-    return None
+    i=0
+    res=[]
+    if len(elements) == 0 :
+        return 'elements list empty'
+    else :
+        for each in elements :
+            if i == 0:
+                res.append('none')
+                i+=1
+            else :
+                res.append(elements[i]-elements[i-1])
+                i+=1
+    return res
+
 
 
 def prime_number(num):
@@ -106,8 +164,14 @@ def prime_number(num):
     :param num: the number to check
     :return: bool. True if prime, else False
     """
-    return None
-
+    if num <= 1:
+        return False
+    if num == 2 :
+        return True
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+             return False
+        return True
 
 def palindrome_num(num):
     """
@@ -122,7 +186,15 @@ def palindrome_num(num):
     :param num: int
     :return: bool. True is palindrome, else False
     """
-    return None
+    num_str = str(num)
+    reversed_str = num_str[::-1]
+    reversed_num = int(reversed_str)
+    if reversed_num == num:
+
+        return True
+    else:
+        return False
+
 
 
 def pair_match(men, women):
@@ -153,7 +225,20 @@ def pair_match(men, women):
     :param women: dict mapping name -> age
     :return: tuple (men_name, women_name) such their age absolute difference is the minimal
     """
-    return None
+    listmen =list(men.items())
+    listwomen = list(women.items())
+    matchp = ()
+    smalldif = abs(listmen[0][1] - listwomen[0][1])
+    for mens in listmen :
+        for womens in listwomen:
+            if smalldif > abs(mens[1] - womens[1]) :
+                smalldif = abs(mens[1] - womens[1])
+                matchp=(mens[0],womens[0])
+            if smalldif == abs(mens[1] - womens[1]) :
+                matchp = (mens[0], womens[0])+matchp
+
+
+    return matchp
 
 
 def bad_average(a, b, c):
@@ -165,7 +250,7 @@ def bad_average(a, b, c):
 
     :return:
     """
-    return a + b + c / 3
+    return (a + b + c) / 3
 
 
 def best_student(grades):
@@ -188,7 +273,17 @@ def best_student(grades):
     :param grades: dict of name -> grade mapping
     :return: str. some key from the dict
     """
-    return None
+
+    stname = ()
+    hgrade = 0
+    listgrades =list(grades.items())
+    for student in listgrades :
+        if student[1] > hgrade:
+            hgrade = student[1]
+            stname = (student[0])
+        elif student[1] == hgrade:
+            stname = stname+' '+(student[0])
+    return stname
 
 
 def print_dict_as_table(some_dict):
@@ -217,7 +312,17 @@ def print_dict_as_table(some_dict):
     :param some_dict:
     :return:
     """
-    return None
+    dictoprint = list(some_dict.items())
+
+    print("Key"+"     "+"Value")
+    print("-------------")
+    for eachname in dictoprint :
+        # print(eachname)
+
+        formatted_name = eachname[0].ljust(10)
+        print(f"{formatted_name}{eachname[0]}")
+
+
 
 
 def merge_dicts(dict1, dict2):
@@ -252,6 +357,12 @@ def seven_boom(n):
     :param n: int. The last number for count for a 7-boom play
     :return: list of integers
     """
+    num = n
+    listnum = []
+
+    while n :
+        n
+
     return None
 
 
@@ -307,13 +418,13 @@ if __name__ == '__main__':
     print('\nis_unique_string:\n--------------------')
     print(is_unique_string('aasdssdsederd'))
     print(is_unique_string('12345tgbnh'))
-
+    print(is_unique_string(''))
     print('\nlist_diff:\n--------------------')
     print(list_diff([1, 2, 3, 8, 77, 0]))
 
     print('\nprime_number:\n--------------------')
-    print(prime_number(5))
-    print(prime_number(22))
+    print(prime_number(2))
+    print(prime_number(17))
 
     print('\npalindrome_num:\n--------------------')
     print(palindrome_num(12221))
@@ -322,12 +433,12 @@ if __name__ == '__main__':
     print('\npair_match:\n--------------------')
     print(pair_match(
         {
-            "John": 20,
-            "Abraham": 45
+            "John": 19,
+            "Abraham": 17
         },
         {
             "July": 18,
-            "Kim": 26
+            "Kim": 16
         }
     ))
 
@@ -336,21 +447,21 @@ if __name__ == '__main__':
 
     print('\nbest_student:\n--------------------')
     print(best_student({
-        "Ben": 78,
-        "Hen": 88,
+        "Ben": 10,
+        "Hen": 10,
         "Natan": 99,
         "Efraim": 65,
-        "Rachel": 95
+        "Rachel": 10
     }))
 
     print('\nprint_dict_as_table:\n--------------------')
-    print(print_dict_as_table({
+    print_dict_as_table({
         "Ben": 78,
         "Hen": 88,
         "Natan": 99,
         "Efraim": 65,
         "Rachel": 95
-    }))
+    })
 
     print('\nmerge_dicts:\n--------------------')
     print(merge_dicts({'a': 1}, {'b': 2}))
