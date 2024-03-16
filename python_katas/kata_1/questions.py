@@ -33,7 +33,7 @@ def verbing(word):
     :return: Return the resulting string.
     """
     if (len(word) == 0):
-        return 'empty string'
+        return word
     leng = len(word)
     if leng >=3 :
         s_index = len(word)-3
@@ -56,17 +56,22 @@ def words_concatenation(words):
     :param words: list of str
     :return: Return the resulting string.
     """
-    if len(words) == 0 :
-        return "empty list"
+    if len(words) == 0:
+        return ''
 
     res = ''
     for w in words:
         if w == '':
             res = res
-        if w == ' ':
+        elif w == ' ':
             res = res
-        else :
+        else:
             res += w+' '
+
+    if res[len(res) - 1] == ' ':
+        res = res.rstrip(res[len(res) - 1])
+    if res[0] == ' ':
+        res = res.rstrip(res[0])
     return res
 
 
@@ -84,17 +89,21 @@ def reverse_words_concatenation(words):
 
     """
     if len(words) == 0 :
-        return "empty list"
+        return words
 
     res =''
     leng = len(words)
     while leng :
        if words[leng-1] == '':
            res=res
-       if words[leng-1] == ' ':
+       elif words[leng-1] == ' ':
            res=res
-       else : res += words[leng-1] +' '
+       else : res = res+words[leng-1]+' '
        leng-=1
+    if res[len(res) - 1] == ' ':
+        res = res.rstrip(res[len(res) - 1])
+    if res[0] == ' ':
+        res = res.rstrip(res[0])
     return res
 
 
@@ -141,11 +150,11 @@ def list_diff(elements):
     i=0
     res=[]
     if len(elements) == 0 :
-        return 'elements list empty'
+        return elements
     else :
         for each in elements :
             if i == 0:
-                res.append('none')
+                res.append(None)
                 i+=1
             else :
                 res.append(elements[i]-elements[i-1])
@@ -164,6 +173,7 @@ def prime_number(num):
     :param num: the number to check
     :return: bool. True if prime, else False
     """
+
     if num <= 1:
         return False
     if num == 2 :
@@ -171,7 +181,7 @@ def prime_number(num):
     for i in range(2, int(math.sqrt(num)) + 1):
         if num % i == 0:
              return False
-        return True
+    return True
 
 def palindrome_num(num):
     """
@@ -186,6 +196,8 @@ def palindrome_num(num):
     :param num: int
     :return: bool. True is palindrome, else False
     """
+    if num < 0 :
+        return False
     num_str = str(num)
     reversed_str = num_str[::-1]
     reversed_num = int(reversed_str)
@@ -225,16 +237,20 @@ def pair_match(men, women):
     :param women: dict mapping name -> age
     :return: tuple (men_name, women_name) such their age absolute difference is the minimal
     """
-    listmen =list(men.items())
+
+    listmen = list(men.items())
     listwomen = list(women.items())
     matchp = ()
+
+    if len(listmen) == 0 or len(listwomen) == 0:
+        return matchp
     smalldif = abs(listmen[0][1] - listwomen[0][1])
     for mens in listmen :
         for womens in listwomen:
             if smalldif > abs(mens[1] - womens[1]) :
                 smalldif = abs(mens[1] - womens[1])
                 matchp=(mens[0],womens[0])
-            if smalldif == abs(mens[1] - womens[1]) :
+            elif smalldif == abs(mens[1] - womens[1]) :
                 matchp = (mens[0], womens[0])+matchp
 
 
@@ -274,17 +290,18 @@ def best_student(grades):
     :return: str. some key from the dict
     """
 
-    stname = ()
+    stname = ''
     hgrade = 0
-    listgrades =list(grades.items())
-    for student in listgrades :
-        if student[1] > hgrade:
-            hgrade = student[1]
-            stname = (student[0])
-        elif student[1] == hgrade:
-            stname = stname+' '+(student[0])
+    listgrades = list(grades.items())
+    for student in listgrades:
+            if hgrade == 0:
+                hgrade = student[1]
+            if student[1] > hgrade:
+                hgrade = student[1]
+                stname = student[0]
+            elif student[1] == hgrade:
+                stname += ' ' + student[0]  # Concatenate student names with a space
     return stname
-
 
 def print_dict_as_table(some_dict):
     """
@@ -314,16 +331,17 @@ def print_dict_as_table(some_dict):
     """
     dictoprint = list(some_dict.items())
 
-    print("Key"+"     "+"Value")
-    print("-------------")
-    for eachname in dictoprint :
-        # print(eachname)
+    if words_concatenation!=None:
+        print("Key".ljust(10) + "Value")
+        print("-------------")
 
-        formatted_name = eachname[0].ljust(10)
-        print(f"{formatted_name}{eachname[0]}")
+        for eachname in dictoprint:
+            formatted_name = eachname[0].ljust(10)
+            print(f"{formatted_name}{eachname[0]}")
 
-
-
+    else:
+        print("Key".ljust(10) + "Value")
+        print("-------------")
 
 def merge_dicts(dict1, dict2):
     """
@@ -361,15 +379,23 @@ def seven_boom(n):
 
     num = 7
     listnum = []
-    if n<7:
-        return 'no booms'
-    while num<=n:
+    mark =1
+    if n==0 :
+        return [0]
+    if abs(n)<7:
+        return listnum
+    if n<0 :
+        mark = -1
+    if mark == -1:
+        listnum.append(0)
+    while num<=abs(n):
+
         if num%7==0:
-          listnum.append(num)
+          listnum.append(num*mark)
         elif num %10 == 7:
-          listnum.append(num)
+          listnum.append(num*mark)
         elif int(num/10) ==7:
-          listnum.append(num)
+          listnum.append(num*mark)
         num+=1
 
 
@@ -422,7 +448,7 @@ def sum_of_digits(digits_str):
     """
     num=0
     if len(digits_str)==0:
-        return 'empty string'
+        return 0
     else:
         for ch in digits_str:
             num+=int(ch)
@@ -441,7 +467,7 @@ if __name__ == '__main__':
     print(verbing('do'))
 
     print('\nwords_concatenation:\n--------------------')
-    print(words_concatenation(['take', 'me', 'home']))
+    print(words_concatenation(['take', '', 'home']))
 
     print('\nreverse_words_concatenation:\n--------------------')
     print(reverse_words_concatenation(['take', 'me', 'home']))
@@ -454,35 +480,37 @@ if __name__ == '__main__':
     print(list_diff([1, 2, 3, 8, 77, 0]))
 
     print('\nprime_number:\n--------------------')
-    print(prime_number(2))
+    print(prime_number(87))
     print(prime_number(17))
 
     print('\npalindrome_num:\n--------------------')
-    print(palindrome_num(12221))
+    print(palindrome_num(-1))
     print(palindrome_num(577))
 
     print('\npair_match:\n--------------------')
     print(pair_match(
         {
-            "John": 19,
-            "Abraham": 17
+            "John": 20,
+            "Abraham": 45
         },
         {
             "July": 18,
-            "Kim": 16
+            "Kim": 20
         }
     ))
+
+
 
     print('\nbad_average:\n--------------------')
     print(bad_average(1, 2, 3))
 
     print('\nbest_student:\n--------------------')
     print(best_student({
-        "Ben": 10,
-        "Hen": 10,
-        "Natan": 99,
-        "Efraim": 65,
-        "Rachel": 10
+        "Ben": 0,
+        "Hen": 0,
+        "Natan": 0,
+        "Efraim": 0,
+        "Rachel": 0
     }))
 
     print('\nprint_dict_as_table:\n--------------------')
