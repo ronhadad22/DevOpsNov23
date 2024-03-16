@@ -342,6 +342,7 @@ def merge_dicts(dict1, dict2):
     :param dict2:
     :return:
     """
+    dict1 = {**dict1,**dict2}
     return dict1
 
 
@@ -357,13 +358,24 @@ def seven_boom(n):
     :param n: int. The last number for count for a 7-boom play
     :return: list of integers
     """
-    num = n
+
+    num = 7
     listnum = []
+    if n<7:
+        return 'no booms'
+    while num<=n:
+        if num%7==0:
+          listnum.append(num)
+        elif num %10 == 7:
+          listnum.append(num)
+        elif int(num/10) ==7:
+          listnum.append(num)
+        num+=1
 
-    while n :
-        n
 
-    return None
+
+
+    return listnum
 
 
 def caesar_cipher(str_to_encrypt):
@@ -378,7 +390,19 @@ def caesar_cipher(str_to_encrypt):
 
     :return:
     """
-    return None
+    encrypted_text = ''
+    for char in str_to_encrypt:
+        if char.isalpha():
+            if char.islower():
+                offset = ord('a')
+            else:
+                offset = ord('A')
+            # Apply the Caesar cipher shift
+            encrypted_char = chr(((ord(char) - offset) + 3) % 26 + offset)
+        else:
+            encrypted_char = char  # Spaces remain unchanged
+        encrypted_text += encrypted_char
+    return encrypted_text
 
 
 def sum_of_digits(digits_str):
@@ -396,7 +420,14 @@ def sum_of_digits(digits_str):
     :param digits_str: str of numerical digits only
     :return: int representing the sum of digits
     """
-    return None
+    num=0
+    if len(digits_str)==0:
+        return 'empty string'
+    else:
+        for ch in digits_str:
+            num+=int(ch)
+
+    return num
 
 
 if __name__ == '__main__':
@@ -467,11 +498,11 @@ if __name__ == '__main__':
     print(merge_dicts({'a': 1}, {'b': 2}))
 
     print('\nseven_boom:\n--------------------')
-    print(seven_boom(30))
+    print(seven_boom(77))
 
     print('\ncaesar_cipher:\n--------------------')
     print(caesar_cipher('Fly Me To The Moon'))
 
     print('\nsum_of_digits:\n--------------------')
-    print(sum_of_digits('1223432'))
+    print(sum_of_digits('10101001'))
 
