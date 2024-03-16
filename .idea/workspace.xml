@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add 03 and 04">
-      <change afterPath="$PROJECT_DIR$/08_python_class/bank_account.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_1/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/one.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/simple.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/two.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/validate_card.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_1/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_1/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +28,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2ZzlKawrnoonXrRoucfg7XBVWOX" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -47,16 +39,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ronh/PycharmProjects/DevOpsNov23",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;python__katas1/beny&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/beny1/Desktop/python_kat&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
