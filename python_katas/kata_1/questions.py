@@ -5,14 +5,12 @@ def sum_of_element(elements):
     :param elements: list of integers
     :return: Return int - the sum of all elements.
     """
-    # elements=[1,2]
-    sum=0
+    s = 0
+    for num in elements:
+        s = s + num
 
-    for moshe in elements:
-        print(moshe)
-        sum=sum+moshe
+    return s
 
-    return sum
 
 def verbing(word):
     """
@@ -30,7 +28,15 @@ def verbing(word):
     :param word: str
     :return: Return the resulting string.
     """
-    return None
+    if len(word) >= 3:
+        if word.endswith('ing'):
+            result = word + 'ly'
+        else:
+            result = word + 'ing'
+    else:
+        result = word
+
+    return result
 
 
 def words_concatenation(words):
@@ -45,7 +51,8 @@ def words_concatenation(words):
     :param words: list of str
     :return: Return the resulting string.
     """
-    return None
+    result = ' '.join(words)
+    return result
 
 
 def reverse_words_concatenation(words):
@@ -60,7 +67,8 @@ def reverse_words_concatenation(words):
     :param words: list of str
     :return: Return the resulting string.
     """
-    return None
+    result = ' '.join(reversed(words))
+    return result
 
 
 def is_unique_string(some_str):
@@ -77,7 +85,14 @@ def is_unique_string(some_str):
     :param some_str:
     :return: bool
     """
-    return None
+    seen_characters = set()
+
+    for char in some_str:
+        if char in seen_characters:
+            return False
+        seen_characters.add(char)
+
+    return True
 
 
 def list_diff(elements):
@@ -95,7 +110,14 @@ def list_diff(elements):
     :param elements: list of integers
     :return: the diff list
     """
-    return None
+    if not elements: #check if the input is empty and return '[]' which is the empty list.
+        return []
+
+    diff_list = [None]  #This line initializes a new list called diff_list with the first element set to None.
+    for i in range(1, len(elements)):  #this is a loop that iterates over the 'indices' of the elements list, starting from index 1. The loop is used to calculate the differences between
+        diff_list.append(elements[i] - elements[i - 1]) # Inside the loop, the function calculates the difference between the current element (elements[i]) and its previous element (elements[i-1]). The result is appended to the diff_list.
+
+    return diff_list
 
 
 def prime_number(num):
@@ -108,7 +130,15 @@ def prime_number(num):
     :param num: the number to check
     :return: bool. True if prime, else False
     """
-    return None
+    if num < 2:
+        return False  # Numbers less than 2 are not prime
+
+        # Check for divisibility from 2 to the square root of num
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False  # The number is divisible, not prime
+
+    return True  # No divisors found, the number is prime
 
 
 def palindrome_num(num):
@@ -124,14 +154,17 @@ def palindrome_num(num):
     :param num: int
     :return: bool. True is palindrome, else False
     """
-    return None
+    # Convert the number to a string
+    num_str = str(num)
+
+    # Check if the string is equal to its reverse
+    return num_str == num_str[::-1]
 
 
 def pair_match(men, women):
     """
     3 Kata
-
-    This function gets two dictionaries of the type:
+This function gets two dictionaries of the type:
     {
         "<name>": <age>
     }
@@ -155,7 +188,22 @@ def pair_match(men, women):
     :param women: dict mapping name -> age
     :return: tuple (men_name, women_name) such their age absolute difference is the minimal
     """
-    return None
+    # Initialize with a large initial value
+    min_age_difference = float('inf')
+    result_pair = None
+
+    # Iterate through each pair of men and women
+    for men_name, men_age in men.items():
+        for women_name, women_age in women.items():
+            # Calculate absolute age difference
+            age_difference = abs(men_age - women_age)
+
+            # Update result_pair if the current pair has a smaller absolute age difference
+            if age_difference < min_age_difference:
+                min_age_difference = age_difference
+                result_pair = (men_name, women_name)
+
+    return result_pair
 
 
 def bad_average(a, b, c):
@@ -167,7 +215,7 @@ def bad_average(a, b, c):
 
     :return:
     """
-    return a + b + c / 3
+    return (a + b + c) / 3  #added Parenthese because it didnt divide the whole sum by 3 to calculate avg.
 
 
 def best_student(grades):
@@ -180,7 +228,8 @@ def best_student(grades):
     {
         "Ben": 78,
         "Hen": 88,
-        "Natan": 99,
+        "Natan": 99,:
+
         "Efraim": 65,
         "Rachel": 95
     }
@@ -190,8 +239,11 @@ def best_student(grades):
     :param grades: dict of name -> grade mapping
     :return: str. some key from the dict
     """
-    return None
+    if not grades:
+        return None  # Return None for an empty dictionary
 
+    best_student_name = max(grades, key=grades.get) #This line uses the max function to find the key (student name) with the maximum value (grade) in the dictionary.
+    return best_student_name
 
 def print_dict_as_table(some_dict):
     """
@@ -219,8 +271,20 @@ def print_dict_as_table(some_dict):
     :param some_dict:
     :return:
     """
+    if not some_dict:
+        print("Empty dictionary.")
+        return
 
-    return None
+        # Find the maximum length of keys for formatting
+    max_key_length = max(len(str(key)) for key in some_dict.keys())
+
+    # Print table header
+    print(f"{'Key':<{max_key_length}}  Value")
+    print("-" * (max_key_length + 9))  # Adjust the width for "Key" and "Value" headers
+
+    # Print key-value pairs
+    for key, value in some_dict.items():
+        print(f"{key:<{max_key_length}}  {value}")
 
 
 def merge_dicts(dict1, dict2):
@@ -240,6 +304,10 @@ def merge_dicts(dict1, dict2):
     :param dict2:
     :return:
     """
+    # Use the update method to merge dict2 into dict1
+    dict1.update(dict2)
+
+    # Return the modified dict1
     return dict1
 
 
@@ -255,10 +323,24 @@ def seven_boom(n):
     :param n: int. The last number for count for a 7-boom play
     :return: list of integers
     """
-    return None
+    # Initialize an empty list to store "Booms"
+    boom_list = []
+
+    # Iterate through numbers from 1 to n
+    for number in range(1, n + 1):
+        # Convert the number to a string for easy checking of the digit '7'
+        number_str = str(number)
+
+        # Check if '7' is present in the string representation of the number
+        if '7' in number_str:
+            # If '7' is present, append the number to the boom_list
+            boom_list.append(number)
+
+    # Return the list of "Booms"
+    return boom_list
 
 
-def caesar_cipher(str_to_encrypt):
+def caesar_cipher(str_to_encrypt): #important to go through the code
     """
     2 Kata
 
@@ -270,7 +352,30 @@ def caesar_cipher(str_to_encrypt):
 
     :return:
     """
-    return None
+    # Define the shift value for the caesar cipher
+    shift = 3
+
+    # Initialize an empty string to store the encrypted result
+    encrypted_str = ""
+
+    # Iterate through each character in the input string
+    for char in str_to_encrypt:
+        # Check if the character is a letter (a-z or A-Z)
+        if char.isalpha():
+            # Determine the case (uppercase or lowercase) of the letter
+            is_upper = char.isupper()
+
+            # Shift the character by the specified amount
+            shifted_char = chr((ord(char) - ord('A' if is_upper else 'a') + shift) % 26 + ord('A' if is_upper else 'a'))
+
+            # Append the shifted character to the encrypted string
+            encrypted_str += shifted_char
+        else:
+            # If the character is not a letter, keep it unchanged
+            encrypted_str += char
+
+    # Return the encrypted string
+    return encrypted_str
 
 
 def sum_of_digits(digits_str):
@@ -288,84 +393,93 @@ def sum_of_digits(digits_str):
     :param digits_str: str of numerical digits only
     :return: int representing the sum of digits
     """
-    return None
+    # Check if the input string is empty
+    if not digits_str:
+        return 0  # Return 0 for an empty string
 
+    # Initialize a variable to store the sum of digits
+    total_sum = 0
+
+    # Iterate through each character in the input string
+    for char in digits_str:
+        # Convert the character to an integer and add it to the total sum
+        total_sum += int(char)
+
+    # Return the sum of digits
+    return total_sum
 
 if __name__ == '__main__':
 
     print('\nsum_of_element:\n--------------------')
-    print(sum_of_element([1, 2]))
-    print(sum_of_element([1, 3]))
-    # print(sum_of_element([4, 5, 6]))
-    #
-    # print('\nverbing:\n--------------------')
-    # print(verbing('walk'))
-    # print(verbing('swimming'))
-    # print(verbing('do'))
-    #
-    # print('\nwords_concatenation:\n--------------------')
-    # print(words_concatenation(['take', 'me', 'home']))
-    #
-    # print('\nreverse_words_concatenation:\n--------------------')
-    # print(reverse_words_concatenation(['take', 'me', 'home']))
-    #
-    # print('\nis_unique_string:\n--------------------')
-    # print(is_unique_string('aasdssdsederd'))
-    # print(is_unique_string('12345tgbnh'))
-    #
-    # print('\nlist_diff:\n--------------------')
-    # print(list_diff([1, 2, 3, 8, 77, 0]))
-    #
-    # print('\nprime_number:\n--------------------')
-    # print(prime_number(5))
-    # print(prime_number(22))
-    #
-    # print('\npalindrome_num:\n--------------------')
-    # print(palindrome_num(12221))
-    # print(palindrome_num(577))
-    #
-    # print('\npair_match:\n--------------------')
-    # print(pair_match(
-    #     {
-    #         "John": 20,
-    #         "Abraham": 45
-    #     },
-    #     {
-    #         "July": 18,
-    #         "Kim": 26
-    #     }
-    # ))
-    #
-    # print('\nbad_average:\n--------------------')
-    # print(bad_average(1, 2, 3))
-    #
-    # print('\nbest_student:\n--------------------')
-    # print(best_student({
-    #     "Ben": 78,
-    #     "Hen": 88,
-    #     "Natan": 99,
-    #     "Efraim": 65,
-    #     "Rachel": 95
-    # }))
-    #
-    # print('\nprint_dict_as_table:\n--------------------')
-    # print(print_dict_as_table({
-    #     "Ben": 78,
-    #     "Hen": 88,
-    #     "Natan": 99,
-    #     "Efraim": 65,
-    #     "Rachel": 95
-    # }))
-    #
-    # print('\nmerge_dicts:\n--------------------')
-    # print(merge_dicts({'a': 1}, {'b': 2}))
-    #
-    # print('\nseven_boom:\n--------------------')
-    # print(seven_boom(30))
-    #
-    # print('\ncaesar_cipher:\n--------------------')
-    # print(caesar_cipher('Fly Me To The Moon'))
-    #
-    # print('\nsum_of_digits:\n--------------------')
-    # print(sum_of_digits('1223432'))
+    print(sum_of_element([1, 2, 3, 4, 5, 6]))
 
+    print('\nverbing:\n--------------------')
+    print(verbing('walk'))
+    print(verbing('swimming'))
+    print(verbing('do'))
+
+    print('\nwords_concatenation:\n--------------------')
+    print(words_concatenation(['take', 'me', 'home']))
+
+    print('\nreverse_words_concatenation:\n--------------------')
+    print(reverse_words_concatenation(['take', 'me', 'home']))
+
+    print('\nis_unique_string:\n--------------------')
+    print(is_unique_string('aasdssdsederd'))
+    print(is_unique_string('12345tgbnh'))
+
+    print('\nlist_diff:\n--------------------')
+    print(list_diff([1, 2, 3, 8, 77, 0]))
+
+    print('\nprime_number:\n--------------------')
+    print(prime_number(5))
+    print(prime_number(22))
+
+    print('\npalindrome_num:\n--------------------')
+    print(palindrome_num(12221))
+    print(palindrome_num(577))
+
+    print('\npair_match:\n--------------------')
+    print(pair_match(
+        {
+            "John": 20,
+            "Abraham": 45
+        },
+        {
+            "July": 18,
+            "Kim": 26
+        }
+    ))
+
+    print('\nbad_average:\n--------------------')
+    print(bad_average(1, 2, 3))
+
+    print('\nbest_student:\n--------------------')
+    print(best_student({
+        "Ben": 99,
+        "Hen": 88,
+        "Natan": 78,
+        "Efraim": 65,
+        "Rachel": 95
+    }))
+
+    print('\nprint_dict_as_table:\n--------------------')
+    print(print_dict_as_table({
+        "Ben": 99,
+        "Hen": 88,
+        "Natan": 78,
+        "Efraim": 65,
+        "Rachel": 95
+    }))
+
+    print('\nmerge_dicts:\n--------------------')
+    print(merge_dicts({'a': 1}, {'b': 2}))
+
+    print('\nseven_boom:\n--------------------')
+    print(seven_boom(30))
+
+    print('\ncaesar_cipher:\n--------------------')
+    print(caesar_cipher('Fly Me To The Moon'))
+
+    print('\nsum_of_digits:\n--------------------')
+    print(sum_of_digits('1223432'))
