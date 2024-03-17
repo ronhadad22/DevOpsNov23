@@ -7,7 +7,6 @@
     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add 03 and 04">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_katas/kata_1/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_1/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

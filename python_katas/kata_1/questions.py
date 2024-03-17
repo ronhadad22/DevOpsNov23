@@ -329,19 +329,21 @@ def print_dict_as_table(some_dict):
     :param some_dict:
     :return:
     """
-    dictoprint = list(some_dict.items())
+    result = ""
+    result += "Key".ljust(8) + "Value\n"
+    result += "-------------\n"
 
-    if words_concatenation!=None:
-        print("Key".ljust(10) + "Value")
-        print("-------------")
+    for key, value in some_dict.items():
+        formatted_key = str(key).ljust(8)
+        formatted_value = str(value)
+        result += formatted_key + formatted_value + "\n"
 
-        for eachname in dictoprint:
-            formatted_name = eachname[0].ljust(10)
-            print(f"{formatted_name}{eachname[0]}")
+    result=result[:-1]
 
-    else:
-        print("Key".ljust(10) + "Value")
-        print("-------------")
+
+    return result
+
+
 
 def merge_dicts(dict1, dict2):
     """
@@ -426,7 +428,7 @@ def caesar_cipher(str_to_encrypt):
             # Apply the Caesar cipher shift
             encrypted_char = chr(((ord(char) - offset) + 3) % 26 + offset)
         else:
-            encrypted_char = char  # Spaces remain unchanged
+            encrypted_char = char
         encrypted_text += encrypted_char
     return encrypted_text
 
@@ -514,13 +516,14 @@ if __name__ == '__main__':
     }))
 
     print('\nprint_dict_as_table:\n--------------------')
-    print_dict_as_table({
+    print(print_dict_as_table({
         "Ben": 78,
         "Hen": 88,
         "Natan": 99,
         "Efraim": 65,
         "Rachel": 95
-    })
+    }))
+
 
     print('\nmerge_dicts:\n--------------------')
     print(merge_dicts({'a': 1}, {'b': 2}))
