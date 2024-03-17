@@ -214,7 +214,15 @@ def best_student(grades):
     :param grades: dict of name -> grade mapping
     :return: str. some key from the dict
     """
-    return None
+    highest_grade = float('-inf')
+    highest_grade_student = None
+
+    for student, grade in grades.items():
+        if grade > highest_grade:
+            highest_grade = grade
+            highest_grade_student = student
+
+    return highest_grade_student
 
 
 def print_dict_as_table(some_dict):
@@ -310,7 +318,16 @@ def caesar_cipher(str_to_encrypt):
 
     :return:
     """
-    return None
+    encrypted_text = ""
+    for char in str_to_encrypt:
+        if char.isalpha():
+            shift = 3 if char.islower() else 3
+            encrypted_char = chr(
+                ((ord(char) - ord('a' if char.islower() else 'A') + shift) % 26) + ord('a' if char.islower() else 'A'))
+            encrypted_text += encrypted_char
+        else:
+            encrypted_text += char  # Keep spaces as they are
+    return encrypted_text
 
 
 def sum_of_digits(digits_str):
@@ -328,7 +345,11 @@ def sum_of_digits(digits_str):
     :param digits_str: str of numerical digits only
     :return: int representing the sum of digits
     """
-    return None
+    total = 0
+    for char in digits_str:
+        total += int(char)
+
+    return total
 
 
 if __name__ == '__main__':
