@@ -51,8 +51,11 @@ def words_concatenation(words):
     :param words: list of str
     :return: Return the resulting string.
     """
-    result = ' '.join(words)
-    return result
+    concatenated_string = " ".join(words)
+    return concatenated_string
+
+    #result = ' '.join(words)
+    #return ' '.join(result.split())
 
 
 def reverse_words_concatenation(words):
@@ -68,7 +71,7 @@ def reverse_words_concatenation(words):
     :return: Return the resulting string.
     """
     result = ' '.join(reversed(words))
-    return result
+    return ' '.join(result.split())  # Remove extra spaces
 
 
 def is_unique_string(some_str):
@@ -188,7 +191,9 @@ This function gets two dictionaries of the type:
     :param women: dict mapping name -> age
     :return: tuple (men_name, women_name) such their age absolute difference is the minimal
     """
-    # Initialize with a large initial value
+    if not men or not women:  # If either of the dictionaries is empty
+        return ()  # Return an empty tuple
+
     min_age_difference = float('inf')
     result_pair = None
 
@@ -240,51 +245,29 @@ def best_student(grades):
     :return: str. some key from the dict
     """
     if not grades:
-        return None  # Return None for an empty dictionary
+        return ""  # Return None for an empty dictionary
 
     best_student_name = max(grades, key=grades.get) #This line uses the max function to find the key (student name) with the maximum value (grade) in the dictionary.
     return best_student_name
 
 def print_dict_as_table(some_dict):
-    """
-    1 Kata
+    # Initialize an empty string to store the table
+    table_str = ""
 
-    Prints dictionary keys and values as the following format. For:
-    {
-        "Ben": 78,
-        "Hen": 88,
-        "Natan": 99,
-        "Efraim": 65,
-        "Rachel": 95
-    }
+    # Add table headers
+    table_str += "Key".ljust(8) + "Value\n"
+   # table_str += "-" * 5 + "\n"  # Adjust the number of dashes to match the header width
+    table_str += "-" * 13 + "\n"  # Adjust the number of dashes to match the header width
 
-    The output will be:
+    # Sort the dictionary by key to ensure consistent order
+    sorted_dict = dict(sorted(some_dict.items()))
 
-    Key     Value
-    -------------
-    Ben     78
-    Hen     88
-    Natan   99
-    Efraim  65
-    Rachel  95
+    # Add key-value pairs to the table string
+    for key, value in sorted_dict.items():
+        table_str += f"{key:<8}{value}\n"
 
-    :param some_dict:
-    :return:
-    """
-    if not some_dict:
-        print("Empty dictionary.")
-        return
-
-        # Find the maximum length of keys for formatting
-    max_key_length = max(len(str(key)) for key in some_dict.keys())
-
-    # Print table header
-    print(f"{'Key':<{max_key_length}}  Value")
-    print("-" * (max_key_length + 9))  # Adjust the width for "Key" and "Value" headers
-
-    # Print key-value pairs
-    for key, value in some_dict.items():
-        print(f"{key:<{max_key_length}}  {value}")
+    # Return the table string
+    return table_str.strip()
 
 
 def merge_dicts(dict1, dict2):
@@ -327,14 +310,19 @@ def seven_boom(n):
     boom_list = []
 
     # Iterate through numbers from 1 to n
-    for number in range(1, n + 1):
-        # Convert the number to a string for easy checking of the digit '7'
-        number_str = str(number)
-
-        # Check if '7' is present in the string representation of the number
-        if '7' in number_str:
-            # If '7' is present, append the number to the boom_list
+    for number in range(1, abs(n) + 1):
+        # Check if the number is divisible by 7 or if '7' is present in the string representation of the number
+        if number % 7 == 0 or '7' in str(number):
+            # Append the number to the boom_list
             boom_list.append(number)
+
+    # If the input number is negative and there are "Booms", make them negative
+    if n < 0 and boom_list:
+        boom_list = [-boom for boom in boom_list]
+
+    # If the input number is zero and it's a "Boom", include it in the list
+    if n == 0 and (n % 7 == 0 or '7' in str(n)):
+        boom_list.append(0)
 
     # Return the list of "Booms"
     return boom_list
@@ -483,3 +471,4 @@ if __name__ == '__main__':
 
     print('\nsum_of_digits:\n--------------------')
     print(sum_of_digits('1223432'))
+
