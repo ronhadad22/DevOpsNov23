@@ -30,7 +30,12 @@ def verbing(word):
     :param word: str
     :return: Return the resulting string.
     """
-    return None
+    if len(word) < 3:
+        return word
+    elif word[-3:] == 'ing':
+        return word + 'ly'
+    else:
+        return word + 'ing'
 
 
 def words_concatenation(words):
@@ -45,7 +50,15 @@ def words_concatenation(words):
     :param words: list of str
     :return: Return the resulting string.
     """
-    return None
+    #words = ' '.join(words)
+
+    #return words
+    # Filter out empty strings to avoid extra spaces in the result
+    filtered_words = [word for word in words if word]
+    # Concatenate the filtered words
+    concatenated_words = ' '.join(filtered_words)
+
+    return concatenated_words
 
 
 def reverse_words_concatenation(words):
@@ -60,7 +73,15 @@ def reverse_words_concatenation(words):
     :param words: list of str
     :return: Return the resulting string.
     """
-    return None
+    #words = ' '.join(words[::-1])
+
+    #return words
+    # Filter out empty strings to avoid extra spaces in the result
+    filtered_words = [word for word in words if word]
+    # Concatenate the words in reverse order
+    reversed_concatenation = ' '.join(filtered_words[::-1])
+
+    return reversed_concatenation
 
 
 def is_unique_string(some_str):
@@ -77,7 +98,21 @@ def is_unique_string(some_str):
     :param some_str:
     :return: bool
     """
-    return None
+    # Use a set to store unique characters
+    unique_characters = set()
+
+    # Iterate through each character in the string
+    for char in some_str:
+        # If the character is already in the set, it's not unique
+        if char in unique_characters:
+            return False
+        # Otherwise, add it to the set
+        else:
+            unique_characters.add(char)
+
+    # If the loop completes without returning False, all characters are unique
+
+    return True
 
 
 def list_diff(elements):
@@ -95,7 +130,20 @@ def list_diff(elements):
     :param elements: list of integers
     :return: the diff list
     """
-    return None
+    # Check if the input list is empty
+    if not elements:
+        return []
+
+    # Initialize the result list with None as the first element
+    diff_list = [None]
+
+    # Iterate through the elements starting from the second one
+    for i in range(1, len(elements)):
+        # Calculate the difference between the current and previous elements
+        diff = elements[i] - elements[i - 1]
+        # Append the calculated difference to the result list
+        diff_list.append(diff)
+    return diff_list
 
 
 def prime_number(num):
@@ -108,7 +156,12 @@ def prime_number(num):
     :param num: the number to check
     :return: bool. True if prime, else False
     """
-    return None
+    if num <= 1:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
 
 
 def palindrome_num(num):
@@ -124,7 +177,10 @@ def palindrome_num(num):
     :param num: int
     :return: bool. True is palindrome, else False
     """
-    return None
+    # Convert the number to a string
+    num_str = str(num)
+    # Check if the string is equal to its reverse
+    return num_str == num_str[::-1]
 
 
 def pair_match(men, women):
@@ -155,7 +211,26 @@ def pair_match(men, women):
     :param women: dict mapping name -> age
     :return: tuple (men_name, women_name) such their age absolute difference is the minimal
     """
-    return None
+    # Check if either of the input dictionaries is empty
+    if not men or not women:
+        return ()  # Return an empty tuple if one or both dictionaries are empty
+
+    # Initialize variables to store the best match and the minimum age difference
+    best_match = None
+    min_age_difference = float('inf')
+
+    # Iterate over each combination of names from men and women dictionaries
+    for men_name, men_age in men.items():
+        for women_name, women_age in women.items():
+            # Calculate the absolute age difference between the current pair
+            age_difference = abs(men_age - women_age)
+
+            # Update the best match if the current pair has a smaller age difference
+            if age_difference < min_age_difference:
+                best_match = (men_name, women_name)
+                min_age_difference = age_difference
+
+    return best_match
 
 
 def bad_average(a, b, c):
@@ -167,7 +242,7 @@ def bad_average(a, b, c):
 
     :return:
     """
-    return a + b + c / 3
+    return (a + b + c) / 3
 
 
 def best_student(grades):
@@ -190,7 +265,15 @@ def best_student(grades):
     :param grades: dict of name -> grade mapping
     :return: str. some key from the dict
     """
-    return None
+    highest_grade = float('-inf')
+    highest_grade_student = ""
+
+    for student, grade in grades.items():
+        if grade > highest_grade:
+            highest_grade = grade
+            highest_grade_student = student
+
+    return highest_grade_student
 
 
 def print_dict_as_table(some_dict):
@@ -219,8 +302,18 @@ def print_dict_as_table(some_dict):
     :param some_dict:
     :return:
     """
-
-    return None
+    # Start with the table header
+    table = "Key     Value\n-------------"
+    # Only add a newline if the dictionary is not empty
+    if some_dict:
+        table += "\n"
+    for key, value in some_dict.items():
+        # Append each key-value pair to the table string
+        table += f"{key:<7} {value}\n"
+    # Remove the last newline to match the test case expectations
+    if some_dict:
+        table = table.rstrip('\n')
+    return table
 
 
 def merge_dicts(dict1, dict2):
@@ -240,7 +333,10 @@ def merge_dicts(dict1, dict2):
     :param dict2:
     :return:
     """
-    return dict1
+    merged_dict = dict1.copy()
+    merged_dict.update(dict2)
+
+    return merged_dict
 
 
 def seven_boom(n):
@@ -255,7 +351,22 @@ def seven_boom(n):
     :param n: int. The last number for count for a 7-boom play
     :return: list of integers
     """
-    return None
+    # Special case for n == 0
+    if n == 0:
+        return [0]
+
+    boom_list = []
+    if n > 0:  # Handling positive n
+        for num in range(1, n + 1):
+            if '7' in str(num) or num % 7 == 0:
+                boom_list.append(num)
+    else:  # Handling negative n
+        boom_list.append(0)  # Include 0 as per the negative test case requirements
+        for num in range(-1, n - 1, -1):  # Iterate through negative numbers
+            if '7' in str(abs(num)) or abs(num) % 7 == 0:
+                boom_list.append(num)
+
+    return boom_list
 
 
 def caesar_cipher(str_to_encrypt):
@@ -270,7 +381,20 @@ def caesar_cipher(str_to_encrypt):
 
     :return:
     """
-    return None
+    result = ""
+    for char in str_to_encrypt:
+        if char.isalpha():  # Check if the character is an alphabet letter
+            shift = 3
+            if char.islower():
+                # Encrypt lowercase letters
+                result += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
+            else:
+                # Encrypt uppercase letters
+                result += chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
+        else:
+            # Keep spaces as they are
+            result += char
+    return result
 
 
 def sum_of_digits(digits_str):
@@ -288,7 +412,16 @@ def sum_of_digits(digits_str):
     :param digits_str: str of numerical digits only
     :return: int representing the sum of digits
     """
-    return None
+    # Initialize the sum to 0
+    total_sum = 0
+
+    # Iterate through each character in the input string
+    for digit in digits_str:
+        # Convert the current character to an integer and add it to the total sum
+        total_sum += int(digit)
+
+    # Return the total sum of the digits
+    return total_sum
 
 
 if __name__ == '__main__':
