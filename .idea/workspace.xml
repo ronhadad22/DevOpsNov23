@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add 03 and 04">
-      <change afterPath="$PROJECT_DIR$/08_python_class/bank_account.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_1/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/one.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/simple.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/two.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_modules/validate_card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DevOpsNov23.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DevOpsNov23.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_1/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +15,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/python_katas1/osher" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,9 +41,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2ZzlKawrnoonXrRoucfg7XBVWOX" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -50,9 +55,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests in test.py.executor": "Run",
+    "Python.questions.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "python__katas1/osher",
     "last_opened_file_path": "/Users/ronh/PycharmProjects/DevOpsNov23",
     "settings.editor.selected.configurable": "terminal"
   }
@@ -65,7 +72,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+        <option value="bundled-python-sdk-7a29c1521ef0-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.11799.298" />
       </set>
     </attachedChunks>
   </component>
