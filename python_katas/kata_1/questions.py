@@ -51,11 +51,8 @@ def words_concatenation(words):
     :param words: list of str
     :return: Return the resulting string.
     """
-    concatenated_string = " ".join(words)
-    return concatenated_string
+    return ' '.join(filter(None, words))
 
-    #result = ' '.join(words)
-    #return ' '.join(result.split())
 
 
 def reverse_words_concatenation(words):
@@ -251,24 +248,44 @@ def best_student(grades):
     return best_student_name
 
 def print_dict_as_table(some_dict):
-    # Initialize an empty string to store the table
-    table_str = ""
+    """
+    1 Kata
 
-    # Add table headers
-    table_str += "Key".ljust(8) + "Value\n"
-   # table_str += "-" * 5 + "\n"  # Adjust the number of dashes to match the header width
-    table_str += "-" * 13 + "\n"  # Adjust the number of dashes to match the header width
+    Prints dictionary keys and values as the following format. For:
+    {
+        "Ben": 78,
+        "Hen": 88,
+        "Natan": 99,
+        "Efraim": 65,
+        "Rachel": 95
+    }
 
-    # Sort the dictionary by key to ensure consistent order
-    sorted_dict = dict(sorted(some_dict.items()))
+    The output will be:
 
-    # Add key-value pairs to the table string
-    for key, value in sorted_dict.items():
-        table_str += f"{key:<8}{value}\n"
+    Key     Value
+    -------------
+    Ben     78
+    Hen     88
+    Natan   99
+    Efraim  65
+    Rachel  95
 
-    # Return the table string
-    return table_str.strip()
+    :param some_dict:
+    :return:
+    """
+    header = "Key     Value\n-------------"
 
+    if not some_dict:
+        return header
+
+    # number of spaces from 1st position to "Value"
+    spaces = 8
+    lines = [header]
+
+    for key, value in some_dict.items():
+        space_string = " " * (spaces - len(key))
+        lines.append(f'{key}{space_string}{value}')
+    return '\n'.join(lines)
 
 def merge_dicts(dict1, dict2):
     """
@@ -307,26 +324,24 @@ def seven_boom(n):
     :return: list of integers
     """
     # Initialize an empty list to store "Booms"
-    boom_list = []
 
-    # Iterate through numbers from 1 to n
-    for number in range(1, abs(n) + 1):
-        # Check if the number is divisible by 7 or if '7' is present in the string representation of the number
-        if number % 7 == 0 or '7' in str(number):
-            # Append the number to the boom_list
-            boom_list.append(number)
+    boom_list = list()
 
-    # If the input number is negative and there are "Booms", make them negative
-    if n < 0 and boom_list:
-        boom_list = [-boom for boom in boom_list]
-
-    # If the input number is zero and it's a "Boom", include it in the list
-    if n == 0 and (n % 7 == 0 or '7' in str(n)):
+    # case n==0: return list with 0
+    if n == 0:
         boom_list.append(0)
+        return boom_list
 
-    # Return the list of "Booms"
+    # define function is_boom
+    def is_boom(val):
+        return val % 7 == 0 or '7' in str(val)
+
+    # support both directions: from 1 to n and from 1 to -n
+    step = -1 if n < 0 else 1
+    for i in range(1, n, step):
+        if is_boom(i):
+            boom_list.append(i)
     return boom_list
-
 
 def caesar_cipher(str_to_encrypt): #important to go through the code
     """
