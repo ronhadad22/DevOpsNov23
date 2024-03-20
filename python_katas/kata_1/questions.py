@@ -103,7 +103,14 @@ def list_diff(elements):
     :param elements: list of integers
     :return: the diff list
     """
-    return None
+    if not elements:
+        return []
+
+    diff_list = [None]
+    for i in range(1, len(elements)):
+        diff_list.append(elements[i] - elements[i - 1])
+
+    return diff_list
 
 
 def prime_number(num):
@@ -116,7 +123,11 @@ def prime_number(num):
     :param num: the number to check
     :return: bool. True if prime, else False
     """
-    return None
+
+    for i in range(2, (num-1)):
+        if num % i == 0:
+            return False
+    return True
 
 
 def palindrome_num(num):
@@ -132,8 +143,8 @@ def palindrome_num(num):
     :param num: int
     :return: bool. True is palindrome, else False
     """
-    return None
-
+    number_str = str(num)
+    return number_str == number_str[::-1]
 
 def pair_match(men, women):
     """
@@ -163,7 +174,17 @@ def pair_match(men, women):
     :param women: dict mapping name -> age
     :return: tuple (men_name, women_name) such their age absolute difference is the minimal
     """
-    return None
+    min_difference = float('inf')
+    min_pair = ()
+
+    for man_name, man_age in men.items():
+        for woman_name, woman_age in women.items():
+            difference = abs(man_age - woman_age)
+            if difference < min_difference:
+                min_difference = difference
+                min_pair = (man_name, woman_name)
+
+    return min_pair
 
 
 def bad_average(a, b, c):
@@ -175,7 +196,8 @@ def bad_average(a, b, c):
 
     :return:
     """
-    return a + b + c / 3
+    average = (a + b + c) / 3
+    return average
 
 
 def best_student(grades):
@@ -198,7 +220,16 @@ def best_student(grades):
     :param grades: dict of name -> grade mapping
     :return: str. some key from the dict
     """
-    return None
+
+    highest_grade = float('-inf')
+    highest_grade_student = None
+
+    for student, grade in grades.items():
+        if grade > highest_grade:
+            highest_grade = grade
+            highest_grade_student = student
+
+    return highest_grade_student
 
 
 def print_dict_as_table(some_dict):
@@ -227,7 +258,18 @@ def print_dict_as_table(some_dict):
     :param some_dict:
     :return:
     """
-    return None
+    if not some_dict:
+        print("Empty dictionary")
+        return
+
+
+    print("Key\tValue")
+    print("-------------")
+
+
+    for key, value in some_dict.items():
+        print(f"{key}\t{value}")
+
 
 
 def merge_dicts(dict1, dict2):
@@ -247,6 +289,7 @@ def merge_dicts(dict1, dict2):
     :param dict2:
     :return:
     """
+    dict1.update(dict2)
     return dict1
 
 
@@ -262,7 +305,15 @@ def seven_boom(n):
     :param n: int. The last number for count for a 7-boom play
     :return: list of integers
     """
-    return None
+
+    result = []
+
+    for number in range(1, n + 1):
+        if '7' in str(number) or number % 7 == 0:
+            result.append(number)
+
+    return result
+
 
 
 def caesar_cipher(str_to_encrypt):
@@ -277,7 +328,16 @@ def caesar_cipher(str_to_encrypt):
 
     :return:
     """
-    return None
+    encrypted_text = ""
+    for char in str_to_encrypt:
+        if char.isalpha():
+            shift = 3 if char.islower() else 3
+            encrypted_char = chr(
+                ((ord(char) - ord('a' if char.islower() else 'A') + shift) % 26) + ord('a' if char.islower() else 'A'))
+            encrypted_text += encrypted_char
+        else:
+            encrypted_text += char  # Keep spaces as they are
+    return encrypted_text
 
 
 def sum_of_digits(digits_str):
@@ -295,7 +355,11 @@ def sum_of_digits(digits_str):
     :param digits_str: str of numerical digits only
     :return: int representing the sum of digits
     """
-    return None
+    total = 0
+    for char in digits_str:
+        total += int(char)
+
+    return total
 
 
 if __name__ == '__main__':
