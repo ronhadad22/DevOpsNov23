@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add 03 and 04">
-      <change beforePath="$PROJECT_DIR$/.idea/DevOpsNov23.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DevOpsNov23.iml" afterDir="false" />
+    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="my solotion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_1/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +28,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="python_katas1/osher" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,7 +57,7 @@
     "Python.questions.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "python__katas1/osher",
+    "git-widget-placeholder": "python__katas2/osher",
     "last_opened_file_path": "/Users/ronh/PycharmProjects/DevOpsNov23",
     "settings.editor.selected.configurable": "terminal"
   }
@@ -113,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706453241175</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="my solotion">
+      <option name="closed" value="true" />
+      <created>1710876809017</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1710876809017</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +137,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
     <MESSAGE value="add 03 and 04" />
-    <option name="LAST_COMMIT_MESSAGE" value="add 03 and 04" />
+    <MESSAGE value="my solotion" />
+    <option name="LAST_COMMIT_MESSAGE" value="my solotion" />
   </component>
 </project>
