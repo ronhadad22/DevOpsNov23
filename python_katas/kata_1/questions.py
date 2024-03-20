@@ -281,7 +281,6 @@ def print_dict_as_table(some_dict):
     # number of spaces from 1st position to "Value"
     spaces = 8
     lines = [header]
-
     for key, value in some_dict.items():
         space_string = " " * (spaces - len(key))
         lines.append(f'{key}{space_string}{value}')
