@@ -1,3 +1,10 @@
+import os
+from datetime import datetime
+import tarfile
+import re
+import socket
+
+
 def valid_parentheses(s):
     """
     3 Kata
@@ -13,7 +20,26 @@ def valid_parentheses(s):
     s = '[[{()}](){}]'  -> True
     s = ']}'          -> False
     """
-    pass
+
+    # data structure to store coming opening parenthesis
+    stack = []
+
+    # dictionary mapping closing and opening parenthesis
+    mapping_dict = {"]": "[", ")": "(", "}": "{"}
+
+    for ch in s:
+        # check if it is an opening parenthesis:
+        if ch in mapping_dict.values():
+            # if open, put it to stack
+            stack.append(ch)
+        # check if it is closing:
+        elif ch in mapping_dict.keys():
+            # if there is no matching an open in the stack, return false
+            # else - put it out
+            if not stack or stack[-1] != mapping_dict[ch]:
+                return False
+            stack.pop()
+    return not stack
 
 
 def fibonacci_fixme(n):
@@ -34,7 +60,24 @@ def fibonacci_fixme(n):
     But it doesn't (it has some bad lines in it...)
     You should (1) correct the for statement and (2) swap two lines, so that the correct fibonacci element will be returned
     """
-    pass
+    if n <= 1:
+        return 1
+    return fibonacci_fixme(n - 1) + fibonacci_fixme(n - 2)
+
+
+def fibonacci_fixme_2(n):
+    memo = {}
+
+    # recursive function using memoisation
+    def fibonacci_with_memo(n, memo={}):
+        if n <= 1:
+            return 1
+        if n in memo:
+            return memo[n]
+        memo[n] = fibonacci_with_memo(n - 1, memo) + fibonacci_with_memo(n - 2, memo)
+        return memo[n]
+
+    return fibonacci_with_memo(n, memo)
 
 
 def most_frequent_name(file_path):
@@ -49,7 +92,32 @@ def most_frequent_name(file_path):
     :param file_path: str - absolute or relative file to read names from
     :return: str - the mose frequent name. If there are many, return one of them
     """
-    return None
+
+    def is_file_empty(full_file_path):
+        return os.path.getsize(full_file_path) == 0
+
+    if is_file_empty(file_path):
+        return ''
+
+    # names_counters dictionary
+    names = {'name': 'cnt'}
+    max_cnt = 0
+    most_frequent = ''
+    # Open the file in read mode
+    with open(file_path, 'r') as file:
+        # Iterate over each line in the file
+        for line in file:
+            # Process each line as needed
+            name = line.strip()  # remove trailing newline character
+            cnt = 0
+            if name in names:
+                cnt = names[name]
+            cnt += 1
+            names.update({name: cnt})
+            if cnt > max_cnt:
+                max_cnt = cnt
+                most_frequent = name
+    return most_frequent
 
 
 def files_backup(dir_path):
@@ -69,8 +137,22 @@ def files_backup(dir_path):
     :param dir_path: string - path to a directory
     :return: str - the backup file name
     """
-    return None
 
+    def get_directory_name(full_dir_path):
+        return os.path.basename(full_dir_path)
+
+    def get_current_time_in_format_yyyy_mm_dd(timestamp):
+        return timestamp.strftime('%Y-%m-%d')
+
+    def create_tar_gz(full_dir_path, file_name):
+        with tarfile.open(file_name, "w:gz") as tar:
+            for file in os.scandir(full_dir_path):
+                tar.add(file)
+
+    file_name_expect = ('backup_' + get_directory_name(dir_path) + '_' +
+                        get_current_time_in_format_yyyy_mm_dd(datetime.now()) + '.tar.gz')
+
+    return create_tar_gz(dir_path, file_name_expect)
 
 
 def replace_in_file(file_path, text, replace_text):
@@ -86,8 +168,21 @@ def replace_in_file(file_path, text, replace_text):
     :param replace_text: text to replace with
     :return: None
     """
-    return None
-    
+    # check that file_path exists, if not exist - do nothing, return None
+    if not os.path.exists(file_path):
+        return None
+
+    # open the file in read mode:
+    with open(file_path, 'r') as file:
+        file_content = file.read()
+
+    # Perform the replacement
+    modified_content = file_content.replace(text, replace_text)
+
+    # Write the modified content back to the file
+    with open(file_path, 'w') as file:
+        file.write(modified_content)
+
 
 def json_configs_merge(*json_paths):
     """
@@ -100,7 +195,21 @@ def json_configs_merge(*json_paths):
     :param json_paths:
     :return: dict - the merges json files
     """
-    return None
+    # check that json_paths exists and not empty
+    if len(json_paths) == 0:
+        return {}
+    dic_to_ret = {'file_name': 'content'}
+
+    for json_path in json_paths:
+        if not json_path or not os.path.exists(json_path):
+            continue
+        else:
+            with open(json_path, 'r') as file:
+                file_content = file.read()
+
+            dic_to_ret.update({file.name: file_content})
+
+    return dic_to_ret
 
 
 def monotonic_array(lst):
@@ -112,7 +221,16 @@ def monotonic_array(lst):
     :param lst: list of numbers (int, floats)
     :return: bool: indicating for monotonicity
     """
-    return None
+
+    def is_monotonic_increasing(lst_):
+        return all(lst_[i] <= lst_[i + 1] for i in range(len(lst_) - 1))
+
+    def is_monotonic_decreasing(lst_):
+        return all(lst_[i] >= lst_[i + 1] for i in range(len(lst_) - 1))
+
+    if is_monotonic_increasing(lst) or is_monotonic_decreasing(lst):
+        return True
+    return False
 
 
 def matrix_avg(mat, rows=None):
@@ -142,7 +260,19 @@ def merge_sorted_lists(l1, l2):
     :param l2: list of integers
     :return: list: sorted list combining l1 and l2
     """
-    return None
+    merged_list = []
+    i = j = 0
+
+    while i < len(l1) and j < len(l2):
+        if l1[i] <= l2[j]:
+            merged_list.append(l1[i])
+            i += 1
+        else:
+            merged_list.append(l2[j])
+            j += 1
+    merged_list.extend(l1[i:])
+    merged_list.extend(l2[j:])
+    return merged_list
 
 
 def longest_common_substring(str1, str2):
@@ -162,7 +292,34 @@ def longest_common_substring(str1, str2):
     :param str2: str
     :return: str - the longest common substring
     """
-    return None
+
+    if not str1 or not str2:
+        return ''
+    # safe max_len
+    max_len = 0
+
+    # dict len:substring
+    max_len_to_substr_dic = {'len': 'substring'}
+
+    # select a shortest string among two given strings
+    # and go over the shortest string
+    first_str = str1 if len(str1) < len(str2) else str2
+    second_str = str2 if len(str2) > len(str1) else str1
+
+    i = 0
+    while i in range(0, len(first_str) - 1):
+        if first_str[i] in second_str:
+            substr = first_str[i]
+
+            while substr in second_str:
+                if len(substr) > max_len:
+                    max_len = len(substr)
+                    max_len_to_substr_dic.update({max_len: substr})
+                i += 1
+                substr += first_str[i]
+        else:
+            i += 1
+    return max_len_to_substr_dic[max_len]
 
 
 def longest_common_prefix(str1, str2):
@@ -181,7 +338,17 @@ def longest_common_prefix(str1, str2):
     :param str2: str
     :return: str - the longest common prefix
     """
-    return None
+    if not str1 or not str2:
+        return ''
+
+    i = 0
+    prefix = ''
+    while i in range(0, len(str1) - 1):
+        if str1[i] == str2[i]:
+            prefix += str1[i]
+        i += 1
+
+    return prefix
 
 
 def rotate_matrix(mat):
@@ -226,7 +393,33 @@ def is_valid_email(mail_str):
     :param mail_str: mail to check
     :return: bool: True if it's a valid mail (otherwise either False is returned or the program can crash)
     """
-    return None
+    # first validation: check that a given mail_str isn't empty and contains @
+    if not mail_str or mail_str.find('@') == -1 :
+        return False
+    # split the string to two parts: before @ and after @
+    split_string = mail_str.split('@')
+    user_name = split_string[0]
+    domain_name = split_string[1]
+
+    def is_user_name_valid(input_string):
+        pattern_for_start = r'^[a-zA-Z0-9]*$'
+        # Regular expression pattern to match the criteria
+        pattern_for_whole_str = r'^[a-zA-Z0-9_.][a-zA-Z0-9_.]*$'
+
+        # Check if the string matches the pattern
+        if re.match(pattern_for_start, input_string[0]) and re.match(pattern_for_whole_str, input_string):
+            return True
+        else:
+            return False
+
+    def is_domain_name_valid(hostname):
+        try:
+            socket.gethostbyname(hostname)
+            return True
+        except socket.error as e:
+            return f"Error: {e}"
+
+    return is_user_name_valid(user_name) and is_domain_name_valid(domain_name)
 
 
 def pascal_triangle(lines):
