@@ -359,7 +359,6 @@ class TestPrintDictAsTable(unittest.TestCase):
             "Efraim\t65\n" +
             "Rachel\t95",
         ]
-
         self.assertTrue(questions.print_dict_as_table(test_dict) in possibilities)
 
     def test_negative(self):
@@ -393,7 +392,6 @@ class TestPrintDictAsTable(unittest.TestCase):
             "Efraim\t-65\n" +
             "Rachel\t-95",
         ]
-
         self.assertTrue(questions.print_dict_as_table(test_dict) in possibilities)
 
 
@@ -422,7 +420,7 @@ class TestMergeDicts(unittest.TestCase):
     def test_half_empty(self):
         dict1 = {
             'a': 1, 'b': 1, 'c': 1
-        }:q
+        }
         self.assertDictEqual(questions.merge_dicts(dict1, {}), dict1)
 
     def test_half_empty2(self):
