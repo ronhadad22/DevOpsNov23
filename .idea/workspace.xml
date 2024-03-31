@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add katas 1">
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/default.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/files_to_backup/a.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/files_to_backup/b.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/local.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/mnist-predictor.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/names.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DevOpsNov23.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DevOpsNov23.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_1/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +68,7 @@
     "Python.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "python__katas1/denisb",
     "last_opened_file_path": "/Users/ronh/PycharmProjects/DevOpsNov23/python_katas",
     "settings.editor.selected.configurable": "terminal"
   }
@@ -89,7 +79,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test.py (1)">
+  <component name="RunManager" selected="Python tests.Python tests in test.py">
     <configuration name="questions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DevOpsNov23" />
       <option name="ENV_FILES" value="" />
@@ -181,11 +171,18 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.questions" />
+      <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
+      <item itemvalue="Python tests.Python tests in test.py (1)" />
+      <item itemvalue="Python tests.Python tests in test.py" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in test.py" />
         <item itemvalue="Python tests.Python tests in test.py (1)" />
         <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
-        <item itemvalue="Python tests.Python tests in test.py" />
         <item itemvalue="Python.questions" />
         <item itemvalue="Python.test" />
       </list>
