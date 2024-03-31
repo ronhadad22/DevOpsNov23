@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="v111">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/backup_files_to_backup_2024-03-27.tar.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/backup_files_to_backup_2024-03-31.tar.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_1/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
-    </list>
+    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="v111" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,13 +24,6 @@
     &quot;assignee&quot;: &quot;ronhadad22&quot;
   }
 }</component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="main" />
-      </list>
-    </option>
-  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -190,8 +176,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.questions (1)" />
-      <item itemvalue="Python.utils" />
       <item itemvalue="Python.questions" />
+      <item itemvalue="Python.utils" />
       <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
       <item itemvalue="Python tests.Python tests in test.py (1)" />
     </list>
@@ -284,7 +270,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="add 03 and 04" />
     <MESSAGE value="add katas 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="add katas 1" />
+    <MESSAGE value="kata 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="kata 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
