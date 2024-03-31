@@ -2,7 +2,8 @@ def valid_parentheses(s):
     """
     3 Kata
 
-    This function gets a string containing just the characters '(', ')', '{', '}', '[' and ']',
+    This function gets a string containing just the characters
+    '(', ')', '{', '}', '[' and ']',
     and determines if the input string is valid.
 
     An input string is valid if:
@@ -13,15 +14,26 @@ def valid_parentheses(s):
     s = '[[{()}](){}]'  -> True
     s = ']}'          -> False
     """
-    pass
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
 
+    for char in s:
+        if char in mapping.values():
+            stack.append(char)
+        elif char in mapping.keys():
+            if not stack or mapping[char] != stack.pop():
+                return False
+
+    return not stack
+pass
 
 def fibonacci_fixme(n):
     """
     2 Kata
 
     A Fibonacci sequence is the integer sequence of 1, 1, 2, 3, 5, 8, 13....
-    The first two terms are 1 and 1. All other terms are obtained by adding the preceding two terms.
+    The first two terms are 1 and 1. All other terms are obtained
+    by adding the preceding two terms.
 
     This function should return the n'th element of fibonacci sequence. As following:
 
@@ -32,9 +44,31 @@ def fibonacci_fixme(n):
     fibonacci_fixme(5) -> 5
 
     But it doesn't (it has some bad lines in it...)
-    You should (1) correct the for statement and (2) swap two lines, so that the correct fibonacci element will be returned
+    You should (1) correct the for statement and (2) swap two lines,
+     so that the correct fibonacci element will be returned
     """
-    pass
+    # if n <= 0:
+    #     return 0
+    # elif n == 0:
+    #     return 0
+    # elif n == 1:
+    #     return 1
+    # else:
+    #     return fibonacci_fixme(n - 1) + fibonacci_fixme(n - 2)
+
+    if not isinstance(n, int) or n < 1:
+        return "Invalid input. Please provide a positive integer for 'n'."
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    elif n > 2:
+        a, b = 1, 1
+        for _ in range(2, n):
+            a, b = b, a + b
+        return b
+    else:
+        return 0
 
 
 def most_frequent_name(file_path):
@@ -49,7 +83,15 @@ def most_frequent_name(file_path):
     :param file_path: str - absolute or relative file to read names from
     :return: str - the mose frequent name. If there are many, return one of them
     """
-    return None
+    from collections import Counter
+
+    with open(file_path, 'r') as file:
+         names = file.read().splitlines()
+
+    name_counter = Counter(names)
+    most_common_name = max(name_counter, key=name_counter.get)
+
+    return most_common_name
 
 
 def files_backup(dir_path):
@@ -69,7 +111,24 @@ def files_backup(dir_path):
     :param dir_path: string - path to a directory
     :return: str - the backup file name
     """
-    return None
+    import os
+    import tarfile
+    import gzip
+    from datetime import datetime
+
+    dir_name = os.path.basename(dir_path)
+
+        # Generate current date in yyyy-mm-dd format
+    current_date = datetime.now().strftime('%Y-%m-%d')
+
+        # Compose backup file name
+    backup_file_name = f'backup_{dir_name}_{current_date}.tar.gz'
+
+        # Create a tar.gz file and add directory contents to it
+    with tarfile.open(backup_file_name, 'w:gz') as tar:
+        tar.add(dir_path, arcname=os.path.basename(dir_path))
+
+    return backup_file_name
 
 
 
@@ -86,8 +145,29 @@ def replace_in_file(file_path, text, replace_text):
     :param replace_text: text to replace with
     :return: None
     """
-    return None
-    
+
+    import os
+
+    if not os.path.exists(file_path):
+     print(f"Error: {file_path} does not exist.")
+
+    # # Read the content of the file
+    with open(file_path, 'r') as file:
+        file_content = file.read()
+
+    # # Replace text
+    replaced_content = file_content.replace(text, replace_text)
+    #
+    # # Write the replaced content back to the file
+    with open(file_path, 'w') as file:
+        file.write(replaced_content)
+    return replace_in_file
+    # return replaced_content
+
+
+
+
+
 
 def json_configs_merge(*json_paths):
     """
@@ -100,7 +180,22 @@ def json_configs_merge(*json_paths):
     :param json_paths:
     :return: dict - the merges json files
     """
-    return None
+    import json
+
+    merged_json = {}
+
+        # Iterate over each JSON file path
+    for json_path in json_paths:
+            # Open and read the JSON file
+        with open(json_path, 'r') as file:
+            json_content = json.load(file)
+
+            # Merge the JSON content into the merged_json dictionary
+        merged_json.update(json_content)
+
+    return merged_json
+    # return json_paths
+
 
 
 def monotonic_array(lst):
@@ -112,7 +207,14 @@ def monotonic_array(lst):
     :param lst: list of numbers (int, floats)
     :return: bool: indicating for monotonicity
     """
-    return None
+    if all(lst[i] <= lst[i + 1] for i in range(len(lst) - 1)):
+        return True
+
+    elif all(lst[i] >= lst[i + 1] for i in range(len(lst) - 1)):
+        return True
+    else:
+        return False
+
 
 
 def matrix_avg(mat, rows=None):
@@ -126,7 +228,28 @@ def matrix_avg(mat, rows=None):
     :param rows: list of unique integers in the range [0, 2] and length of maximum 3
     :return: int - the average values
     """
-    return None
+    if rows is None:
+        rows = [0, 1, 2]
+
+        # Initialize variables to store total sum and count of elements
+    total_sum = 0
+    count = 0
+
+    # Iterate over the specified rows and columns to calculate sum and count
+    for i in rows:
+        for j in range(len(mat[i])):
+            total_sum += mat[i][j]
+            count += 1
+
+    # Calculate the average
+    if count > 0:
+        average = total_sum / count
+    else:
+        average = 0
+
+    return average
+
+
 
 
 def merge_sorted_lists(l1, l2):
@@ -142,7 +265,30 @@ def merge_sorted_lists(l1, l2):
     :param l2: list of integers
     :return: list: sorted list combining l1 and l2
     """
-    return None
+    merged_list = []
+    i = 0  # Pointer for list l1
+    j = 0  # Pointer for list l2
+
+    # Merge the lists until one of them is exhausted
+    while i < len(l1) and j < len(l2):
+        if l1[i] < l2[j]:
+            merged_list.append(l1[i])
+            i += 1
+        else:
+            merged_list.append(l2[j])
+            j += 1
+
+    # Add remaining elements from l1, if any
+    while i < len(l1):
+        merged_list.append(l1[i])
+        i += 1
+
+    # Add remaining elements from l2, if any
+    while j < len(l2):
+        merged_list.append(l2[j])
+        j += 1
+
+    return merged_list
 
 
 def longest_common_substring(str1, str2):
@@ -162,7 +308,23 @@ def longest_common_substring(str1, str2):
     :param str2: str
     :return: str - the longest common substring
     """
-    return None
+    m = [[0] * (len(str2) + 1) for _ in range(len(str1) + 1)]
+    max_length = 0
+    end_index = 0
+
+    for i in range(1, len(str1) + 1):
+        for j in range(1, len(str2) + 1):
+            if str1[i - 1] == str2[j - 1]:
+                m[i][j] = m[i - 1][j - 1] + 1
+                if m[i][j] > max_length:
+                    max_length = m[i][j]
+                    end_index = i
+            else:
+                m[i][j] = 0
+
+    common_substring = str1[end_index - max_length: end_index]
+
+    return common_substring
 
 
 def longest_common_prefix(str1, str2):
@@ -181,6 +343,14 @@ def longest_common_prefix(str1, str2):
     :param str2: str
     :return: str - the longest common prefix
     """
+    min_length = min(len(str1), len(str2))
+    prefix = ""
+    for i in range(min_length):
+        if str1[i] == str2[i]:
+            prefix += str1[i]
+        else:
+            break
+    return prefix
     return None
 
 
@@ -207,7 +377,39 @@ def rotate_matrix(mat):
     :param mat:
     :return: list of lists - rotate matrix
     """
-    return None
+    # n = len(mat)
+    # m = len(mat[0])
+    #
+    # # Iterate through layers
+    # for layer in range(min(n, m) // 2):
+    #     first = layer
+    #     last = n - layer - 1
+    #
+    #
+    #     for i in range(first, last):
+    #         offset = i - first
+    #         temp = mat[first][i]
+    #         mat[first][i] = mat[last - offset][first]
+    #         mat[last - offset][first] = mat[last][last - offset]
+    #         mat[last][last - offset] = mat[i][last]
+    #         mat[i][last] = temp
+    #
+    # return mat
+
+    transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
+    rotated_mat = [row[::1] for row in transposed_mat]
+
+    return rotated_mat
+
+
+# Example usage:
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+
+rotated_matrix = rotate_matrix(matrix)
+for row in rotated_matrix:
+    print(row)
+
+
 
 
 def is_valid_email(mail_str):
@@ -309,7 +511,7 @@ def strong_pass(password):
     A password is considered strong if it satisfies the following criteria:
     1) Its length is at least 6.
     2) It contains at least one digit.
-    3) It contains at least one lowercase English character.
+     3) It contains at least one lowercase English character.
     4) It contains at least one uppercase English character.
     5) It contains at least one special character. The special characters are: !@#$%^&*()-+
 
@@ -321,9 +523,23 @@ def strong_pass(password):
 if __name__ == '__main__':
     print('\nvalid_parentheses:\n--------------------')
     print(valid_parentheses('[[{()}](){}]'))
+    print(valid_parentheses('({)(){9(({[[[)[)'))
+    print(valid_parentheses('[[{()'))
+    print(valid_parentheses('('))
+    print(valid_parentheses(''))
+
 
     print('\nfibonacci_fixme:\n--------------------')
+    print(fibonacci_fixme(7))
     print(fibonacci_fixme(6))
+    print(fibonacci_fixme(5))
+    print(fibonacci_fixme(4))
+    print(fibonacci_fixme(3))
+    print(fibonacci_fixme(2))
+    print(fibonacci_fixme(1))
+    print(fibonacci_fixme(0))
+    print(fibonacci_fixme(-1))
+
 
     print('\nmost_frequent_name:\n--------------------')
     print(most_frequent_name('names.txt'))
@@ -332,41 +548,61 @@ if __name__ == '__main__':
     print(files_backup('files_to_backup'))
 
     print('\nreplace_in_file:\n--------------------')
-    print(replace_in_file('mnist-predictor.yaml', '{{IMG_NAME}}', 'mnist-pred:0.0.1'))
+    print(replace_in_file('mnist-predictor.yaml', '{{port: 8080}}', 'port: 9999'))
+
 
     print('\njson_configs_merge:\n--------------------')
     print(json_configs_merge('default.json', 'local.json'))
-
+    #
     print('\nmonotonic_array:\n--------------------')
     print(monotonic_array([1, 2, 3, 6, 8, 9, 0]))
+    print(monotonic_array([9, 8, 7, 6]))
+    print(monotonic_array([1.1, 1.2, 1.3, 1.4]))
+    print(monotonic_array(['a', 'b', 'c', 'd']))
+    print(monotonic_array([0, 0, 0, 0]))
+    print(monotonic_array([]))
+    print(monotonic_array(['c', 'd', 'z', 'k']))
+    print(monotonic_array([1.8, 1.6, 1.9]))
+    print(monotonic_array([-1, -2, -3, -4]))
+
 
     print('\nmatrix_avg:\n--------------------')
-    print(matrix_avg([[1, 2, 3], [4, 5, 6], [7, 8, 9]], rows=[0, 2]))
+    print(matrix_avg([[1, 2, 3], [4, 5, 6], [7, 8, 9]], rows=[0,1]))
     print(matrix_avg([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
-
+    #
     print('\nmerge_sorted_lists:\n--------------------')
     print(merge_sorted_lists([1, 4, 9, 77, 13343], [-7, 0, 7, 23]))
+    print(merge_sorted_lists([0, 6, 8, 4, -3,-7], [-100, 80, 10, 20]))
+    print(merge_sorted_lists(['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h']))
 
     print('\nlongest_common_substring:\n--------------------')
     print(longest_common_substring('abcdefg', 'bgtcdesd'))
+    print(longest_common_substring('.ksndknakgnbksjbv', 'wkdcnslknakgnddkd'))
+    print(longest_common_substring('', ''))
+    print(longest_common_substring('sdjghsjdgh1234sdghnsih', 'djfkslcnrm1234sdghnfxg'))
 
     print('\nlongest_common_prefix:\n--------------------')
     print(longest_common_prefix('abcd', 'ttty'))
+    print(longest_common_prefix('abcd', 'adcd'))
+    print(longest_common_prefix('1256', '1234'))
+    print(longest_common_prefix('', ''))
+
 
     print('\nrotate_matrix:\n--------------------')
     print(rotate_matrix([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]))
+    print(rotate_matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]))
 
-    print('\nis_valid_email:\n--------------------')
-    print(is_valid_email('israel.israeli@gmail.com'))
-
-    print('\npascal_triangle:\n--------------------')
-    print(pascal_triangle(4))
-
-    print('\nlist_flatten:\n--------------------')
-    print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))
-
-    print('\nstr_compression:\n--------------------')
-    print(str_compression('aaaabdddddhgf'))
-
-    print('\nstrong_pass:\n--------------------')
-    print(strong_pass('##$FgC7^^5a'))
+    # print('\nis_valid_email:\n--------------------')
+    # print(is_valid_email('israel.israeli@gmail.com'))
+    #
+    # print('\npascal_triangle:\n--------------------')
+    # print(pascal_triangle(4))
+    #
+    # print('\nlist_flatten:\n--------------------')
+    # print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))
+    #
+    # print('\nstr_compression:\n--------------------')
+    # print(str_compression('aaaabdddddhgf'))
+    #
+    # print('\nstrong_pass:\n--------------------')
+    # print(strong_pass('##$FgC7^^5a'))
