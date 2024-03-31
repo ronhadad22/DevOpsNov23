@@ -1,6 +1,6 @@
 import unittest
-from python_katas.kata_1 import questions
-from python_katas.utils import unittest_runner
+import questions
+
 
 testers = ['Ofir', 'Rima', 'Beny']
 
