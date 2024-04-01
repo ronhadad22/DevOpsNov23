@@ -118,13 +118,9 @@ def files_backup(dir_path):
 
     dir_name = os.path.basename(dir_path)
 
-        # Generate current date in yyyy-mm-dd format
+
     current_date = datetime.now().strftime('%Y-%m-%d')
-
-        # Compose backup file name
     backup_file_name = f'backup_{dir_name}_{current_date}.tar.gz'
-
-        # Create a tar.gz file and add directory contents to it
     with tarfile.open(backup_file_name, 'w:gz') as tar:
         tar.add(dir_path, arcname=os.path.basename(dir_path))
 
@@ -150,19 +146,13 @@ def replace_in_file(file_path, text, replace_text):
 
     if not os.path.exists(file_path):
      print(f"Error: {file_path} does not exist.")
-
-    # # Read the content of the file
     with open(file_path, 'r') as file:
         file_content = file.read()
-
-    # # Replace text
     replaced_content = file_content.replace(text, replace_text)
-    #
-    # # Write the replaced content back to the file
+
     with open(file_path, 'w') as file:
         file.write(replaced_content)
     return replace_in_file
-    # return replaced_content
 
 
 
@@ -184,17 +174,15 @@ def json_configs_merge(*json_paths):
 
     merged_json = {}
 
-        # Iterate over each JSON file path
+
     for json_path in json_paths:
-            # Open and read the JSON file
+
         with open(json_path, 'r') as file:
             json_content = json.load(file)
 
-            # Merge the JSON content into the merged_json dictionary
         merged_json.update(json_content)
 
     return merged_json
-    # return json_paths
 
 
 
@@ -231,17 +219,16 @@ def matrix_avg(mat, rows=None):
     if rows is None:
         rows = [0, 1, 2]
 
-        # Initialize variables to store total sum and count of elements
     total_sum = 0
     count = 0
 
-    # Iterate over the specified rows and columns to calculate sum and count
+
     for i in rows:
         for j in range(len(mat[i])):
             total_sum += mat[i][j]
             count += 1
 
-    # Calculate the average
+
     if count > 0:
         average = total_sum / count
     else:
@@ -266,10 +253,10 @@ def merge_sorted_lists(l1, l2):
     :return: list: sorted list combining l1 and l2
     """
     merged_list = []
-    i = 0  # Pointer for list l1
-    j = 0  # Pointer for list l2
+    i = 0
+    j = 0
 
-    # Merge the lists until one of them is exhausted
+
     while i < len(l1) and j < len(l2):
         if l1[i] < l2[j]:
             merged_list.append(l1[i])
@@ -278,12 +265,12 @@ def merge_sorted_lists(l1, l2):
             merged_list.append(l2[j])
             j += 1
 
-    # Add remaining elements from l1, if any
+
     while i < len(l1):
         merged_list.append(l1[i])
         i += 1
 
-    # Add remaining elements from l2, if any
+
     while j < len(l2):
         merged_list.append(l2[j])
         j += 1
@@ -377,37 +364,14 @@ def rotate_matrix(mat):
     :param mat:
     :return: list of lists - rotate matrix
     """
-    # n = len(mat)
-    # m = len(mat[0])
-    #
-    # # Iterate through layers
-    # for layer in range(min(n, m) // 2):
-    #     first = layer
-    #     last = n - layer - 1
-    #
-    #
-    #     for i in range(first, last):
-    #         offset = i - first
-    #         temp = mat[first][i]
-    #         mat[first][i] = mat[last - offset][first]
-    #         mat[last - offset][first] = mat[last][last - offset]
-    #         mat[last][last - offset] = mat[i][last]
-    #         mat[i][last] = temp
-    #
-    # return mat
-
     transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
-    rotated_mat = [row[::1] for row in transposed_mat]
+    rotated_mat = [row[::-1] for row in transposed_mat]
 
     return rotated_mat
-
-
-# Example usage:
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
-
-rotated_matrix = rotate_matrix(matrix)
-for row in rotated_matrix:
-    print(row)
+    # transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[1]))]
+    # rotated_mat = [row[::1] for row in transposed_mat]
+    #
+    # return rotated_mat dosnt aprov
 
 
 
@@ -428,7 +392,33 @@ def is_valid_email(mail_str):
     :param mail_str: mail to check
     :return: bool: True if it's a valid mail (otherwise either False is returned or the program can crash)
     """
-    return None
+    # import re
+    #
+    # pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    #
+    # # Check if the email matches the pattern
+    # if re.match(pattern, mail_str):
+    #     return True
+    # else:
+    #     return False
+    import re
+    import socket
+
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+
+        # Check if the email matches the pattern
+    if not re.match(pattern, mail_str):
+            return False
+
+        # Extract domain from email address
+    domain = mail_str.split('@')[1]
+
+        # Try to resolve domain to an IP address
+    try:
+        socket.gethostbyname(domain)
+        return True
+    except socket.gaierror:
+        return False
 
 
 def pascal_triangle(lines):
@@ -464,7 +454,17 @@ def pascal_triangle(lines):
     :param lines: int
     :return: None
     """
-    return None
+    triangle = []
+    for i in range(lines):
+        row = [1]
+        if i > 0:
+            prev_row = triangle[i - 1]
+            for j in range(1, i):
+                row.append(prev_row[j - 1] + prev_row[j])
+            row.append(1)
+        triangle.append(row)
+    return triangle
+
 
 
 def list_flatten(lst):
@@ -592,14 +592,22 @@ if __name__ == '__main__':
     print(rotate_matrix([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]))
     print(rotate_matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]))
 
-    # print('\nis_valid_email:\n--------------------')
-    # print(is_valid_email('israel.israeli@gmail.com'))
+    print('\nis_valid_email:\n--------------------')
+    print(is_valid_email('israel.israeli@gmail.com'))
+    print(is_valid_email(''))
+    print(is_valid_email('osher@walle.com'))
+    print(is_valid_email('oshr@gmail.com'))
+
+
+    print('\npascal_triangle:\n--------------------')
+    print(pascal_triangle(4))
+    print(pascal_triangle(5))
+    print(pascal_triangle(6))
+    print(pascal_triangle(7))
+    print(pascal_triangle(11))
     #
-    # print('\npascal_triangle:\n--------------------')
-    # print(pascal_triangle(4))
-    #
-    # print('\nlist_flatten:\n--------------------')
-    # print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))
+    print('\nlist_flatten:\n--------------------')
+    print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))
     #
     # print('\nstr_compression:\n--------------------')
     # print(str_compression('aaaabdddddhgf'))
