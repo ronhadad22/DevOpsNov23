@@ -189,12 +189,12 @@ def monotonic_array(lst):
 
 def matrix_avg(mat, rows=None):
     """
-    This function gets a 3*3 matrix (list of 3 lists) and returns the average of all elements
-    The 'rows' optional argument (with None as default) indicating which rows should be included in the average calculation
+    This function gets a 3*3 matrix (list of 3 lists) and returns the average of all elements.
+    The 'rows' optional argument (with None as default) indicates which rows should be included in the average calculation.
 
     :param mat: 3*3 matrix
     :param rows: list of unique integers in the range [0, 2] and length of maximum 3
-    :return: int - the average values
+    :return: float - the average values
     """
     if rows is None:
         rows = range(3)
@@ -203,12 +203,11 @@ def matrix_avg(mat, rows=None):
     total_elements = 0
 
     for row_index in rows:
-       if 0 <= row_index < 3:
+        if 0 <= row_index < 3:
             row = mat[row_index]
             total_sum += sum(row)
             total_elements += len(row)
         else:
-            print("Invalid row index encountered:", row_index)
             raise IndexError("Invalid row index: {}".format(row_index))
 
     if total_elements == 0:
@@ -508,6 +507,19 @@ def strong_pass(password):
 
     return has_digit and has_lower and has_upper and has_special
 
+def replace_in_file(file_name, placeholder, replacement):
+    # Read the content of the file
+    with open(file_name, 'r') as file:
+        filedata = file.read()
+
+    # Replace the target string
+    filedata = filedata.replace(placeholder, replacement)
+
+    # Write the file out again
+    with open(file_name, 'w') as file:
+        file.write(filedata)
+
+    return f"The placeholder {placeholder} has been replaced with {replacement} in {file_name}."
 
 if __name__ == '__main__':
     print('\nvalid_parentheses:\n--------------------')
