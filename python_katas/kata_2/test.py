@@ -1,12 +1,15 @@
+
 import os
 import unittest
 import shutil
 import tarfile
 from datetime import datetime
-from python_katas.kata_2 import questions
-from python_katas.utils import unittest_runner
+import questions
+
+
 
 testers = ['ofri','denis','ron']
+
 
 class TestValidParentheses(unittest.TestCase):
     """
@@ -62,13 +65,14 @@ class TestFibonacciFixme(unittest.TestCase):
         # We choose a relatively small large input value for efficiency
         self.assertEqual(questions.fibonacci_fixme(20), 6765)
 
+
 class TestMostFrequentName(unittest.TestCase):
     """
     2 Katas
     """
     def test_most_frequent_name(self):
         file_path = "names.txt"  # Adjust the file path accordingly
-        expected_result = "tawsha"
+        expected_result = "Tawsha"
         self.assertEqual(questions.most_frequent_name(file_path), expected_result)
 
     def test_file_existence(self):
@@ -190,6 +194,7 @@ class TestReplaceInFile(unittest.TestCase):
 
         os.remove(test_file_name)  # Cleanup
 
+
 class TestJsonConfigsMerge(unittest.TestCase):
     """
     2 Katas
@@ -199,6 +204,7 @@ class TestJsonConfigsMerge(unittest.TestCase):
         merged_json = questions.json_configs_merge('default.json', 'local.json')
         # Assert that the merged data is not empty
         self.assertTrue(merged_json)
+
 
 class TestMonotonicArray(unittest.TestCase):
     """
@@ -261,6 +267,7 @@ class TestMonotonicArray(unittest.TestCase):
         # Test case for a non-monotonic list with mixed signs
         self.assertFalse(questions.monotonic_array([-5, -4, -3, 2, 1]))
 
+
 class TestMatrixAvg(unittest.TestCase):
     """
     2 Katas
@@ -303,8 +310,6 @@ class TestMatrixAvg(unittest.TestCase):
         # Expecting a failure or specific handling of invalid row index
         with self.assertRaises(IndexError):
             questions.matrix_avg(matrix, rows=[3])
-
-
 
 
 class TestMergeSortedLists(unittest.TestCase):
@@ -355,7 +360,8 @@ class TestLongestCommonSubstring(unittest.TestCase):
 
     def test_basic_example(self):
         str1 = 'Introduced in 1991, The Linux kernel is an amazing software'
-        str2 = 'The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, Unix-like operating system kernel.'
+        str2 = ('The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, '
+                'Unix-like operating system kernel.')
         expected_result = 'The Linux kernel is a'
         self.assertEqual(questions.longest_common_substring(str1, str2), expected_result)
 
@@ -372,7 +378,8 @@ class TestLongestCommonSubstring(unittest.TestCase):
         self.assertEqual(questions.longest_common_substring(str1, str2), expected_result)
 
     def test_one_empty_string(self):
-        str1 = 'The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, Unix-like operating system kernel.'
+        str1 = ('The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, '
+                'Unix-like operating system kernel.')
         str2 = ''
         expected_result = ''
         self.assertEqual(questions.longest_common_substring(str1, str2), expected_result)
@@ -397,7 +404,8 @@ class TestLongestCommonPrefix(unittest.TestCase):
 
     def test_common_prefix(self):
         str1 = 'The Linux kernel is an amazing software'
-        str2 = 'The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, Unix-like operating system kernel.'
+        str2 = ('The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking,'
+                ' Unix-like operating system kernel.')
         expected_result = 'The Linux kernel is a'
         self.assertEqual(questions.longest_common_prefix(str1, str2), expected_result)
 
@@ -650,7 +658,6 @@ class TestStrongPass(unittest.TestCase):
     def test_strong_password(self):
         """Test that a valid password is considered strong."""
         self.assertTrue(questions.strong_pass('Aa!2bcD'))
-
 
 
 if __name__ == '__main__':

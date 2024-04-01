@@ -13,7 +13,19 @@ def valid_parentheses(s):
     s = '[[{()}](){}]'  -> True
     s = ']}'          -> False
     """
-    pass
+    stack = []
+    mapping = {")": "(", "}": "{", "]": "["}
+
+    for char in s:
+        if char in mapping.values():
+            stack.append(char)
+        elif char in mapping.keys():
+            if not stack or mapping[char] != stack.pop():
+                return False
+        else:
+            return False
+
+    return not stack
 
 
 def fibonacci_fixme(n):
@@ -34,7 +46,15 @@ def fibonacci_fixme(n):
     But it doesn't (it has some bad lines in it...)
     You should (1) correct the for statement and (2) swap two lines, so that the correct fibonacci element will be returned
     """
-    pass
+    if n <= 0:
+        return "Input should be a positive integer."
+    elif n == 1 or n == 2:
+        return 1
+    else:
+        fib = [1, 1]
+        for i in range(2, n):
+            fib.append(fib[-1] + fib[-2])
+        return fib[-1]
 
 
 def most_frequent_name(file_path):
@@ -49,7 +69,29 @@ def most_frequent_name(file_path):
     :param file_path: str - absolute or relative file to read names from
     :return: str - the mose frequent name. If there are many, return one of them
     """
-    return None
+    import os
+
+    def is_file_empty(full_file_path):
+        return os.path.getsize(full_file_path) == 0
+
+    if is_file_empty(file_path):
+        return ''
+
+    names = {'name': 'cnt'}
+    max_cnt = 0
+    most_frequent = ''
+    with open(file_path, 'r') as file:
+        for line in file:
+            name = line.strip()
+            cnt = 0
+            if name in names:
+                cnt = names[name]
+            cnt += 1
+            names.update({name:cnt})
+            if cnt > max_cnt:
+                max_cnt = cnt
+                most_frequent = name
+    return most_frequent
 
 
 def files_backup(dir_path):
@@ -69,8 +111,21 @@ def files_backup(dir_path):
     :param dir_path: string - path to a directory
     :return: str - the backup file name
     """
-    return None
+    import os
+    import tarfile
+    import gzip
+    from datetime import datetime
 
+    dir_name = os.path.basename(dir_path)
+
+    current_date = datetime.now().strftime('%Y-%m-%d')
+
+    backup_file_name = f"backup_{dir_name}_{current_date}.tar.gz"
+
+    with tarfile.open(backup_file_name, 'w:gz') as tar:
+        tar.add(dir_path, arcname=os.path.basename(dir_path))
+
+    return backup_file_name
 
 
 def replace_in_file(file_path, text, replace_text):
@@ -86,8 +141,20 @@ def replace_in_file(file_path, text, replace_text):
     :param replace_text: text to replace with
     :return: None
     """
-    return None
-    
+    import os
+
+    if not os.path.exists(file_path):
+        print(f"Error: File '{file_path}' does not exist.")
+        return
+
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    modified_content = content.replace(text, replace_text)
+
+    with open(file_path, 'w') as file:
+        file.write(modified_content)
+
 
 def json_configs_merge(*json_paths):
     """
@@ -100,7 +167,15 @@ def json_configs_merge(*json_paths):
     :param json_paths:
     :return: dict - the merges json files
     """
-    return None
+    import json
+    merged_dict = {}
+
+    for path in json_paths:
+        with open(path, 'r') as file:
+            data = json.load(file)
+            merged_dict.update(data)
+
+    return merged_dict
 
 
 def monotonic_array(lst):
@@ -112,7 +187,10 @@ def monotonic_array(lst):
     :param lst: list of numbers (int, floats)
     :return: bool: indicating for monotonicity
     """
-    return None
+    increasing = all(lst[i] <= lst[i + 1] for i in range(len(lst) - 1))
+    decreasing = all(lst[i] >= lst[i + 1] for i in range(len(lst) - 1))
+
+    return increasing or decreasing
 
 
 def matrix_avg(mat, rows=None):
@@ -126,7 +204,21 @@ def matrix_avg(mat, rows=None):
     :param rows: list of unique integers in the range [0, 2] and length of maximum 3
     :return: int - the average values
     """
-    return None
+    if rows is None:
+        rows = range(len(mat))
+
+    total_sum = 0
+    count = 0
+
+    for i in rows:
+        for j in range(len(mat[i])):
+            total_sum += mat[i][j]
+            count += 1
+
+    if count == 0:
+        return 0
+
+    return total_sum / count
 
 
 def merge_sorted_lists(l1, l2):
@@ -142,7 +234,21 @@ def merge_sorted_lists(l1, l2):
     :param l2: list of integers
     :return: list: sorted list combining l1 and l2
     """
-    return None
+    merged_list = []
+    i = j = 0
+
+    while i < len(l1) and j < len(l2):
+        if l1[i] < l2[j]:
+            merged_list.append(l1[i])
+            i += 1
+        else:
+            merged_list.append(l2[j])
+            j += 1
+
+    merged_list.extend(l1[i:])
+    merged_list.extend(l2[j:])
+
+    return merged_list
 
 
 def longest_common_substring(str1, str2):
@@ -162,7 +268,26 @@ def longest_common_substring(str1, str2):
     :param str2: str
     :return: str - the longest common substring
     """
-    return None
+    m = len(str1)
+    n = len(str2)
+
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    max_length = 0
+    ending_index = 0
+
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if str1[i - 1] == str2[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+                if dp[i][j] > max_length:
+                    max_length = dp[i][j]
+                    ending_index = i
+            else:
+                dp[i][j] = 0
+
+    longest_substring = str1[ending_index - max_length: ending_index]
+
+    return longest_substring
 
 
 def longest_common_prefix(str1, str2):
@@ -181,7 +306,12 @@ def longest_common_prefix(str1, str2):
     :param str2: str
     :return: str - the longest common prefix
     """
-    return None
+    min_length = min(len(str1), len(str2))
+
+    i = 0
+    while i < min_length and str1[i] == str2[i]:
+        i += 1
+    return str1[:i]
 
 
 def rotate_matrix(mat):
@@ -207,7 +337,10 @@ def rotate_matrix(mat):
     :param mat:
     :return: list of lists - rotate matrix
     """
-    return None
+    transposed_matrix = list(zip(*mat))
+    rotated_matrix = [list(row)[::-1] for row in transposed_matrix]
+
+    return rotated_matrix
 
 
 def is_valid_email(mail_str):
@@ -226,7 +359,21 @@ def is_valid_email(mail_str):
     :param mail_str: mail to check
     :return: bool: True if it's a valid mail (otherwise either False is returned or the program can crash)
     """
-    return None
+    pattern = r'^[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+    import re
+    import socket
+
+    if not re.match(pattern, mail_str):
+        return False
+
+    username, domainname = mail_str.split('@')
+
+    try:
+        ip_address = socket.gethostbyname(domainname)
+        return True
+    except socket.gaierror:
+        return False
 
 
 def pascal_triangle(lines):
@@ -262,7 +409,12 @@ def pascal_triangle(lines):
     :param lines: int
     :return: None
     """
-    return None
+    for line in range(1, lines + 1):
+        C = 1
+        for i in range(1, line + 1):
+            print(C, end=" ")
+            C = C * (line - i) // i
+        print()
 
 
 def list_flatten(lst):
@@ -279,7 +431,13 @@ def list_flatten(lst):
     :param lst: list of integers of another list
     :return: flatten list
     """
-    return None
+    flattened = []
+    for item in lst:
+        if isinstance(item, list):
+            flattened.extend(list_flatten(item))
+        else:
+            flattened.append(item)
+    return flattened
 
 
 def str_compression(text):
@@ -299,7 +457,29 @@ def str_compression(text):
     :param text: str
     :return: list representing the compressed form of the string
     """
-    return None
+    if not text:
+        return []
+
+    compressed_list = []
+    current_char = text[0]
+    count = 1
+
+    for char in text[1:]:
+        if char == current_char:
+            count += 1
+        else:
+            compressed_list.append(current_char)
+            if count > 1:
+                compressed_list.append(count)
+            current_char = char
+            count = 1
+
+    # Append the last character and its count
+    compressed_list.append(current_char)
+    if count > 1:
+        compressed_list.append(count)
+
+    return compressed_list
 
 
 def strong_pass(password):
@@ -315,7 +495,24 @@ def strong_pass(password):
 
     This function returns True if the given password is strong enough
     """
-    return None
+    import re
+
+    if len(password) < 6:
+        return False
+
+    if not re.search(r"\d", password):
+        return False
+
+    if not re.search(r"[a-z]", password):
+        return False
+
+    if not re.search(r"[A-Z]", password):
+        return False
+
+    if not re.search(r"[!@#$%^&*()-+]", password):
+        return False
+
+    return True
 
 
 if __name__ == '__main__':
@@ -366,7 +563,7 @@ if __name__ == '__main__':
     print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))
 
     print('\nstr_compression:\n--------------------')
-    print(str_compression('aaaabdddddhgf'))
+    print(str_compression(''))
 
     print('\nstrong_pass:\n--------------------')
     print(strong_pass('##$FgC7^^5a'))
