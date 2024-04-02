@@ -409,12 +409,20 @@ def pascal_triangle(lines):
     :param lines: int
     :return: None
     """
-    for line in range(1, lines + 1):
-        C = 1
-        for i in range(1, line + 1):
-            print(C, end=" ")
-            C = C * (line - i) // i
-        print()
+    triangle = []
+    for line in range(lines):
+        row = []
+        for i in range(line + 1):
+            if i == 0 or i == line:
+                row.append(1)
+            else:
+                row.append(triangle[line - 1][i - 1] + triangle[line - 1][i])
+        triangle.append(row)
+
+    for row in triangle:
+        print(" ".join(map(str, row)).center(lines * 3))
+
+    return triangle
 
 
 def list_flatten(lst):
