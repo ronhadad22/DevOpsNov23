@@ -47,14 +47,7 @@ def fibonacci_fixme(n):
     You should (1) correct the for statement and (2) swap two lines,
      so that the correct fibonacci element will be returned
     """
-    # if n <= 0:
-    #     return 0
-    # elif n == 0:
-    #     return 0
-    # elif n == 1:
-    #     return 1
-    # else:
-    #     return fibonacci_fixme(n - 1) + fibonacci_fixme(n - 2)
+
 
     if not isinstance(n, int) or n < 1:
         return "Invalid input. Please provide a positive integer for 'n'."
@@ -113,7 +106,7 @@ def files_backup(dir_path):
     """
     import os
     import tarfile
-    import gzip
+    # import gzip dont need it
     from datetime import datetime
 
     dir_name = os.path.basename(dir_path)
@@ -338,7 +331,6 @@ def longest_common_prefix(str1, str2):
         else:
             break
     return prefix
-    return None
 
 
 def rotate_matrix(mat):
@@ -364,31 +356,16 @@ def rotate_matrix(mat):
     :param mat:
     :return: list of lists - rotate matrix
     """
-    if not mat:  # Check if matrix is empty
+    if not mat:
         return []
 
     n = len(mat)
     m = len(mat[0])
 
-    # Transpose and reverse for clockwise rotation
     transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
     rotated_mat = [row[::-1] for row in transposed_mat]
 
     return rotated_mat
-
-
-    # transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
-    # rotated_mat = [row[::-1] for row in transposed_mat]
-    #
-    # return rotated_mat
-
-
-    # transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[1]))]
-    # rotated_mat = [row[::1] for row in transposed_mat]
-    #
-    # return rotated_mat dosnt aprov
-
-
 
 
 def is_valid_email(mail_str):
@@ -407,28 +384,16 @@ def is_valid_email(mail_str):
     :param mail_str: mail to check
     :return: bool: True if it's a valid mail (otherwise either False is returned or the program can crash)
     """
-    # import re
-    #
-    # pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
-    #
-    # # Check if the email matches the pattern
-    # if re.match(pattern, mail_str):
-    #     return True
-    # else:
-    #     return False
     import re
     import socket
 
     pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
 
-        # Check if the email matches the pattern
     if not re.match(pattern, mail_str):
             return False
 
-        # Extract domain from email address
     domain = mail_str.split('@')[1]
 
-        # Try to resolve domain to an IP address
     try:
         socket.gethostbyname(domain)
         return True
@@ -534,7 +499,6 @@ def list_flatten(lst):
     flattened_list = []
     for item in lst:
         if isinstance(item, list):
-            # Recursively flatten nested list
             flattened_list.extend(list_flatten(item))
         elif item != []:
             flattened_list.append(item)
@@ -599,13 +563,11 @@ def strong_pass(password):
     if len(password) < 6:
         return False
 
-        # Character type checks using sets
     has_digit = any(char in string.digits for char in password)
     has_lowercase = any(char in string.ascii_lowercase for char in password)
     has_uppercase = any(char in string.ascii_uppercase for char in password)
     has_special = any(char in string.punctuation for char in password)
 
-    # Check if all criteria are met
     return has_digit and has_lowercase and has_uppercase and has_special
 
 
