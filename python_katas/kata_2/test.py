@@ -305,6 +305,7 @@ class TestMatrixAvg(unittest.TestCase):
             questions.matrix_avg(matrix, rows=[3])
 
 
+
 class TestMergeSortedLists(unittest.TestCase):
     """
     1 Katas
