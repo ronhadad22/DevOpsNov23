@@ -481,7 +481,17 @@ def list_flatten(lst):
     :param lst: list of integers of another list
     :return: flatten list
     """
-    return None
+    flattened_list = []
+    for item in lst:
+        if isinstance(item, list):
+            # Recursively flatten nested list
+            flattened_list.extend(list_flatten(item))
+        elif item != []:
+            flattened_list.append(item)
+    return flattened_list
+
+
+
 
 
 def str_compression(text):
@@ -501,7 +511,20 @@ def str_compression(text):
     :param text: str
     :return: list representing the compressed form of the string
     """
-    return None
+    compressed_text = ""
+    count = 1
+
+
+    for i in range(len(text)):
+
+        if i < len(text) - 1 and text[i] == text[i + 1]:
+            count += 1
+        else:
+            compressed_text += text[i] + str(count)
+            count = 1
+
+    return compressed_text if len(compressed_text) < len(text) else text
+
 
 
 def strong_pass(password):
@@ -517,7 +540,26 @@ def strong_pass(password):
 
     This function returns True if the given password is strong enough
     """
-    return None
+    import re
+
+    patterns = [
+        r'[a-z]',  # Lowercase letters
+        r'[A-Z]',  # Uppercase letters
+        r'[0-9]',  # Digits
+        r'[^a-zA-Z0-9]'  # Special characters
+        ]
+
+        # Check if the password satisfies each pattern
+    for pattern in patterns:
+        if not re.search(pattern, password):
+            return False
+
+        # Check if the password length is at least 8 characters
+    if len(password) < 8:
+        return False
+
+    return True
+
 
 
 if __name__ == '__main__':
@@ -605,12 +647,13 @@ if __name__ == '__main__':
     print(pascal_triangle(6))
     print(pascal_triangle(7))
     print(pascal_triangle(11))
-    #
+
     print('\nlist_flatten:\n--------------------')
     print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))
-    #
-    # print('\nstr_compression:\n--------------------')
-    # print(str_compression('aaaabdddddhgf'))
-    #
-    # print('\nstrong_pass:\n--------------------')
-    # print(strong_pass('##$FgC7^^5a'))
+
+    print('\nstr_compression:\n--------------------')
+    print(str_compression('aaaabdddddhgf'))
+    print(str_compression('abbccddddeeeeeffffff'))
+
+    print('\nstrong_pass:\n--------------------')
+    print(strong_pass('##$FgC7^^5a'))
