@@ -364,10 +364,25 @@ def rotate_matrix(mat):
     :param mat:
     :return: list of lists - rotate matrix
     """
+    if not mat:  # Check if matrix is empty
+        return []
+
+    n = len(mat)
+    m = len(mat[0])
+
+    # Transpose and reverse for clockwise rotation
     transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
     rotated_mat = [row[::-1] for row in transposed_mat]
 
     return rotated_mat
+
+
+    # transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
+    # rotated_mat = [row[::-1] for row in transposed_mat]
+    #
+    # return rotated_mat
+
+
     # transposed_mat = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[1]))]
     # rotated_mat = [row[::1] for row in transposed_mat]
     #
@@ -454,17 +469,52 @@ def pascal_triangle(lines):
     :param lines: int
     :return: None
     """
-    triangle = []
-    for i in range(lines):
-        row = [1]
-        if i > 0:
-            prev_row = triangle[i - 1]
-            for j in range(1, i):
-                row.append(prev_row[j - 1] + prev_row[j])
-            row.append(1)
-        triangle.append(row)
-    return triangle
+    # for i in range(lines):
+    #
+    #     row = []
+    #
+    #     row.append(1)
+    #
+    #     for j in range(1, i):
+    #         row.append(int((row[j - 1] * (i - j + 1)) // j))
+    #
+    #     if i > 0:
+    #         row.extend(row[:-1][::-1])
+    #
+    #     print(" " * (lines - i - 1), end="")
+    #     print(*row)
 
+    if not lines:  # Check if lines is empty (no rows to print)
+        return
+
+        # Iterate through each line (row)
+    for i in range(lines):
+        # Create an empty list to store the current row elements
+        row = []
+
+        # First and last element in each row are always 1
+        row.append(1)
+
+        # Calculate elements in the middle using nCr formula (efficient for larger triangles)
+        for j in range(i + 1):  # Loop from 0 to i (inclusive)
+            if j == 0 or j == i:
+                row.append(1)
+            else:
+                row.append(int((row[j - 1] * (i - j + 1)) // j))
+
+            # Check Pascal's Identity for the current element
+            if i < 1 and j < 0:
+                pascal_identity = row[j - 1] + row[j]
+                if row[j] != pascal_identity:
+                    print(
+                        f"Error: Pascal's Identity not satisfied at row {i}, column {j + 1} ({row[j]} != {pascal_identity})")
+
+        # If there are more than 1 element, append the mirrored right side (symmetrical triangle)
+        if i > 1:
+            row.extend(row[:-1][::-1])
+        # Print the current row with spacing for better visualization (optional)
+        print(" " * (lines - i - 1), end="")  # Adjust spacing for triangle shape (optional)
+        print(*row)  # Print each element in the row with spacing
 
 
 def list_flatten(lst):
@@ -511,19 +561,24 @@ def str_compression(text):
     :param text: str
     :return: list representing the compressed form of the string
     """
-    compressed_text = ""
-    count = 1
-
-
-    for i in range(len(text)):
-
-        if i < len(text) - 1 and text[i] == text[i + 1]:
+    compressed = []
+    current_char = None
+    count = 0
+    for char in text:
+        if char == current_char:
             count += 1
         else:
-            compressed_text += text[i] + str(count)
+            if current_char is not None:
+                compressed.append(current_char)
+                if count > 1:
+                    compressed.append(count)
+            current_char = char
             count = 1
-
-    return compressed_text if len(compressed_text) < len(text) else text
+    if current_char is not None:
+        compressed.append(current_char)
+        if count > 1:
+            compressed.append(count)
+    return compressed
 
 
 
@@ -540,26 +595,18 @@ def strong_pass(password):
 
     This function returns True if the given password is strong enough
     """
-    import re
-
-    patterns = [
-        r'[a-z]',  # Lowercase letters
-        r'[A-Z]',  # Uppercase letters
-        r'[0-9]',  # Digits
-        r'[^a-zA-Z0-9]'  # Special characters
-        ]
-
-        # Check if the password satisfies each pattern
-    for pattern in patterns:
-        if not re.search(pattern, password):
-            return False
-
-        # Check if the password length is at least 8 characters
-    if len(password) < 8:
+    import string
+    if len(password) < 6:
         return False
 
-    return True
+        # Character type checks using sets
+    has_digit = any(char in string.digits for char in password)
+    has_lowercase = any(char in string.ascii_lowercase for char in password)
+    has_uppercase = any(char in string.ascii_uppercase for char in password)
+    has_special = any(char in string.punctuation for char in password)
 
+    # Check if all criteria are met
+    return has_digit and has_lowercase and has_uppercase and has_special
 
 
 if __name__ == '__main__':
@@ -653,7 +700,8 @@ if __name__ == '__main__':
 
     print('\nstr_compression:\n--------------------')
     print(str_compression('aaaabdddddhgf'))
-    print(str_compression('abbccddddeeeeeffffff'))
+    print(str_compression('abbccddddtVeeeeesffffff'))
 
     print('\nstrong_pass:\n--------------------')
     print(strong_pass('##$FgC7^^5a'))
+    print(strong_pass('Aa!2bcD'))
