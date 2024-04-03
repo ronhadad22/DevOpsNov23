@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="tests for katas2">
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-04-03.tar.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/backup_files_to_backup_2024-03-31.tar.gz" beforeDir="false" />
+    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="katas2 work">
       <change beforePath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-03-31.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711903222988</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="katas2 work">
+      <option name="closed" value="true" />
+      <created>1712156320961</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712156320961</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,7 +281,8 @@
     <MESSAGE value="add 03 and 04" />
     <MESSAGE value="add katas 1" />
     <MESSAGE value="tests for katas2" />
-    <option name="LAST_COMMIT_MESSAGE" value="tests for katas2" />
+    <MESSAGE value="katas2 work" />
+    <option name="LAST_COMMIT_MESSAGE" value="katas2 work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
