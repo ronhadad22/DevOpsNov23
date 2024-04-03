@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add katas 1">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-04-03.tar.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/python_kat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_kat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_katas/kata_2/mnist-predictor.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/mnist-predictor.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_katas/kata_2/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_katas/kata_2/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/test.py" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/python_katas/kata_3/67203.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_katas/kata_3/questions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_katas/kata_3/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_katas/kata_3/utils.py" afterDir="false" />
+>>>>>>> 674cd1b7eee67f121d1f4a3763311462192c2d82
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="python_katas1/denisb" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +80,11 @@
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;git-widget-placeholder&quot;: &quot;python__katas2/beny&quot;,
+=======
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+>>>>>>> 674cd1b7eee67f121d1f4a3763311462192c2d82
     &quot;last_opened_file_path&quot;: &quot;/Users/ronh/PycharmProjects/DevOpsNov23/python_katas&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
@@ -155,6 +166,13 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.questions" />
+      <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
+      <item itemvalue="Python tests.Python tests in test.py (1)" />
+      <item itemvalue="Python tests.Python tests in test.py" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for test.TestFilesBackup.test_correct_backup_file_name" />
@@ -217,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709327347649</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add katas 1">
+      <option name="closed" value="true" />
+      <created>1711904312564</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711904312564</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,9 +269,24 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/python_katas/kata_1/questions.py</url>
+<<<<<<< HEAD
           <line>296</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+=======
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_katas/kata_1/questions.py</url>
+          <line>213</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python_katas/kata_1/questions.py</url>
+          <line>170</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+>>>>>>> 674cd1b7eee67f121d1f4a3763311462192c2d82
       </breakpoints>
     </breakpoint-manager>
   </component>
