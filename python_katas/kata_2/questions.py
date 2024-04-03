@@ -390,15 +390,19 @@ def pascal_triangle(lines):
     :param lines: int - number of lines to print
     :return: None
     """
-    triangle = []
+    def calculate_coefficient(n, k):
+        """Calculate binomial coefficient C(n, k)"""
+        if k == 0 or k == n:
+            return 1
+        return calculate_coefficient(n-1, k-1) + calculate_coefficient(n-1, k)
+
     for i in range(lines):
-        row = [1]
-        if i > 0:
-            for j in range(1, i):
-                row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
-            row.append(1)
-        triangle.append(row)
-    return triangle
+        # Print leading spaces
+        print(" " * (lines - i - 1), end="")
+        for j in range(i + 1):
+            # Print coefficients with spaces in between
+            print(calculate_coefficient(i, j), end=" ")
+        print()
 
 def list_flatten(lst):
     """
