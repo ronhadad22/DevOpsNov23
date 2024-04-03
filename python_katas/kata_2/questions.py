@@ -434,52 +434,23 @@ def pascal_triangle(lines):
     :param lines: int
     :return: None
     """
-    # for i in range(lines):
-    #
-    #     row = []
-    #
-    #     row.append(1)
-    #
-    #     for j in range(1, i):
-    #         row.append(int((row[j - 1] * (i - j + 1)) // j))
-    #
-    #     if i > 0:
-    #         row.extend(row[:-1][::-1])
-    #
-    #     print(" " * (lines - i - 1), end="")
-    #     print(*row)
-
-    if not lines:  # Check if lines is empty (no rows to print)
+    if lines <= 0:
+        print([])
         return
 
-        # Iterate through each line (row)
+    triangle = []
     for i in range(lines):
-        # Create an empty list to store the current row elements
-        row = []
+        row = [1]
+        if i > 0:
+            prev_row = triangle[i - 1]
+            for j in range(1, i):
+                row.append(prev_row[j - 1] + prev_row[j])
+            row.append(1)
+        triangle.append(row)
+    for row in triangle:
+        print(" ".join(map(str, row)))
 
-        # First and last element in each row are always 1
-        row.append(1)
 
-        # Calculate elements in the middle using nCr formula (efficient for larger triangles)
-        for j in range(i + 1):  # Loop from 0 to i (inclusive)
-            if j == 0 or j == i:
-                row.append(1)
-            else:
-                row.append(int((row[j - 1] * (i - j + 1)) // j))
-
-            # Check Pascal's Identity for the current element
-            if i < 1 and j < 0:
-                pascal_identity = row[j - 1] + row[j]
-                if row[j] != pascal_identity:
-                    print(
-                        f"Error: Pascal's Identity not satisfied at row {i}, column {j + 1} ({row[j]} != {pascal_identity})")
-
-        # If there are more than 1 element, append the mirrored right side (symmetrical triangle)
-        if i > 1:
-            row.extend(row[:-1][::-1])
-        # Print the current row with spacing for better visualization (optional)
-        print(" " * (lines - i - 1), end="")  # Adjust spacing for triangle shape (optional)
-        print(*row)  # Print each element in the row with spacing
 
 
 def list_flatten(lst):

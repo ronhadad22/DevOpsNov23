@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-04-01.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-04-02.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-04-02.tar.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_katas/kata_2/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +139,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1712077108885</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎-00008" summary="my_solution_kata2_osher">
+      <option name="closed" value="true" />
+      <created>1712084224037</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1712084224037</updated>
+    </task>
+    <task id="LOCAL‎-00009" summary="my_solution_kata2_osher">
+      <option name="closed" value="true" />
+      <created>1712085569301</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1712085569302</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +176,7 @@
     <MESSAGE value="my solotion" />
     <MESSAGE value="add tast" />
     <MESSAGE value="add test update" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test update" />
+    <MESSAGE value="my_solution_kata2_osher" />
+    <option name="LAST_COMMIT_MESSAGE" value="my_solution_kata2_osher" />
   </component>
 </project>
