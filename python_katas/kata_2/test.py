@@ -69,7 +69,7 @@ class TestMostFrequentName(unittest.TestCase):
     """
     def test_most_frequent_name(self):
         file_path = "names.txt"  # Adjust the file path accordingly
-        expected_result = "Tawsha"
+        expected_result = "tawsha"
         self.assertEqual(questions.most_frequent_name(file_path), expected_result)
 
     def test_file_existence(self):

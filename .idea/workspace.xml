@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add katas 1">
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-04-03.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/python_kat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_kat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/mnist-predictor.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/mnist-predictor.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/test.py" afterDir="false" />
+=======
       <change afterPath="$PROJECT_DIR$/python_katas/kata_3/67203.jpeg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/python_katas/kata_3/questions.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/python_katas/kata_3/test.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/python_katas/kata_3/utils.py" afterDir="false" />
+>>>>>>> 674cd1b7eee67f121d1f4a3763311462192c2d82
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +80,11 @@
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
+    &quot;git-widget-placeholder&quot;: &quot;python__katas2/beny&quot;,
+=======
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+>>>>>>> 674cd1b7eee67f121d1f4a3763311462192c2d82
     &quot;last_opened_file_path&quot;: &quot;/Users/ronh/PycharmProjects/DevOpsNov23/python_katas&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
@@ -82,56 +95,37 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test.py (1)">
-    <configuration name="questions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DevOpsNov23" />
-      <option name="ENV_FILES" value="" />
+  <component name="RunManager">
+    <configuration name="Python tests for test.TestFilesBackup.test_backup_file_validity" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="python_kat" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_1" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_2" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_katas/kata_1/questions.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.TestFilesBackup.test_backup_file_validity&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DevOpsNov23" />
-      <option name="ENV_FILES" value="" />
+    <configuration name="Python tests for test.TestFilesBackup.test_correct_backup_file_name" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="python_kat" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_1" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_2" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_katas/kata_1/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.TestFilesBackup.test_correct_backup_file_name&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests for test.TestWordsConcatenation.test_empty_list" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="DevOpsNov23" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -146,7 +140,6 @@
     </configuration>
     <configuration name="Python tests in test.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="DevOpsNov23" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -161,7 +154,6 @@
     </configuration>
     <configuration name="Python tests in test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="DevOpsNov23" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
@@ -183,11 +175,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test.TestFilesBackup.test_correct_backup_file_name" />
+        <item itemvalue="Python tests.Python tests for test.TestFilesBackup.test_backup_file_validity" />
         <item itemvalue="Python tests.Python tests in test.py (1)" />
         <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
         <item itemvalue="Python tests.Python tests in test.py" />
-        <item itemvalue="Python.questions" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -277,6 +269,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/python_katas/kata_1/questions.py</url>
+<<<<<<< HEAD
+          <line>296</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+=======
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -289,6 +286,7 @@
           <line>170</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+>>>>>>> 674cd1b7eee67f121d1f4a3763311462192c2d82
       </breakpoints>
     </breakpoint-manager>
   </component>
