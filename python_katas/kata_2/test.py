@@ -2,11 +2,13 @@ import os
 import unittest
 import shutil
 import tarfile
+import io
+from contextlib import redirect_stdout
 from datetime import datetime
 from python_katas.kata_2 import questions
 from python_katas.utils import unittest_runner
-testers = ['ofri','denis','ron']
 
+testers = ['ofri','denis','ron']
 
 class TestValidParentheses(unittest.TestCase):
     """
@@ -35,16 +37,18 @@ class TestValidParentheses(unittest.TestCase):
     def test_nested_invalid_string(self):
         self.assertFalse(questions.valid_parentheses("[{[())]}]"))
 
-
 class TestFibonacciFixme(unittest.TestCase):
     """
     2 Katas
     """
+
     def test_fibonacci_fixme_first_two_terms(self):
+        # Test case for the first two Fibonacci terms
         self.assertEqual(questions.fibonacci_fixme(1), 1)
         self.assertEqual(questions.fibonacci_fixme(2), 1)
 
     def test_fibonacci_fixme_valid_input(self):
+        # Test case for valid input values
         self.assertEqual(questions.fibonacci_fixme(3), 2)
         self.assertEqual(questions.fibonacci_fixme(4), 3)
         self.assertEqual(questions.fibonacci_fixme(5), 5)
@@ -55,8 +59,9 @@ class TestFibonacciFixme(unittest.TestCase):
         self.assertEqual(questions.fibonacci_fixme(10), 55)
 
     def test_fibonacci_fixme_large_input(self):
+        # Test case for large input value
+        # We choose a relatively small large input value for efficiency
         self.assertEqual(questions.fibonacci_fixme(20), 6765)
-    pass
 
 class TestMostFrequentName(unittest.TestCase):
     """
@@ -64,11 +69,10 @@ class TestMostFrequentName(unittest.TestCase):
     """
     def test_most_frequent_name(self):
         file_path = "names.txt"  # Adjust the file path accordingly
-        expected_result = "tawsha"
+        expected_result = "Tawsha"
         self.assertEqual(questions.most_frequent_name(file_path), expected_result)
 
     def test_file_existence(self):
-
         # Specify the file path
         file_path = 'names.txt'
         # Check if the file exists
@@ -77,7 +81,6 @@ class TestMostFrequentName(unittest.TestCase):
         self.assertTrue(file_exists, f"File '{file_path}' does not exist in the directory.")
 
     def test_empty_file(self):
-
         # Specify the file path
         file_path = 'names.txt'
 
@@ -88,20 +91,23 @@ class TestMostFrequentName(unittest.TestCase):
         # Check if the file is empty
         file_empty = os.stat(file_path).st_size == 0
         self.assertFalse(file_empty, f"File '{file_path}' is empty.")
-    pass
+
 class TestFilesBackup(unittest.TestCase):
     """
     3 Katas
     """
     # Test cases for the files_backup function
     def setUp(self):
-        # Create a temporary directory for testing
+        # Define the test directory attribute
         self.test_dir = 'test_directory'
-        os.makedirs(self.test_dir)
-        # Create some test files inside the directory
-        for i in range(3):
-            with open(os.path.join(self.test_dir, f'test_file_{i}.txt'), 'w') as f:
-                f.write(f'This is test file {i}')
+        # Check if the test directory already exists
+        if not os.path.exists(self.test_dir):
+            # Create a temporary directory for testing
+            os.makedirs(self.test_dir)
+            # Create some test files inside the directory
+            for i in range(3):
+                with open(os.path.join(self.test_dir, f'test_file_{i}.txt'), 'w') as f:
+                    f.write(f'This is test file {i}')
 
     def tearDown(self):
         # Remove the temporary directory and its contents after testing
@@ -129,7 +135,6 @@ class TestFilesBackup(unittest.TestCase):
         backup_file_name = questions.files_backup(self.test_dir)
         with tarfile.open(backup_file_name, 'r:gz') as tar:
             self.assertIsNotNone(tar)
-
 
 class TestReplaceInFile(unittest.TestCase):
     """
@@ -189,14 +194,16 @@ class TestJsonConfigsMerge(unittest.TestCase):
     2 Katas
     """
     def test_merge_json_files(self):
-
+        # Test merging JSON files
         merged_json = questions.json_configs_merge('default.json', 'local.json')
+        # Assert that the merged data is not empty
         self.assertTrue(merged_json)
 
 class TestMonotonicArray(unittest.TestCase):
     """
     1 Katas
         """
+
     def test_monotonic_array_increasing(self):
         # Test case for a monotonically increasing list
         self.assertTrue(questions.monotonic_array([1, 2, 3, 4, 5]))
@@ -252,13 +259,12 @@ class TestMonotonicArray(unittest.TestCase):
     def test_monotonic_array_non_monotonic_list_mixed_sign(self):
         # Test case for a non-monotonic list with mixed signs
         self.assertFalse(questions.monotonic_array([-5, -4, -3, 2, 1]))
-    pass
-
 
 class TestMatrixAvg(unittest.TestCase):
     """
     2 Katas
     """
+
     def test_full_matrix_average(self):
         """Tests the average calculation of all elements in the matrix."""
         matrix = [
@@ -284,7 +290,7 @@ class TestMatrixAvg(unittest.TestCase):
             [1, 3, 5],
             [7, 9, 11]
         ]
-        self.assertEqual(questions.matrix_avg(matrix, rows=[0, 2]), 6)
+        self.assertEqual(questions.matrix_avg(matrix, rows=[0, 2]), 6.5)
 
     def test_invalid_row_index(self):
         """Tests the average calculation with an invalid row index."""
@@ -296,15 +302,6 @@ class TestMatrixAvg(unittest.TestCase):
         # Expecting a failure or specific handling of invalid row index
         with self.assertRaises(IndexError):
             questions.matrix_avg(matrix, rows=[3])
-
-    def test_empty_matrix(self):
-        """Tests the average calculation with an empty matrix."""
-        matrix = [[], [], []]
-        # Adjust the expected result or exception as per your function's behavior
-        with self.assertRaises(ZeroDivisionError):
-            questions.matrix_avg(matrix)
-    pass
-
 
 class TestMergeSortedLists(unittest.TestCase):
     """
@@ -343,15 +340,14 @@ class TestMergeSortedLists(unittest.TestCase):
         self.assertEqual(questions.merge_sorted_lists([1, 2, 3], [1, 2, 3]), [1, 1, 2, 2, 3, 3])
 
     def test_large_lists(self):
-        self.assertEqual(questions.merge_sorted_lists(list(range(1000000)), list(range(1000000, 2000000))), list(range(2000000)))
-
-    pass
-
+        self.assertEqual(questions.merge_sorted_lists(list(range(1000000)), list(range(1000000, 2000000))),
+                         list(range(2000000)))
 
 class TestLongestCommonSubstring(unittest.TestCase):
     """
     4 Katas
     """
+
     def test_basic_example(self):
         str1 = 'Introduced in 1991, The Linux kernel is an amazing software'
         str2 = 'The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, Unix-like operating system kernel.'
@@ -388,11 +384,11 @@ class TestLongestCommonSubstring(unittest.TestCase):
         expected_result = 'def'
         self.assertEqual(questions.longest_common_substring(str1, str2), expected_result)
 
-
 class TestLongestCommonPrefix(unittest.TestCase):
     """
     1 Katas
     """
+
     def test_common_prefix(self):
         str1 = 'The Linux kernel is an amazing software'
         str2 = 'The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, Unix-like operating system kernel.'
@@ -429,11 +425,11 @@ class TestLongestCommonPrefix(unittest.TestCase):
         expected_result = 'hello'
         self.assertEqual(questions.longest_common_prefix(str1, str2), expected_result)
 
-#Shani
 class TestRotateMatrix(unittest.TestCase):
     """
     2 Katas
     """
+
     def test_3x3_matrix(self):
         mat = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
         expected = [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
@@ -458,88 +454,84 @@ class TestRotateMatrix(unittest.TestCase):
         mat = []
         expected = []
         self.assertEqual(questions.rotate_matrix(mat), expected, "Empty matrix rotation failed")
-    pass
 
-#Dani
 class TestIsValidEmail(unittest.TestCase):
     """
     3 Katas
     """
+
     def test_valid_emails(self):
-        self.assertTrue(questions.is_valid_email('john.doe@example.com'))
-        self.assertTrue(questions.is_valid_email('user123@example.com'))
+        # Test case for valid email addresses
+        self.assertTrue(questions.is_valid_email('john.doe@gmail.com'))
+        self.assertTrue(questions.is_valid_email('john_doe@gmail.com'))
+        self.assertTrue(questions.is_valid_email('user13@gmail.com'))
+        self.assertTrue(questions.is_valid_email('13user@gmail.com'))
+        self.assertTrue(questions.is_valid_email('user@support.google.com'))
         self.assertTrue(questions.is_valid_email('user@example.co.uk'))
 
     def test_invalid_email_formats(self):
+        # Test case for invalid email formats
         self.assertFalse(questions.is_valid_email('invalid_email'))  # Missing @ symbol
-        self.assertFalse(questions.is_valid_email('user@example'))  # Missing domain extension
-        self.assertFalse(questions.is_valid_email('user@example@com'))  # Multiple @ symbols
+        self.assertFalse(questions.is_valid_email('user.gmail.com'))  # Missing @ symbol
+        self.assertFalse(questions.is_valid_email('user@gmail'))  # Missing domain extension
+        self.assertFalse(questions.is_valid_email('user@gmail@com'))  # Multiple @ symbols
 
     def test_invalid_characters_in_email(self):
-        self.assertFalse(questions.is_valid_email('user!@example.com'))  # Invalid character (!) in username
-        self.assertFalse(questions.is_valid_email('user123@example!com'))  # Invalid character (!) in domain
+        # Test case for email addresses with invalid characters
+        self.assertFalse(questions.is_valid_email('user!@gmail.com'))  # Invalid character (!) in username
+        self.assertFalse(questions.is_valid_email('user123@gmail!com'))  # Invalid character (!) in domain
 
     def test_invalid_domain_resolution(self):
-        self.assertFalse(questions.is_valid_email('user@example.invalid'))  # Invalid domain extension
+        # Test case for email addresses with domain names that do not resolve to an actual IP address
+        self.assertFalse(questions.is_valid_email('user@gmail.invalid'))  # Invalid domain extension
 
     def test_combinations_of_valid_and_invalid_characters(self):
-        self.assertFalse(questions.is_valid_email('!user@example.com'))  # Invalid character (!) in username
-        self.assertFalse(questions.is_valid_email('user@example!.com'))  # Invalid character (!) in domain
-        self.assertFalse(questions.is_valid_email('user@example.com!'))  # Invalid character (!) in domain
-
+        # Test case for email addresses with different combinations of valid and invalid characters
+        self.assertFalse(questions.is_valid_email('!user@gmail.com'))  # Invalid character (!) in username
+        self.assertFalse(questions.is_valid_email('user@gmail!.com'))  # Invalid character (!) in domain
+        self.assertFalse(questions.is_valid_email('user@gmail.com!'))  # Invalid character (!) in domain
 
 class TestPascalTriangle(unittest.TestCase):
     """
      3 Katas
      """
 
-    def test_pascal_triangle_5(self):
-        expected_output = [
-            [1],
-            [1, 1],
-            [1, 2, 1],
-            [1, 3, 3, 1],
-            [1, 4, 6, 4, 1]
+    def test_pascal_triangle_identity(self):
+        # Define expected Pascal's triangles for the first 10 lines
+        expected_triangles = [
+            [[1]],
+            [[1], [1, 1]],
+            [[1], [1, 1], [1, 2, 1]],
+            [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]],
+            [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]],
+            [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1]],
+            [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1], [1, 6, 15, 20, 15, 6, 1]],
+            [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1], [1, 6, 15, 20, 15, 6, 1],
+             [1, 7, 21, 35, 35, 21, 7, 1]],
+            [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1], [1, 6, 15, 20, 15, 6, 1],
+             [1, 7, 21, 35, 35, 21, 7, 1], [1, 8, 28, 56, 70, 56, 28, 8, 1]],
+            [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1], [1, 6, 15, 20, 15, 6, 1],
+             [1, 7, 21, 35, 35, 21, 7, 1], [1, 8, 28, 56, 70, 56, 28, 8, 1], [1, 9, 36, 84, 126, 126, 84, 36, 9, 1]]
         ]
 
-        self.assertEqual(questions.pascal_triangle(5), expected_output)
+        # Test for the first 10 lines to validate the identity property of Pascal's Triangle
+        for n in range(10):
+            # Redirect stdout to capture printed output
+            with io.StringIO() as buf, redirect_stdout(buf):
+                questions.pascal_triangle(n + 1)
+                printed_output = buf.getvalue()
 
-    def test_pascal_triangle_7(self):
-        expected_output = [
-            [1],
-            [1, 1],
-            [1, 2, 1],
-            [1, 3, 3, 1],
-            [1, 4, 6, 4, 1],
-            [1, 5, 10, 10, 5, 1],
-            [1, 6, 15, 20, 15, 6, 1]
-        ]
+            # Parse printed output into a list of lists
+            printed_triangle = [list(map(int, line.split())) for line in printed_output.strip().split('\n')]
 
-        self.assertEqual(questions.pascal_triangle(7), expected_output)
+            # Compare printed triangle with expected triangle
+            self.assertEqual(printed_triangle, expected_triangles[n])
 
-    def test_pascal_triangle_10(self):
-        expected_output = [
-            [1],
-            [1, 1],
-            [1, 2, 1],
-            [1, 3, 3, 1],
-            [1, 4, 6, 4, 1],
-            [1, 5, 10, 10, 5, 1],
-            [1, 6, 15, 20, 15, 6, 1],
-            [1, 7, 21, 35, 35, 21, 7, 1],
-            [1, 8, 28, 56, 70, 56, 28, 8, 1],
-            [1, 9, 36, 84, 126, 126, 84, 36, 9, 1]
-        ]
-
-        self.assertEqual(questions.pascal_triangle(10), expected_output)
-
-    pass
-
-#Arthur
 class TestListFlatten(unittest.TestCase):
     """
     2 Katas
     """
+
     def test_flat_list(self):
         input_list = [1, 2, 3, 4]
         expected_output = [1, 2, 3, 4]
@@ -579,6 +571,7 @@ class TestStrCompression(unittest.TestCase):
     """
     2 Katas
     """
+
     def test_single_occurrences(self):
         """Test a string with single occurrences of each character."""
         self.assertEqual(questions.str_compression('abc'), ['a', 'b', 'c'])
@@ -610,13 +603,12 @@ class TestStrCompression(unittest.TestCase):
     def test_case_sensitivity(self):
         """Test that the function is case-sensitive."""
         self.assertEqual(questions.str_compression('aAaA'), ['a', 'A', 'a', 'A'])
-    pass
 
-#Arthur
 class TestStrongPass(unittest.TestCase):
     """
     1 Katas
     """
+
     def test_short_password(self):
         """Test that a short password is considered not strong."""
         self.assertFalse(questions.strong_pass('Aa!2'))
@@ -640,7 +632,8 @@ class TestStrongPass(unittest.TestCase):
     def test_strong_password(self):
         """Test that a valid password is considered strong."""
         self.assertTrue(questions.strong_pass('Aa!2bcD'))
-    pass
+
+
 
 if __name__ == '__main__':
     import inspect

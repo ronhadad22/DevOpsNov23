@@ -83,7 +83,7 @@ def most_frequent_name(file_path):
     with open(file_path, 'r') as file:
         for line in file:
             # Remove leading/trailing whitespaces and convert name to lowercase
-            name = line.strip().lower()
+            name = line.strip()
             # Increment count for the name in the dictionary
             name_counts[name] = name_counts.get(name, 0) + 1
 
@@ -241,7 +241,7 @@ def matrix_avg(mat, rows=None):
 
     # Calculate the average and return as an integer
     avg = total / count
-    return int(avg)
+    return avg
 
 
 def merge_sorted_lists(l1, l2):
@@ -468,10 +468,7 @@ def pascal_triangle(lines):
 
     # Print the Pascal's triangle
     for row in triangle:
-        print(' '.join(map(str, row)).center(lines * 6))
-
-    return triangle
-
+        print(' '.join(map(str, row)).center(lines * 3))
 
 # Helper function to calculate factorial
 def factorial(n):
@@ -631,7 +628,7 @@ if __name__ == '__main__':
     print(is_valid_email('israel.israeli@gmail.com'))
 
     print('\npascal_triangle:\n--------------------')
-    pascal_triangle(4)
+    pascal_triangle(10)
 
     print('\nlist_flatten:\n--------------------')
     print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))

@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add katas 1">
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/default.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/files_to_backup/a.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/files_to_backup/b.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/local.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/mnist-predictor.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/names.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DevOpsNov23.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DevOpsNov23.iml" afterDir="false" />
+    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="tests for katas2">
+      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-04-03.tar.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_katas/kata_1/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_1/questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/backup_files_to_backup_2024-03-31.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/backup_test_directory_2024-03-31.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,28 +63,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python tests.Python tests for test.TestWordsConcatenation.test_empty_list.executor": "Run",
-    "Python tests.Python tests in test.py (1).executor": "Run",
-    "Python tests.Python tests in test.py.executor": "Run",
-    "Python.questions.executor": "Debug",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ronh/PycharmProjects/DevOpsNov23/python_katas",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test.TestFibonacciFixme.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestMostFrequentName.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestReplaceInFile.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestValidParentheses.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestWordsConcatenation.test_empty_list.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test.py (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.test_katas2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.questions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.questions_katas2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;python__katas2/ronnirz4&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ronh/PycharmProjects/DevOpsNov23/python_katas&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/python_katas" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test.py (1)">
+  <component name="RunManager" selected="Python.questions">
     <configuration name="questions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DevOpsNov23" />
       <option name="ENV_FILES" value="" />
@@ -99,12 +100,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_1" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_2" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_katas/kata_1/questions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_katas/kata_2/questions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,45 +113,52 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DevOpsNov23" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_1" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_katas/kata_1/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test.TestWordsConcatenation.test_empty_list" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test.TestFibonacciFixme" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="DevOpsNov23" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestWordsConcatenation.test_empty_list&quot;" />
+      <option name="_new_target" value="&quot;test.TestFibonacciFixme&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test.py (1)" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test.TestMostFrequentName" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="DevOpsNov23" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.TestMostFrequentName&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test.TestReplaceInFile" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="DevOpsNov23" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.TestReplaceInFile&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_katas2" type="tests" factoryName="Autodetect" temporary="true">
       <module name="DevOpsNov23" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -166,35 +173,27 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="DevOpsNov23" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_1" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/python_katas/kata_1/test.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Python.questions" />
+      <item itemvalue="Python tests.Python tests for test.TestFibonacciFixme" />
+      <item itemvalue="Python tests.Python tests for test.TestMostFrequentName" />
+      <item itemvalue="Python tests.Python tests for test.TestReplaceInFile" />
+      <item itemvalue="Python tests.test_katas2" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in test.py (1)" />
-        <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
-        <item itemvalue="Python tests.Python tests in test.py" />
         <item itemvalue="Python.questions" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python tests.test_katas2" />
+        <item itemvalue="Python tests.Python tests for test.TestReplaceInFile" />
+        <item itemvalue="Python tests.Python tests for test.TestMostFrequentName" />
+        <item itemvalue="Python tests.Python tests for test.TestFibonacciFixme" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
       </set>
     </attachedChunks>
   </component>
@@ -243,7 +242,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709327347649</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="tests for katas2">
+      <option name="closed" value="true" />
+      <created>1711903204463</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711903204464</updated>
+    </task>
+    <task id="LOCAL-00007" summary="tests for katas2">
+      <option name="closed" value="true" />
+      <created>1711903222988</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711903222988</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -262,7 +277,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="add 03 and 04" />
     <MESSAGE value="add katas 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="add katas 1" />
+    <MESSAGE value="tests for katas2" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests for katas2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
