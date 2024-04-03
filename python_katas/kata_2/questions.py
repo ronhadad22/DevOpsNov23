@@ -1,3 +1,11 @@
+import os
+import tarfile
+from datetime import datetime
+import socket
+import json
+import re
+
+
 def valid_parentheses(s):
     """
     3 Kata
@@ -13,7 +21,20 @@ def valid_parentheses(s):
     s = '[[{()}](){}]'  -> True
     s = ']}'          -> False
     """
-    pass
+    # opensb is keeping open brackets , used ones means it have closure is pop out so if opensb is have value in end it fasle
+    opensb = []
+    dict = {')':'(','}':'{',']':'['}
+
+    for ch in s :
+        if ch in dict.values():
+            opensb.append(ch)
+        elif ch in dict.keys():
+            if not opensb or dict[ch] != opensb.pop():
+                return False
+        continue
+
+    return not opensb
+
 
 
 def fibonacci_fixme(n):
@@ -34,7 +55,21 @@ def fibonacci_fixme(n):
     But it doesn't (it has some bad lines in it...)
     You should (1) correct the for statement and (2) swap two lines, so that the correct fibonacci element will be returned
     """
-    pass
+
+
+    if n <= 0:
+        return 0
+    if n <= 2:
+        return 1
+    las,new = 1,1
+
+    for a in range(3 ,n+1):
+
+        las,new = new,new+las
+
+
+
+    return new
 
 
 def most_frequent_name(file_path):
@@ -49,7 +84,22 @@ def most_frequent_name(file_path):
     :param file_path: str - absolute or relative file to read names from
     :return: str - the mose frequent name. If there are many, return one of them
     """
-    return None
+    bigst = 0
+    most_c_name = ''
+    with open(file_path, 'r') as file:
+        names = {}
+        for line in file:
+            word = line.split()
+            if word:
+                first = word[0].lower()
+                names[first] = names.get(first, 0) + 1
+
+        for word, count in names.items():
+            if count >= bigst:
+                bigst = count
+                most_c_name = word
+
+    return most_c_name
 
 
 def files_backup(dir_path):
@@ -64,16 +114,32 @@ def files_backup(dir_path):
     Where <dir_name> is the directory name (only the directory, not the full path given in dir_path)
     and <yyyy-mm-dd> is the date e.g. 2022-04-10
 
-    You can assume dir_path exists in the file system
+     You can assume dir_path exists in the file system
 
     :param dir_path: string - path to a directory
     :return: str - the backup file name
     """
-    return None
+
+    if not os.path.isdir(dir_path):
+        print(f"Error: {dir_path} is not a valid directory.")
+        return None
+
+    folder_name = os.path.basename(dir_path)
+    custom_date = datetime(2024, 4, 3)
+    formatted_date = custom_date.strftime("%Y-%m-%d")
+    output_filename = f"backup_{folder_name}_{formatted_date}.tar.gz"
+    output_path = os.path.join(os.getcwd(), output_filename)
+
+    with tarfile.open(output_path, "w:gz") as tar:
+        tar.add(dir_path, arcname=folder_name)
+
+
+    return str(output_filename)
 
 
 
 def replace_in_file(file_path, text, replace_text):
+
     """
     2 Kata
     This function gets a path of text file, it replaces all occurrences of 'text' by 'replace_text'.
@@ -86,10 +152,17 @@ def replace_in_file(file_path, text, replace_text):
     :param replace_text: text to replace with
     :return: None
     """
-    return None
-    
+    if not os.path.exists(file_path):
+        print(f"Error: {file_path} does not exist.")
+    with open(file_path, 'r') as file:
+        file_content = file.read()
+    replaced_content = file_content.replace(text, replace_text)
 
+    with open(file_path, 'w') as file:
+        file.write(replaced_content)
+    return replace_in_file
 def json_configs_merge(*json_paths):
+
     """
     2 Kata
 
@@ -100,7 +173,17 @@ def json_configs_merge(*json_paths):
     :param json_paths:
     :return: dict - the merges json files
     """
-    return None
+
+    merged_dict = {}
+
+    for path in json_paths:
+        if path :
+         with open(path, 'r') as file:
+            config_dict = json.load(file)
+            merged_dict.update(config_dict)
+
+    return merged_dict
+
 
 
 def monotonic_array(lst):
@@ -112,7 +195,12 @@ def monotonic_array(lst):
     :param lst: list of numbers (int, floats)
     :return: bool: indicating for monotonicity
     """
-    return None
+    increasing = all(lst[i] <= lst[i + 1] for i in range(len(lst) - 1))
+
+    decreasing = all(lst[i] >= lst[i + 1] for i in range(len(lst) - 1))
+
+
+    return increasing or decreasing
 
 
 def matrix_avg(mat, rows=None):
@@ -126,7 +214,22 @@ def matrix_avg(mat, rows=None):
     :param rows: list of unique integers in the range [0, 2] and length of maximum 3
     :return: int - the average values
     """
-    return None
+    total_sum = 0
+    count = 0
+
+    if rows is not None:
+        for row in rows:
+            total_sum += sum(mat[row])
+            count += len(mat[row])
+    else:
+        for row in mat:
+            total_sum += sum(row)
+            count += len(row)
+
+    if count == 0:
+        return 0.0
+
+    return total_sum / count
 
 
 def merge_sorted_lists(l1, l2):
@@ -142,7 +245,20 @@ def merge_sorted_lists(l1, l2):
     :param l2: list of integers
     :return: list: sorted list combining l1 and l2
     """
-    return None
+    i , j = 0,0
+    l3=[]
+    while i<len(l1) and j<len(l2):
+        if l1[i]<=l2[j]:
+            l3.append(l1[i])
+            i+=1
+
+        elif l2[j]<l1[i]:
+            l3.append(l2[j])
+            j+=1
+
+    l3.extend(l1[i:])
+    l3.extend(l2[j:])
+    return l3
 
 
 def longest_common_substring(str1, str2):
@@ -162,7 +278,31 @@ def longest_common_substring(str1, str2):
     :param str2: str
     :return: str - the longest common substring
     """
-    return None
+    # Initialize a matrix to store the lengths of longest common substrings
+    m = len(str1)
+    n = len(str2)
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+    # Variables to store the length of longest common substring and its ending position
+    max_length = 0
+    end_position = 0
+
+    # Fill the matrix
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if str1[i - 1] == str2[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+                if dp[i][j] > max_length:
+                    max_length = dp[i][j]
+                    end_position = i
+            else:
+                dp[i][j] = 0
+
+    # Extract the longest common substring
+    start_position = end_position - max_length
+    return str1[start_position:end_position]
+
+
 
 
 def longest_common_prefix(str1, str2):
@@ -181,7 +321,14 @@ def longest_common_prefix(str1, str2):
     :param str2: str
     :return: str - the longest common prefix
     """
-    return None
+    prefix = ""
+
+    for char1, char2 in zip(str1, str2):
+        if char1 != char2:
+            break
+        prefix += char1
+
+    return prefix
 
 
 def rotate_matrix(mat):
@@ -207,6 +354,16 @@ def rotate_matrix(mat):
     :param mat:
     :return: list of lists - rotate matrix
     """
+
+    transposed_mat = list(zip(*mat))
+
+    rotated_mat = [list(row[::-1]) for row in transposed_mat]
+
+    return rotated_mat
+
+
+
+
     return None
 
 
@@ -226,7 +383,20 @@ def is_valid_email(mail_str):
     :param mail_str: mail to check
     :return: bool: True if it's a valid mail (otherwise either False is returned or the program can crash)
     """
-    return None
+
+
+    pattern = r'^[a-zA-Z0-9][a-zA-Z0-9._]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+    if not re.match(pattern, mail_str):
+        return False
+
+    username, domainname = mail_str.split('@')
+
+    try:
+        ip_address = socket.gethostbyname(domainname)
+        return True
+    except socket.gaierror:
+        return False
 
 
 def pascal_triangle(lines):
@@ -262,6 +432,18 @@ def pascal_triangle(lines):
     :param lines: int
     :return: None
     """
+    triangle = [[1]]
+
+    for i in range(1, lines):
+        prev_row = triangle[-1]
+        new_row = [1]
+        for j in range(1, i):
+            new_row.append(prev_row[j - 1] + prev_row[j])
+        new_row.append(1)
+        triangle.append(new_row)
+
+    for row in triangle:
+        print(" ".join(map(str, row)).center(lines * 2 - 1))
     return None
 
 
@@ -279,7 +461,13 @@ def list_flatten(lst):
     :param lst: list of integers of another list
     :return: flatten list
     """
-    return None
+    flattened = []
+    for item in lst:
+        if isinstance(item, list):
+            flattened.extend(list_flatten(item))
+        else:
+            flattened.append(item)
+    return flattened
 
 
 def str_compression(text):
@@ -299,8 +487,28 @@ def str_compression(text):
     :param text: str
     :return: list representing the compressed form of the string
     """
-    return None
+    if not text:
+        return []
 
+    compressed = []
+    current_char = text[0]
+    count = 1
+
+    for i in range(1, len(text)):
+        if text[i] == current_char:
+            count += 1
+        else:
+            compressed.append(current_char)
+            if count > 1:
+                compressed.append(count)
+            current_char = text[i]
+            count = 1
+
+    compressed.append(current_char)
+    if count > 1:
+        compressed.append(count)
+
+    return compressed
 
 def strong_pass(password):
     """
@@ -315,15 +523,33 @@ def strong_pass(password):
 
     This function returns True if the given password is strong enough
     """
-    return None
+    if len(password) < 6:
+        return False
+
+    has_digit = False
+    has_lowercase = False
+    has_uppercase = False
+    has_special = False
+
+    for char in password:
+        if char.isdigit():
+            has_digit = True
+        elif char.islower():
+            has_lowercase = True
+        elif char.isupper():
+            has_uppercase = True
+        elif char in '!@#$%^&*()-+':
+            has_special = True
+
+    return has_digit and has_lowercase and has_uppercase and has_special
 
 
 if __name__ == '__main__':
     print('\nvalid_parentheses:\n--------------------')
-    print(valid_parentheses('[[{()}](){}]'))
+    print(valid_parentheses(''))
 
     print('\nfibonacci_fixme:\n--------------------')
-    print(fibonacci_fixme(6))
+    print(fibonacci_fixme(5))
 
     print('\nmost_frequent_name:\n--------------------')
     print(most_frequent_name('names.txt'))
@@ -338,35 +564,35 @@ if __name__ == '__main__':
     print(json_configs_merge('default.json', 'local.json'))
 
     print('\nmonotonic_array:\n--------------------')
-    print(monotonic_array([1, 2, 3, 6, 8, 9, 0]))
+    print(monotonic_array([-1, -2, -3, -6, -8, -9, -10,0]))
 
     print('\nmatrix_avg:\n--------------------')
     print(matrix_avg([[1, 2, 3], [4, 5, 6], [7, 8, 9]], rows=[0, 2]))
-    print(matrix_avg([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+    print(matrix_avg([[1, 2, 3],[4, 5, 6],[7, 8, 9]]))
 
     print('\nmerge_sorted_lists:\n--------------------')
-    print(merge_sorted_lists([1, 4, 9, 77, 13343], [-7, 0, 7, 23]))
+    print(merge_sorted_lists([1, 4, 9, 77, 13343], [-7, 0, 9, 23]))
 
     print('\nlongest_common_substring:\n--------------------')
-    print(longest_common_substring('abcdefg', 'bgtcdesd'))
+    print(longest_common_substring('abcbeny1defg', 'benybgtcdesdbeny1'))
 
     print('\nlongest_common_prefix:\n--------------------')
-    print(longest_common_prefix('abcd', 'ttty'))
+    print(longest_common_prefix('The Linux kernel is an amazing software', 'The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, Unix-like operating system kernel.'))
 
     print('\nrotate_matrix:\n--------------------')
-    print(rotate_matrix([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]))
+    print(rotate_matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]))
 
     print('\nis_valid_email:\n--------------------')
-    print(is_valid_email('israel.israeli@gmail.com'))
+    print(is_valid_email('beny.sdad@gmail.com'))
 
     print('\npascal_triangle:\n--------------------')
-    print(pascal_triangle(4))
+    print(pascal_triangle(10))
 
     print('\nlist_flatten:\n--------------------')
-    print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))
+    print(list_flatten([1, [], [1, 2, [4, 0, [5], 6], [5, 4], 34, 0], [3]]))
 
     print('\nstr_compression:\n--------------------')
-    print(str_compression('aaaabdddddhgf'))
+    print(str_compression('aaaaabbcaasbbgvccf'))
 
     print('\nstrong_pass:\n--------------------')
-    print(strong_pass('##$FgC7^^5a'))
+    print(strong_pass('aasdadA2@'))
