@@ -6,6 +6,7 @@ import socket
 
 
 def valid_parentheses(s):
+    # done
     """
     3 Kata
 
@@ -43,6 +44,7 @@ def valid_parentheses(s):
 
 
 def fibonacci_fixme(n):
+    # done
     """
     2 Kata
 
@@ -60,7 +62,7 @@ def fibonacci_fixme(n):
     But it doesn't (it has some bad lines in it...)
     You should (1) correct the for statement and (2) swap two lines, so that the correct fibonacci element will be returned
     """
-    if n <= 1:
+    if n <= 2:
         return 1
     return fibonacci_fixme(n - 1) + fibonacci_fixme(n - 2)
 
@@ -81,6 +83,7 @@ def fibonacci_fixme_2(n):
 
 
 def most_frequent_name(file_path):
+    # Done
     """
     2 Kata
 
@@ -121,6 +124,7 @@ def most_frequent_name(file_path):
 
 
 def files_backup(dir_path):
+    # Done
     """
     3 Kata
 
@@ -152,10 +156,12 @@ def files_backup(dir_path):
     file_name_expect = ('backup_' + get_directory_name(dir_path) + '_' +
                         get_current_time_in_format_yyyy_mm_dd(datetime.now()) + '.tar.gz')
 
-    return create_tar_gz(dir_path, file_name_expect)
+    create_tar_gz(dir_path, file_name_expect)
+    return file_name_expect
 
 
 def replace_in_file(file_path, text, replace_text):
+    # Done
     """
     2 Kata
     This function gets a path of text file, it replaces all occurrences of 'text' by 'replace_text'.
@@ -185,6 +191,7 @@ def replace_in_file(file_path, text, replace_text):
 
 
 def json_configs_merge(*json_paths):
+    # Done
     """
     2 Kata
 
@@ -213,6 +220,7 @@ def json_configs_merge(*json_paths):
 
 
 def monotonic_array(lst):
+    # Done
     """
     1 Kata
 
@@ -234,6 +242,7 @@ def monotonic_array(lst):
 
 
 def matrix_avg(mat, rows=None):
+    # Done
     """
     2 Kata
 
@@ -244,10 +253,24 @@ def matrix_avg(mat, rows=None):
     :param rows: list of unique integers in the range [0, 2] and length of maximum 3
     :return: int - the average values
     """
-    return None
+    if rows is None:
+        rows = range(len(mat))
+    sum = 0
+    count = 0
+
+    for row in rows:
+        for col in range(len(mat[row])):
+            sum += mat[row][col]
+            count += 1
+
+    if count == 0:
+        return 0
+
+    return sum / count
 
 
 def merge_sorted_lists(l1, l2):
+    # Done
     """
     1 Kata
 
@@ -276,6 +299,7 @@ def merge_sorted_lists(l1, l2):
 
 
 def longest_common_substring(str1, str2):
+    # Done
     """
     4 Kata
 
@@ -300,6 +324,7 @@ def longest_common_substring(str1, str2):
 
     # dict len:substring
     max_len_to_substr_dic = {'len': 'substring'}
+    max_len_to_substr_dic.update({0: ''})
 
     # select a shortest string among two given strings
     # and go over the shortest string
@@ -323,6 +348,7 @@ def longest_common_substring(str1, str2):
 
 
 def longest_common_prefix(str1, str2):
+    # Done
     """
     1 Kata
 
@@ -343,7 +369,8 @@ def longest_common_prefix(str1, str2):
 
     i = 0
     prefix = ''
-    while i in range(0, len(str1) - 1):
+    str_len = len(str1) if len(str1) < len(str2) else len(str2)
+    while i in range(0, str_len):
         if str1[i] == str2[i]:
             prefix += str1[i]
         i += 1
@@ -374,10 +401,19 @@ def rotate_matrix(mat):
     :param mat:
     :return: list of lists - rotate matrix
     """
-    return None
+    if not mat:
+        return []
+
+    transposed_matrix = [[mat[j][i] for j in range(len(mat))] for i in range(len(mat[0]))]
+
+    # Reverse each row to complete the rotation
+    rotated_matrix = [row[::-1] for row in transposed_matrix]
+
+    return rotated_matrix
 
 
 def is_valid_email(mail_str):
+    # Done
     """
     3 Kata
 
@@ -394,7 +430,7 @@ def is_valid_email(mail_str):
     :return: bool: True if it's a valid mail (otherwise either False is returned or the program can crash)
     """
     # first validation: check that a given mail_str isn't empty and contains @
-    if not mail_str or mail_str.find('@') == -1 :
+    if not mail_str or mail_str.find('@') == -1:
         return False
     # split the string to two parts: before @ and after @
     split_string = mail_str.split('@')
@@ -417,7 +453,7 @@ def is_valid_email(mail_str):
             socket.gethostbyname(hostname)
             return True
         except socket.error as e:
-            return f"Error: {e}"
+            return False
 
     return is_user_name_valid(user_name) and is_domain_name_valid(domain_name)
 
@@ -455,10 +491,30 @@ def pascal_triangle(lines):
     :param lines: int
     :return: None
     """
-    return None
+
+    if not lines:
+        return None
+
+    def generate_pascals_triangle(n):
+        triangle = []
+        for i in range(n):
+            row = [1]
+            if i > 0:
+                for j in range(1, i):
+                    row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+                row.append(1)
+            triangle.append(row)
+        return triangle
+
+    triangle = generate_pascals_triangle(lines)
+    max_width = len(str(triangle[-1][-1]))  # Width of the last element in the triangle
+    for row in triangle:
+        print(" ".join(map(lambda x: str(x).rjust(max_width), row)))
+    return triangle
 
 
 def list_flatten(lst):
+    # Done
     """
     2 Kata
 
@@ -472,10 +528,22 @@ def list_flatten(lst):
     :param lst: list of integers of another list
     :return: flatten list
     """
-    return None
+
+    # recursive function
+    def flatten_list(items_list):
+        lst_to_ret = []
+        for item in items_list:
+            if isinstance(item, list):
+                lst_to_ret.extend(flatten_list(item))
+            else:
+                lst_to_ret.append(item)
+        return lst_to_ret
+
+    return flatten_list(lst)
 
 
 def str_compression(text):
+    # Done
     """
     2 Kata
 
@@ -492,10 +560,42 @@ def str_compression(text):
     :param text: str
     :return: list representing the compressed form of the string
     """
-    return None
+    if not text:
+        return []
+
+    def is_last(ind, string):
+        return ind == len(string) - 1
+
+    def append_to(char, count):
+        result.append(char)
+        if count > 1:
+            result.append(count)
+
+    result = []
+
+    tmp = text[0]
+    cnt = 1
+
+    if is_last(0, text):
+        append_to(tmp, cnt)
+
+    for i in range(1, len(text)):
+        if text[i] == tmp:
+            cnt += 1
+            if is_last(i, text):
+                append_to(tmp, cnt)
+        else:
+            append_to(tmp, cnt)
+            tmp = text[i]
+            cnt = 1
+            if is_last(i, text):
+                append_to(tmp, cnt)
+
+    return result
 
 
 def strong_pass(password):
+    # Done
     """
     1 Kata
 
@@ -508,7 +608,34 @@ def strong_pass(password):
 
     This function returns True if the given password is strong enough
     """
-    return None
+    if not password:
+        return False
+    if len(password) < 6:
+        return False
+
+    has_digit = False
+    has_lower = False
+    has_upper = False
+    has_special = False
+
+    def all_is_true():
+        return has_digit and has_lower and has_upper and has_special
+
+    special_characters = set("!@#$%^&*()-+")
+
+    for char in password:
+        if all_is_true():
+            return True
+        if char.isdigit():
+            has_digit = True
+        elif char.islower():
+            has_lower = True
+        elif char.isupper():
+            has_upper = True
+        elif char in special_characters:
+            has_special = True
+
+    return all_is_true()
 
 
 if __name__ == '__main__':
