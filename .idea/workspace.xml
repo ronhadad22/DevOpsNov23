@@ -175,8 +175,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.questions" />
+      <item itemvalue="Python.test" />
       <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
       <item itemvalue="Python tests.Python tests in test.py (1)" />
       <item itemvalue="Python tests.Python tests in test.py" />
