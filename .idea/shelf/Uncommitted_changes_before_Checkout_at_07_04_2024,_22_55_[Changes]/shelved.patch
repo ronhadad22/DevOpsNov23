@@ -1,0 +1,564 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"763e984f-d73f-4ae0-910c-16bffae71ccc\" name=\"Changes\" comment=\"add katas 1\">\n      <change afterPath=\"$PROJECT_DIR$/python_katas/kata_3/67203.jpeg\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/python_katas/kata_3/questions.py\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/python_katas/kata_3/test.py\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/python_katas/kata_3/utils.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"python_katas1/denisb\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;ronhadad22&quot;\n  }\n}</component>\n  <component name=\"GithubProjectSettings\">\n    <option name=\"branchProtectionPatterns\">\n      <list>\n        <option value=\"main\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"GithubPullRequestsUISettings\">\n    <option name=\"selectedUrlAndAccountId\">\n      <UrlAndAccount>\n        <option name=\"accountId\" value=\"5b59564d-002d-485b-80a4-6d2b8448adfd\" />\n        <option name=\"url\" value=\"https://github.com/ronhadad22/DevOpsNov23.git\" />\n      </UrlAndAccount>\n    </option>\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/02_linux_ex1/yourSolution.sh\" root0=\"FORCE_HIGHLIGHTING\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"2ZzlKawrnoonXrRoucfg7XBVWOX\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\n    &quot;Python tests.Python tests for test.TestWordsConcatenation.test_empty_list.executor&quot;: &quot;Run&quot;,\n    &quot;Python tests.Python tests in test.py (1).executor&quot;: &quot;Run&quot;,\n    &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,\n    &quot;Python.questions.executor&quot;: &quot;Debug&quot;,\n    &quot;Python.test.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/ronh/PycharmProjects/DevOpsNov23/python_katas&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/python_katas\" />\n      <recent name=\"$PROJECT_DIR$\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Python tests.Python tests in test.py (1)\">\n    <configuration name=\"questions\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"DevOpsNov23\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"SDK_NAME\" value=\"Python 3.12 (pythonProject)\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/python_katas/kata_1\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/python_katas/kata_1/questions.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"test\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"DevOpsNov23\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"SDK_NAME\" value=\"Python 3.12 (pythonProject)\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/python_katas/kata_1\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/python_katas/kata_1/test.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"Python tests for test.TestWordsConcatenation.test_empty_list\" type=\"tests\" factoryName=\"Autodetect\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"DevOpsNov23\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/python_katas/kata_1\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"_new_additionalArguments\" value=\"&quot;&quot;\" />\n      <option name=\"_new_target\" value=\"&quot;test.TestWordsConcatenation.test_empty_list&quot;\" />\n      <option name=\"_new_targetType\" value=\"&quot;PYTHON&quot;\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"Python tests in test.py (1)\" type=\"tests\" factoryName=\"Autodetect\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"DevOpsNov23\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/python_katas/kata_2\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"_new_additionalArguments\" value=\"&quot;&quot;\" />\n      <option name=\"_new_target\" value=\"&quot;$PROJECT_DIR$/python_katas/kata_2/test.py&quot;\" />\n      <option name=\"_new_targetType\" value=\"&quot;PATH&quot;\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"Python tests in test.py\" type=\"tests\" factoryName=\"Autodetect\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"DevOpsNov23\" />\n      <option name=\"ENV_FILES\" value=\"\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/python_katas/kata_1\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"_new_additionalArguments\" value=\"&quot;&quot;\" />\n      <option name=\"_new_target\" value=\"&quot;$PROJECT_DIR$/python_katas/kata_1/test.py&quot;\" />\n      <option name=\"_new_targetType\" value=\"&quot;PATH&quot;\" />\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"Python.test\" />\n      <item itemvalue=\"Python.questions\" />\n      <item itemvalue=\"Python tests.Python tests for test.TestWordsConcatenation.test_empty_list\" />\n      <item itemvalue=\"Python tests.Python tests in test.py (1)\" />\n      <item itemvalue=\"Python tests.Python tests in test.py\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Python tests.Python tests in test.py (1)\" />\n        <item itemvalue=\"Python tests.Python tests for test.TestWordsConcatenation.test_empty_list\" />\n        <item itemvalue=\"Python tests.Python tests in test.py\" />\n        <item itemvalue=\"Python.questions\" />\n        <item itemvalue=\"Python.test\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"763e984f-d73f-4ae0-910c-16bffae71ccc\" name=\"Changes\" comment=\"\" />\n      <created>1703432725419</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1703432725419</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"test\">\n      <created>1703433181989</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1703433181989</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"add 03 and 04\">\n      <created>1705755715038</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705755715038</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"add 03 and 04\">\n      <created>1705756368472</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1705756368472</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"add 03 and 04\">\n      <created>1706453241175</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1706453241175</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"add katas 1\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1709327347649</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1709327347649</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"add katas 1\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1711904312564</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1711904312564</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"test\" />\n    <MESSAGE value=\"add 03 and 04\" />\n    <MESSAGE value=\"add katas 1\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"add katas 1\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/python_katas/kata_1/questions.py</url>\n          <option name=\"timeStamp\" value=\"5\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/python_katas/kata_1/questions.py</url>\n          <line>213</line>\n          <option name=\"timeStamp\" value=\"6\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/python_katas/kata_1/questions.py</url>\n          <line>170</line>\n          <option name=\"timeStamp\" value=\"7\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,10 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add katas 1">
+-      <change afterPath="$PROJECT_DIR$/python_katas/kata_3/67203.jpeg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python_katas/kata_3/questions.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python_katas/kata_3/test.py" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/python_katas/kata_3/utils.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/python_katas/kata_2/backup_files_to_backup_2024-03-31.tar.gz" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/files_to_backup/a.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/files_to_backup/b.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/mnist-predictor.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/mnist-predictor.yaml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/questions.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/python_katas/kata_2/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_katas/kata_2/test.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -64,9 +67,11 @@
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;Python tests.Python tests for test.TestFilesBackup.test_backup_file_created.executor&quot;: &quot;Run&quot;,
+     &quot;Python tests.Python tests for test.TestWordsConcatenation.test_empty_list.executor&quot;: &quot;Run&quot;,
+     &quot;Python tests.Python tests in test.py (1).executor&quot;: &quot;Run&quot;,
+     &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,
++    &quot;Python.questions (1).executor&quot;: &quot;Run&quot;,
+     &quot;Python.questions.executor&quot;: &quot;Debug&quot;,
+     &quot;Python.test.executor&quot;: &quot;Run&quot;,
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+@@ -83,7 +88,7 @@
+     </key>
+   </component>
+   <component name="RunManager" selected="Python tests.Python tests in test.py (1)">
+-    <configuration name="questions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="questions (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="DevOpsNov23" />
+       <option name="ENV_FILES" value="" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+@@ -92,12 +97,11 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_1" />
+-      <option name="IS_MODULE_SDK" value="false" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_2" />
++      <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_katas/kata_1/questions.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_katas/kata_2/questions.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -106,27 +110,19 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="Python tests for test.TestFilesBackup.test_backup_file_created" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+       <module name="DevOpsNov23" />
+       <option name="ENV_FILES" value="" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="SDK_NAME" value="Python 3.12 (pythonProject)" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_1" />
+-      <option name="IS_MODULE_SDK" value="false" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_katas/kata_2" />
++      <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_katas/kata_1/test.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
++      <option name="_new_additionalArguments" value="&quot;&quot;" />
++      <option name="_new_target" value="&quot;test.TestFilesBackup.test_backup_file_created&quot;" />
++      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+       <method v="2" />
+     </configuration>
+     <configuration name="Python tests for test.TestWordsConcatenation.test_empty_list" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+@@ -175,8 +171,8 @@
+       <method v="2" />
+     </configuration>
+     <list>
+-      <item itemvalue="Python.test" />
+-      <item itemvalue="Python.questions" />
++      <item itemvalue="Python.questions (1)" />
++      <item itemvalue="Python tests.Python tests for test.TestFilesBackup.test_backup_file_created" />
+       <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
+       <item itemvalue="Python tests.Python tests in test.py (1)" />
+       <item itemvalue="Python tests.Python tests in test.py" />
+@@ -184,10 +180,10 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Python tests.Python tests in test.py (1)" />
++        <item itemvalue="Python.questions (1)" />
++        <item itemvalue="Python tests.Python tests for test.TestFilesBackup.test_backup_file_created" />
+         <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
+         <item itemvalue="Python tests.Python tests in test.py" />
+-        <item itemvalue="Python.questions" />
+-        <item itemvalue="Python.test" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -251,7 +247,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1711904312564</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="add katas 1">
++      <option name="closed" value="true" />
++      <created>1711904365030</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1711904365030</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: python_katas/kata_2/questions.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>def valid_parentheses(s):\n    \"\"\"\n    3 Kata\n\n    This function gets a string containing just the characters '(', ')', '{', '}', '[' and ']',\n    and determines if the input string is valid.\n\n    An input string is valid if:\n        Open brackets must be closed by the same type of brackets.\n        Open brackets must be closed in the correct order.\n\n    e.g.\n    s = '[[{()}](){}]'  -> True\n    s = ']}'          -> False\n    \"\"\"\n    pass\n\n\ndef fibonacci_fixme(n):\n    \"\"\"\n    2 Kata\n\n    A Fibonacci sequence is the integer sequence of 1, 1, 2, 3, 5, 8, 13....\n    The first two terms are 1 and 1. All other terms are obtained by adding the preceding two terms.\n\n    This function should return the n'th element of fibonacci sequence. As following:\n\n    fibonacci_fixme(1) -> 1\n    fibonacci_fixme(2) -> 1\n    fibonacci_fixme(3) -> 2\n    fibonacci_fixme(4) -> 3\n    fibonacci_fixme(5) -> 5\n\n    But it doesn't (it has some bad lines in it...)\n    You should (1) correct the for statement and (2) swap two lines, so that the correct fibonacci element will be returned\n    \"\"\"\n    pass\n\n\ndef most_frequent_name(file_path):\n    \"\"\"\n    2 Kata\n\n    This function gets a path to a file containing names (name in each line)\n    The function should return the most frequent name in the file\n\n    You can assume file_path exists in the file system\n\n    :param file_path: str - absolute or relative file to read names from\n    :return: str - the mose frequent name. If there are many, return one of them\n    \"\"\"\n    return None\n\n\ndef files_backup(dir_path):\n    \"\"\"\n    3 Kata\n\n    This function gets a path to a directory and generated a .gz file containing all the files the directory contains\n    The backup .gz file name should be in the form:\n\n    'backup_<dir_name>_<yyyy-mm-dd>.tar.gz'\n\n    Where <dir_name> is the directory name (only the directory, not the full path given in dir_path)\n    and <yyyy-mm-dd> is the date e.g. 2022-04-10\n\n    You can assume dir_path exists in the file system\n\n    :param dir_path: string - path to a directory\n    :return: str - the backup file name\n    \"\"\"\n    return None\n\n\n\ndef replace_in_file(file_path, text, replace_text):\n    \"\"\"\n    2 Kata\n    This function gets a path of text file, it replaces all occurrences of 'text' by 'replace_text'.\n    The function saves the replaces content on the same path (overwrites the file's content)\n\n    You MUST check that file_path exists in the file system before you try to open it\n\n    :param file_path: relative or absolute path to a text file\n    :param text: text to search\n    :param replace_text: text to replace with\n    :return: None\n    \"\"\"\n    return None\n    \n\ndef json_configs_merge(*json_paths):\n    \"\"\"\n    2 Kata\n\n    This function gets an unknown number of paths to json files (represented as tuple in json_paths argument)\n    it reads the files content as a dictionary, and merges all of them into a single dictionary,\n    in the same order the files have been sent to the function!\n\n    :param json_paths:\n    :return: dict - the merges json files\n    \"\"\"\n    return None\n\n\ndef monotonic_array(lst):\n    \"\"\"\n    1 Kata\n\n    This function returns True/False if the given list is monotonically increased or decreased\n\n    :param lst: list of numbers (int, floats)\n    :return: bool: indicating for monotonicity\n    \"\"\"\n    return None\n\n\ndef matrix_avg(mat, rows=None):\n    \"\"\"\n    2 Kata\n\n    This function gets a 3*3 matrix (list of 3 lists) and returns the average of all elements\n    The 'rows' optional argument (with None as default) indicating which rows should be included in the average calculation\n\n    :param mat: 3*3 matrix\n    :param rows: list of unique integers in the range [0, 2] and length of maximum 3\n    :return: int - the average values\n    \"\"\"\n    return None\n\n\ndef merge_sorted_lists(l1, l2):\n    \"\"\"\n    1 Kata\n\n    This function gets two sorted lists (each one of them is sorted)\n    and returns a single sorted list combining both of them.\n\n    Try to be as efficient as you can (hint - don't use Python's built in sort() or sorted() functions)\n\n    :param l1: list of integers\n    :param l2: list of integers\n    :return: list: sorted list combining l1 and l2\n    \"\"\"\n    return None\n\n\ndef longest_common_substring(str1, str2):\n    \"\"\"\n    4 Kata\n\n    This functions gets two strings and returns their longest common substring\n\n    e.g. for\n    str1 = 'Introduced in 1991, The Linux kernel is an amazing software'\n    str2 = 'The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, Unix-like operating system kernel.'\n\n    The returned value would be 'The Linux kernel is a'\n    since it's the longest string contained both in str1 and str2\n\n    :param str1: str\n    :param str2: str\n    :return: str - the longest common substring\n    \"\"\"\n    return None\n\n\ndef longest_common_prefix(str1, str2):\n    \"\"\"\n    1 Kata\n\n    This functions gets two strings and returns their longest common prefix\n\n    e.g. for\n    str1 = 'The Linux kernel is an amazing software'\n    str2 = 'The Linux kernel is a mostly free and open-source, monolithic, modular, multitasking, Unix-like operating system kernel.'\n\n    The returned value would be 'The Linux kernel is a'\n\n    :param str1: str\n    :param str2: str\n    :return: str - the longest common prefix\n    \"\"\"\n    return None\n\n\ndef rotate_matrix(mat):\n    \"\"\"\n    2 Kata\n\n    This function gets a matrix n*m (list of m lists of length n) and rotate the matrix clockwise\n    e.g.\n    for [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]] which represent the matrix\n\n    1   2   3\n    4   5   6\n    7   8   9\n    10  11  12\n\n    The output should be:\n    [[10, 7, 4, 1], [11, 8, 5, 2], [12, 9, 6, 3]]\n\n    10  7   4   1\n    11  8   5   2\n    12  9   6   3\n\n    :param mat:\n    :return: list of lists - rotate matrix\n    \"\"\"\n    return None\n\n\ndef is_valid_email(mail_str):\n    \"\"\"\n    3 Kata\n\n    This function returns True if the given mail is in the form:\n    (username)@(domainname)\n\n    Where\n    * (username) must start with digit or an English character, and can contains only 0-9 a-z A-Z . or _\n    * (domainname) is a real, existed domain - one that resolves to an actual ip address\n\n    Hint: use socket.gethostbyname() to resolve a DNS in Python code\n\n    :param mail_str: mail to check\n    :return: bool: True if it's a valid mail (otherwise either False is returned or the program can crash)\n    \"\"\"\n    return None\n\n\ndef pascal_triangle(lines):\n    \"\"\"\n    3 Kata\n\n    This function gets an integer representing the number of lines to print in a Pascal Triangle\n    e.g. For n = 10 then following would be printed\n\n                 1\n                1 1\n               1 2 1\n              1 3 3 1\n             1 4 6 4 1\n           1 5 10 10 5 1\n         1 6 15 20 15 6 1\n        1 7 21 35 35 21 7 1\n      1 8 28 56 70 56 28 8 1\n    1 9 36 84 126 126 84 36 9 1\n\n    You are allowed to print the numbers not in a triangle shape:\n    1\n    1 1\n    1 2 1\n    1 3 3 1\n    1 4 6 4 1\n    1 5 10 10 5 1\n    1 6 15 20 15 6 1\n    1 7 21 35 35 21 7 1\n    1 8 28 56 70 56 28 8 1\n    1 9 36 84 126 126 84 36 9 1\n\n    :param lines: int\n    :return: None\n    \"\"\"\n    return None\n\n\ndef list_flatten(lst):\n    \"\"\"\n    2 Kata\n\n    This function gets a list of combination of integers or nested lists\n    e.g.\n    [1, [], [1, 2, [4, 0, [5], 6], [5, 4], 34, 0], [3]]\n\n    The functions should return a flatten list (including all nested lists):\n    [1, 1, 2, 4, 0, 5, 6, 5, 4, 34, 0, 3]\n\n    :param lst: list of integers of another list\n    :return: flatten list\n    \"\"\"\n    return None\n\n\ndef str_compression(text):\n    \"\"\"\n    2 Kata\n\n    This function gets a text (string) and returns a list representing the compressed form of the text.\n    e.g.\n    text = 'aaaaabbcaasbbgvccf'\n\n    The output will be:\n    ['a', 5, 'b', 2, 'c', 'a', 2, 's', 1, 'b', 2, 'g', 'v', 'c', 2, 'f']\n\n    Since 'a' appears 5 times in consecutively, 'b' 2 times etc...\n    Note that sequences of length 1 don't necessarily have the number 1 after the character (like 'c' before 'a')\n\n    :param text: str\n    :return: list representing the compressed form of the string\n    \"\"\"\n    return None\n\n\ndef strong_pass(password):\n    \"\"\"\n    1 Kata\n\n    A password is considered strong if it satisfies the following criteria:\n    1) Its length is at least 6.\n    2) It contains at least one digit.\n    3) It contains at least one lowercase English character.\n    4) It contains at least one uppercase English character.\n    5) It contains at least one special character. The special characters are: !@#$%^&*()-+\n\n    This function returns True if the given password is strong enough\n    \"\"\"\n    return None\n\n\nif __name__ == '__main__':\n    print('\\nvalid_parentheses:\\n--------------------')\n    print(valid_parentheses('[[{()}](){}]'))\n\n    print('\\nfibonacci_fixme:\\n--------------------')\n    print(fibonacci_fixme(6))\n\n    print('\\nmost_frequent_name:\\n--------------------')\n    print(most_frequent_name('names.txt'))\n\n    print('\\nfiles_backup:\\n--------------------')\n    print(files_backup('files_to_backup'))\n\n    print('\\nreplace_in_file:\\n--------------------')\n    print(replace_in_file('mnist-predictor.yaml', '{{IMG_NAME}}', 'mnist-pred:0.0.1'))\n\n    print('\\njson_configs_merge:\\n--------------------')\n    print(json_configs_merge('default.json', 'local.json'))\n\n    print('\\nmonotonic_array:\\n--------------------')\n    print(monotonic_array([1, 2, 3, 6, 8, 9, 0]))\n\n    print('\\nmatrix_avg:\\n--------------------')\n    print(matrix_avg([[1, 2, 3], [4, 5, 6], [7, 8, 9]], rows=[0, 2]))\n    print(matrix_avg([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))\n\n    print('\\nmerge_sorted_lists:\\n--------------------')\n    print(merge_sorted_lists([1, 4, 9, 77, 13343], [-7, 0, 7, 23]))\n\n    print('\\nlongest_common_substring:\\n--------------------')\n    print(longest_common_substring('abcdefg', 'bgtcdesd'))\n\n    print('\\nlongest_common_prefix:\\n--------------------')\n    print(longest_common_prefix('abcd', 'ttty'))\n\n    print('\\nrotate_matrix:\\n--------------------')\n    print(rotate_matrix([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]))\n\n    print('\\nis_valid_email:\\n--------------------')\n    print(is_valid_email('israel.israeli@gmail.com'))\n\n    print('\\npascal_triangle:\\n--------------------')\n    print(pascal_triangle(4))\n\n    print('\\nlist_flatten:\\n--------------------')\n    print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))\n\n    print('\\nstr_compression:\\n--------------------')\n    print(str_compression('aaaabdddddhgf'))\n\n    print('\\nstrong_pass:\\n--------------------')\n    print(strong_pass('##$FgC7^^5a'))\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/python_katas/kata_2/questions.py b/python_katas/kata_2/questions.py
+--- a/python_katas/kata_2/questions.py	
++++ b/python_katas/kata_2/questions.py	
+@@ -1,3 +1,10 @@
++import json
++import os
++import pathlib
++import re
++import socket
++from _socket import gaierror
++from datetime import datetime
+ def valid_parentheses(s):
+     """
+     3 Kata
+@@ -13,7 +20,32 @@
+     s = '[[{()}](){}]'  -> True
+     s = ']}'          -> False
+     """
+-    pass
++    stack = []
++    for char in s:
++        if char in '([{':
++            stack.append(char)
++        elif not stack:  # closing char
++            top = stack.pop(-1)
++            if top == '(' and char != ')':
++                return False
++            if top == '[' and char != ']':
++                return False
++            if top == '{' and char != '}':
++                return False
++        else:
++            return False
++    return True
++
++    # David's solution
++    while True:
++        if '()' in s:
++            s = s.replace('()', '')
++        elif '{}' in s:
++            s = s.replace('{}', '')
++        elif '[]' in s:
++            s = s.replace('[]', '')
++        else:
++            return not s
+ 
+ 
+ def fibonacci_fixme(n):
+@@ -34,7 +66,14 @@
+     But it doesn't (it has some bad lines in it...)
+     You should (1) correct the for statement and (2) swap two lines, so that the correct fibonacci element will be returned
+     """
+-    pass
++    a = 0
++    b = 1
++    for i in range(1, n + 1):
++        tmp = a + b
++        a = b
++        b = tmp
++
++    return a
+ 
+ 
+ def most_frequent_name(file_path):
+@@ -49,7 +88,24 @@
+     :param file_path: str - absolute or relative file to read names from
+     :return: str - the mose frequent name. If there are many, return one of them
+     """
+-    return None
++    file1 = open(file_path, 'r')
++    Lines = file1.readlines()
++    names = {}
++    max_count = 0
++    name_of_max = ""
++    for line in Lines:
++        #count += 1
++        #print("Line{}: {}".format(count, line.strip()))
++        if line in names:
++            names[line] += 1
++        else:
++            names[line] = 1
++    for key , val in names.items():
++        if val > max_count:
++            max_count = val
++            name_of_max = key
++    print(f"most frequent name: {name_of_max}")
++    return name_of_max
+ 
+ 
+ def files_backup(dir_path):
+@@ -69,13 +125,26 @@
+     :param dir_path: string - path to a directory
+     :return: str - the backup file name
+     """
+-    return None
++    now = datetime.now()  # current date and time
++    year = now.strftime("%Y")
++    print("year:", year)
++
++    month = now.strftime("%m")
++    print("month:", month)
+ 
++    day = now.strftime("%d")
++    print("day:", day)
++
++    path = pathlib.PurePath(dir_path)
++    cmd = f"cd {dir_path} ; tar -czvf backup_{path.name}_{year}-{month}-{day}.tar.gz *"
++    os.system(cmd)
++    return cmd
+ 
+ 
+ def replace_in_file(file_path, text, replace_text):
+     """
+     2 Kata
++
+     This function gets a path of text file, it replaces all occurrences of 'text' by 'replace_text'.
+     The function saves the replaces content on the same path (overwrites the file's content)
+ 
+@@ -86,8 +155,20 @@
+     :param replace_text: text to replace with
+     :return: None
+     """
++    path = pathlib.Path(file_path)
++    if not path.is_file():
++        print("file not found")
++        return
++    else:
++        fin = open(file_path, "rt")
++        data = fin.read()
++        data = data.replace(text, replace_text)
++        fin.close()
++        fin = open(file_path, "wt")
++        fin.write(data)
++        fin.close()
+     return None
+-    
++
+ 
+ def json_configs_merge(*json_paths):
+     """
+@@ -100,7 +181,13 @@
+     :param json_paths:
+     :return: dict - the merges json files
+     """
+-    return None
++    combine_json = {}
++    for my_json_file in json_paths:
++        with open(my_json_file) as json_file:
++            data = json.load(json_file)
++            for k, v in data.items():  # use d.iteritems() in python 2
++                combine_json[k] = v
++    return combine_json
+ 
+ 
+ def monotonic_array(lst):
+@@ -112,7 +199,15 @@
+     :param lst: list of numbers (int, floats)
+     :return: bool: indicating for monotonicity
+     """
+-    return None
++    if all(x>=y for x, y in zip(lst, lst[1:])):
++        non_inc = True
++    else:
++        non_inc = False
++    if all(x<=y for x, y in zip(lst, lst[1:])):
++        non_dec = True
++    else:
++        non_dec = False
++    return non_inc or non_dec
+ 
+ 
+ def matrix_avg(mat, rows=None):
+@@ -126,7 +221,16 @@
+     :param rows: list of unique integers in the range [0, 2] and length of maximum 3
+     :return: int - the average values
+     """
+-    return None
++    if rows == None:
++        num_of_elem = 9;
++        rows = [0,1,2]
++    else:
++        num_of_elem = len(rows) * 3
++    sum = 0
++    for raw in rows:
++       for col in range(3):
++           sum += mat[raw][col]
++    return sum/num_of_elem
+ 
+ 
+ def merge_sorted_lists(l1, l2):
+@@ -142,7 +246,21 @@
+     :param l2: list of integers
+     :return: list: sorted list combining l1 and l2
+     """
+-    return None
++    c = []
++    while l1 and l2:
++        if l1[0] <= l2[0]:
++            c.append(l1[0])
++            l1.pop(0)
++        else:
++            c.append(l2[0])
++            l2.pop(0)
++    while l1:
++        c.append(l1[0])
++        l1.pop(0)
++    while l2:
++        c.append(l2[0])
++        l2.pop(0)
++    return c
+ 
+ 
+ def longest_common_substring(str1, str2):
+@@ -162,8 +280,16 @@
+     :param str2: str
+     :return: str - the longest common substring
+     """
+-    return None
+-
++    longestString = ""
++    maxLength = 0
++    for i in range(0, len(str1)):
++        if str1[i] in str2:
++            for j in range(i + 1, len(str1)):
++                if str1[i:j] in str2:
++                    if (len(str1[i:j]) > maxLength):
++                        maxLength = len(str1[i:j])
++                        longestString = str1[i:j]
++    return longestString
+ 
+ def longest_common_prefix(str1, str2):
+     """
+@@ -181,8 +307,18 @@
+     :param str2: str
+     :return: str - the longest common prefix
+     """
+-    return None
++    len1, len2 = len(str1), len(str2)
+ 
++    if len1 > len2:
++        str1, str2 = str2, str1
++        len1, len2 = len2, len1
++    longest_prefix = ""
++    for i in range(len1):
++        if str1[i] == str2[i]:
++            longest_prefix += str1[i]
++        else:
++            return longest_prefix
++    return longest_prefix
+ 
+ def rotate_matrix(mat):
+     """
+@@ -207,7 +343,17 @@
+     :param mat:
+     :return: list of lists - rotate matrix
+     """
+-    return None
++    rotate_mat = []
++    rot_raw = []
++    num_rows = len(mat)
++    num_col = len(mat[1])
++    for i in range(num_col):
++        for j in range(num_rows):
++           rot_raw.append(mat[j][i])
++        rot_raw.reverse()
++        rotate_mat.append(rot_raw)
++        rot_raw = []
++    return rotate_mat
+ 
+ 
+ def is_valid_email(mail_str):
+@@ -226,7 +372,17 @@
+     :param mail_str: mail to check
+     :return: bool: True if it's a valid mail (otherwise either False is returned or the program can crash)
+     """
+-    return None
++    result = re.search("(^[a-zA-Z0-9]+[a-zA-Z_0-9.]*)@([a-zA-Z]+.{1}[a-z]+)", mail_str)
++    if result == None:
++        return False
++    username = result.group(1)
++    domainname = result.group(2)
++    try:
++        ipAddress = socket.gethostbyname(domainname)
++        print(f"domain IP: {ipAddress}")
++        return True
++    except gaierror:
++        return False
+ 
+ 
+ def pascal_triangle(lines):
+@@ -262,8 +418,30 @@
+     :param lines: int
+     :return: None
+     """
+-    return None
+-
++    line1 = [1]
++    line2 = [1,1]
++    if lines == 1:
++        print(*line1)
++        return
++    elif lines == 2:
++        print(*line1)
++        print(*line2)
++        return
++    print(*line1)
++    print(*line2)
++    prev_line = line2
++    cur_line = []
++    for i in range(2,lines,1):
++        for j in range(len(prev_line) + 1):
++            if j == 0:
++                cur_line.append(1)
++            elif j == len(prev_line):
++                cur_line.append(1)
++            else:
++                cur_line.append(prev_line[j-1] + prev_line[j])
++        prev_line = cur_line
++        print(*cur_line)
++        cur_line = []
+ 
+ def list_flatten(lst):
+     """
+@@ -279,7 +457,17 @@
+     :param lst: list of integers of another list
+     :return: flatten list
+     """
+-    return None
++    ret_list = []
++    str_lst = str(lst)
++    tmp_str = ""
++    for i in str_lst:
++        if i != ' ' and i != '[' and i != ']' and i != ',':
++            tmp_str += i
++        else:
++            if tmp_str != "":
++                ret_list.append(int(tmp_str))
++                tmp_str = ""
++    return ret_list
+ 
+ 
+ def str_compression(text):
+@@ -299,7 +487,28 @@
+     :param text: str
+     :return: list representing the compressed form of the string
+     """
+-    return None
++    ret_list = []
++    if text == "":
++        return ret_list
++    count = 0
++    prev_char = ""
++    for i in text:
++        if i == prev_char and count != 0:
++            count+=1
++            prev_char = i
++        elif count == 0:
++            count = 1
++            prev_char = i
++        elif i != prev_char:
++            ret_list.append(prev_char)
++            if count != 1:
++                ret_list.append(count)
++            count = 1
++            prev_char = i
++    ret_list.append(prev_char)
++    if count != 1:
++        ret_list.append(count)
++    return ret_list
+ 
+ 
+ def strong_pass(password):
+@@ -315,7 +524,22 @@
+ 
+     This function returns True if the given password is strong enough
+     """
+-    return None
++    if len(password) < 6:
++        return False
++    result = re.search("[0-9]+", password)
++    if result == None:
++        return False
++    result = re.search("[a-z]+", password)
++    if result == None:
++        return False
++    result = re.search("[A-Z]+", password)
++    if result == None:
++        return False
++    result = re.search("[!@#$%^&*()-+]+", password)
++    if result == None:
++        return False
++    return True
++
+ 
+ 
+ if __name__ == '__main__':
+@@ -360,13 +584,13 @@
+     print(is_valid_email('israel.israeli@gmail.com'))
+ 
+     print('\npascal_triangle:\n--------------------')
+-    print(pascal_triangle(4))
++    print(pascal_triangle(10))
+ 
+     print('\nlist_flatten:\n--------------------')
+     print(list_flatten([1, 2, [3, 4, [4, 5], 7], 8]))
+ 
+     print('\nstr_compression:\n--------------------')
+-    print(str_compression('aaaabdddddhgf'))
++    print(str_compression('aaaaabbcaasbbgvccf'))
+ 
+     print('\nstrong_pass:\n--------------------')
+     print(strong_pass('##$FgC7^^5a'))
+diff --git a/python_katas/kata_2/files_to_backup/b.txt b/python_katas/kata_2/files_to_backup/b.txt
+deleted file mode 100644
+diff --git a/python_katas/kata_2/files_to_backup/a.txt b/python_katas/kata_2/backup_files_to_backup_2024-03-31.tar.gz
+rename from python_katas/kata_2/files_to_backup/a.txt
+rename to python_katas/kata_2/backup_files_to_backup_2024-03-31.tar.gz
