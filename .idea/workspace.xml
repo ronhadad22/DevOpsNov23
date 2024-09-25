@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="add katas 1" />
+    <list default="true" id="763e984f-d73f-4ae0-910c-16bffae71ccc" name="Changes" comment="aws">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,14 +33,12 @@
       </list>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="5b59564d-002d-485b-80a4-6d2b8448adfd" />
-        <option name="url" value="https://github.com/ronhadad22/DevOpsNov23.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ronhadad22/DevOpsNov23.git&quot;,
+    &quot;accountId&quot;: &quot;57b16c22-ba6d-4704-9691-c95bd8fab6aa&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/02_linux_ex1/yourSolution.sh" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -66,8 +66,8 @@
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ronh/PycharmProjects/DevOpsNov23&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#10 on main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rwnhdd/PycharmProjects/DevOpsNov23&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
 }</component>
@@ -190,7 +190,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+        <option value="bundled-python-sdk-ce3d9afa04ac-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.20224.347" />
       </set>
     </attachedChunks>
   </component>
@@ -263,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716998232489</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="aws">
+      <option name="closed" value="true" />
+      <created>1724251239331</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1724251239331</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,8 +289,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
     <MESSAGE value="add 03 and 04" />
+    <MESSAGE value="add k8s" />
     <MESSAGE value="add katas 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="add katas 1" />
+    <MESSAGE value="aws" />
+    <option name="LAST_COMMIT_MESSAGE" value="aws" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
