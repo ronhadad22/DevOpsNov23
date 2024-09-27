@@ -1,12 +1,43 @@
-name@example.com
-< your secret here >
+<your email>
+fairy3@gmail.com
 
+< your secret here >
+814c5723c21e7e90a3eae36c8df3c513  -
 
 Kernel System Calls
 -------------------
 < Your Answer >
-m
+The program whatIdo do follow things:
+1) system call openat:
+   open or create if not exists a file /welcomeToDevOpsJan22/goodLuck
+   within a current working directory for writing only.
+   If the file already exists, it's truncated to zero length.
+   The file is given read-write permissions for owner,group and others (0666)
+   the system call returns file descriptor of new created/updated file
+2) system call write:
+  String of characters "There you go... tell me what I d" with a length of 36 bytes
+  is written to the  goodLuck
+3) the file is closed
+4) the program exit with code 0 - means successful
+
 
 Binary Numbers
 --------------
 < Your Answer >
+1.
+111 = 2^0 + 2^1 + 2^2 = 1+2+4= 7
+100 = 0+0+2^2=4
+10110 = 0+ 2^1 + 2^2 + 0 + 2^4 = 2+4+16=22
+
+2.What is the available decimal range represented by a 8 bits binary number?
+0 to 2^8 - 1 = 0-255 (11111111 = 2^0+2^1+2^2+2^3+2^4+2^5+2^6+2^7=1+2+4+8+16+32+64+128=255
+
+3.Given a 9 bits binary number, suggest a method to represent a negative numbers between 0-255
+ 8 bits for representation a number between 0 to 255, 9th bit (MSB) = for representation a sign: 1 for "-", 0 for "+"
+
+4. Suggest a method to represent a floating point numbers (e.g. 12.3, 15.67, 0.231) using a 8 bits binary numbers
+ Exponent (4 bits),  Fraction (4 bits)
+ 1100.0101 = 2^3+2^2+(2^-2)+(2^-4) = 8+4+1/4+1/16==12+0.3=12.3
+ 1111.1011 = 2^3+2^2+2^1+2^0+(2^-1)+(2^-3)+(2^-4) = 8+4+2+1+0.5+0.12+0.0625=15.68
+ 00.001111 = 0+(2^-3)+(2^-4)+(2^-5)+(2^-6)=0+0.125+0.0625+0.03125+0.015625=0.234
+
