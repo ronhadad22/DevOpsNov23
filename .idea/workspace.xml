@@ -56,25 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for test.TestWordsConcatenation.test_empty_list.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test.py (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.questions.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#10 on main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/rwnhdd/PycharmProjects/DevOpsNov23/03_graceful_term_simulate&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests for test.TestWordsConcatenation.test_empty_list.executor": "Run",
+    "Python tests.Python tests in test.py (1).executor": "Run",
+    "Python tests.Python tests in test.py.executor": "Run",
+    "Python.questions.executor": "Debug",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "#10 on main",
+    "last_opened_file_path": "/Users/rwnhdd/PycharmProjects/DevOpsNov23",
+    "settings.editor.selected.configurable": "terminal"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/03_graceful_term_simulate" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/03_graceful_term_simulate" />
       <recent name="$PROJECT_DIR$/05_simple_webserver" />
       <recent name="$PROJECT_DIR$/python_katas" />
     </key>
@@ -190,8 +190,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.questions" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.questions" />
       <item itemvalue="Python tests.Python tests for test.TestWordsConcatenation.test_empty_list" />
       <item itemvalue="Python tests.Python tests in test.py (1)" />
       <item itemvalue="Python tests.Python tests in test.py" />
@@ -306,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727271941673</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="aws">
+      <option name="closed" value="true" />
+      <created>1730300374063</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730300374063</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
